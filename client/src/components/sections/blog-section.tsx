@@ -1,49 +1,40 @@
 export default function BlogSection() {
-  // Enhanced blog posts with images and categories matching the screenshot
+  // AI, cloud migration, and robotics focused insights
   const insights = [
     {
       id: 1,
-      title: "The 2025 State of Cloud Report",
-      category: "THOUGHT LEADERSHIP",
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60",
-      link: "/insights/cloud-report-2025"
+      title: "AI-Powered Cloud Migration: Reducing Costs by 40% with Intelligent Automation",
+      category: "CLOUD MIGRATION",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60",
+      link: "/insights/ai-cloud-migration-automation"
     },
     {
       id: 2,
-      title: "The Impact of AI on the BFSI Industry",
-      category: "BLOG",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60",
-      link: "/insights/ai-bfsi-industry"
+      title: "Robotic Process Automation: Transforming Manufacturing Operations with AI",
+      category: "ROBOTICS & AI",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60",
+      link: "/insights/rpa-manufacturing-ai"
     },
     {
       id: 3,
-      title: "Unlocking Agility: Why Hybrid Cloud is the New Normal",
-      category: "BLOG",
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60",
-      link: "/insights/hybrid-cloud-agility"
+      title: "Multi-Cloud Strategy: How AI Orchestration Optimizes Workload Distribution",
+      category: "AI SOLUTIONS",
+      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60",
+      link: "/insights/ai-multi-cloud-orchestration"
     }
   ];
 
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        {/* Header with Rackspace Technology logo */}
-        <div className="flex items-start mb-16">
-          <div className="flex-shrink-0 mr-12">
-            <div className="text-2xl font-bold text-gray-900 font-montserrat">
-              <span className="text-black">rackspace</span>
-              <div className="text-sm font-normal text-gray-600 mt-1">technology.</div>
-            </div>
-          </div>
-          
-          <div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-montserrat">
-              Latest insights
-            </h2>
-            <p className="text-lg text-gray-600 max-w-4xl font-opensans">
-              Discover perspectives from industry experts around digital transformation, trends, innovation, operations – all to help you determine your best path forward.
-            </p>
-          </div>
+        {/* Header */}
+        <div className="mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-montserrat">
+            Latest insights
+          </h2>
+          <p className="text-lg text-gray-600 max-w-4xl font-opensans">
+            Discover expert perspectives on AI implementation, cloud migration strategies, and robotics automation – helping you navigate your digital transformation journey.
+          </p>
         </div>
         
         {/* Insights Grid */}
