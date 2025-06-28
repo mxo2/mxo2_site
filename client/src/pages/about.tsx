@@ -12,28 +12,34 @@ export default function About() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[600px] overflow-hidden">
+      <section className="relative h-[400px] overflow-hidden">
         <div className="absolute inset-0 flex">
           {/* Left side - Gradient */}
           <div className="w-1/2 bg-gradient-to-br from-blue-600 via-purple-600 to-red-500 flex items-center justify-center text-white">
             <div className="text-center px-8">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6 font-montserrat leading-tight">
-                Know MXO2 Better
+              <h1 className="text-3xl lg:text-4xl font-bold mb-4 font-montserrat leading-tight">
+                Built by Tech Entrepreneurs, for Digital Innovators
               </h1>
-              <p className="text-xl lg:text-2xl font-opensans opacity-90">
-                Empower your digital transformation, your way, with AI-driven solutions you trust!
+              <p className="text-lg lg:text-xl font-opensans opacity-90">
+                Founded by Sam Panwar, MXO2 delivers AI-driven solutions you trust!
               </p>
             </div>
           </div>
           
-          {/* Right side - Infrastructure Image */}
-          <div className="w-1/2 relative">
-            <img 
-              src="/assets/instracture_3_1751112701698.jpg" 
-              alt="Infrastructure team training" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+          {/* Right side - Founder Profile */}
+          <div className="w-1/2 relative bg-gray-100 flex items-center justify-center">
+            <div className="text-center">
+              <div className="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden shadow-xl border-4 border-white">
+                <img 
+                  src={samImage}
+                  alt="Sam Panwar - Founder & CEO" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 font-montserrat">Sam Panwar</h3>
+              <p className="text-gray-600 font-opensans">Founder & CEO</p>
+              <p className="text-sm text-gray-500 mt-2 font-opensans">15+ Years Tech Leadership</p>
+            </div>
           </div>
         </div>
         
