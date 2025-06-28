@@ -79,8 +79,12 @@ export default function About() {
             <div className="flex flex-col lg:flex-row gap-12 items-center">
               <div className="lg:w-1/3">
                 <div className="bg-white rounded-lg p-8 shadow-lg text-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <span className="text-white text-4xl font-bold">SP</span>
+                  <div className="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full">
+                    <img 
+                      src="/assets/sam_1751113238654.png" 
+                      alt="Sam Panwar - CEO & Founder of MXO2" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2 font-montserrat">Sam Panwar</h3>
                   <p className="text-blue-600 font-semibold mb-4">CEO, Founder</p>
