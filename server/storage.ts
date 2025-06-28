@@ -204,6 +204,7 @@ export class MemStorage implements IStorage {
     const user: User = { 
       ...insertUser, 
       id,
+      role: insertUser.role || 'user',
       createdAt: new Date()
     };
     this.users.set(id, user);
@@ -232,6 +233,9 @@ export class MemStorage implements IStorage {
     const post: BlogPost = {
       ...insertPost,
       id,
+      featuredImage: insertPost.featuredImage || null,
+      authorId: insertPost.authorId || null,
+      published: insertPost.published || false,
       createdAt: now,
       updatedAt: now
     };
@@ -273,6 +277,8 @@ export class MemStorage implements IStorage {
     const page: Page = {
       ...insertPage,
       id,
+      published: insertPage.published || false,
+      metaDescription: insertPage.metaDescription || null,
       createdAt: now,
       updatedAt: now
     };
@@ -313,7 +319,9 @@ export class MemStorage implements IStorage {
     const id = this.currentId++;
     const service: Service = {
       ...insertService,
-      id
+      id,
+      order: insertService.order || 0,
+      featured: insertService.featured || false
     };
     this.services.set(id, service);
     return service;
