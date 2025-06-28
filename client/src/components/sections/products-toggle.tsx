@@ -6,18 +6,25 @@ export default function ProductsToggle() {
 
   const streetSyncProduct = {
     title: "StreetSync – Smart Municipal Workforce Management",
-    description: "StreetSync was implemented under a government directive in collaboration with IITian-led IAS officers to streamline municipal workforce operations. The system enables real-time GPS tracking, geo-fenced attendance, and daily activity monitoring for sanitation workers. Deployed across select urban wards, StreetSync has improved transparency, reduced absenteeism, and empowered authorities with data-driven insights — transforming how municipalities manage their field teams.",
+    description: "StreetSync was implemented under a government directive in collaboration with IITian-led IAS officers to streamline municipal workforce operations. The system enables real-time GPS tracking, geo-fenced attendance, and daily activity monitoring for sanitation workers.",
+    features: [
+      "Catalog your existing applications, infrastructure and network architecture to help prioritize workloads and applications.",
+      "Determine which cloud platform(s) fit your overall transformation objectives.",
+      "Design a high-level target infrastructure and cloud platform architecture that accommodates your security and risk requirements.",
+      "Assess your existing workloads and predict future cloud consumption to estimate your costs.",
+      "Explore your detailed deployment strategy and migration tools for all applications and future recommendations."
+    ],
     subtitle: "Empowering Municipal Workforce",
     tagline: "GPS-based Tracking Solution for Efficient Street Cleaning and Employee Management",
     image: "/api/placeholder/400/250"
   };
 
   const parallelCampusProduct = {
-    title: "Parallel Campus – AI-Driven School Ecosystem",
+    title: "Parallel Campus – AI-Driven School Ecosystem", 
     description: "Parallel Campus began as a robust School ERP platform, streamlining academic operations, administration, and communication. Today, it has evolved into an AI-powered ecosystem designed to empower teachers, students, and parents alike.",
     features: [
       "For teachers: Smart tools for classroom planning, student performance tracking, and automated reporting.",
-      "For parents: Behavior insights, learning analytics, and AI-driven parenting support tailored to their child's development.",
+      "For parents: Behavior insights, learning analytics, and AI-driven parenting support tailored to their child's development.", 
       "For students: Self-learning assistance, content summarization, and interactive study support through AI copilots.",
       "By combining ERP functionality with intelligent automation and generative AI, Parallel Campus transforms traditional education into a connected, data-informed experience for modern learning environments."
     ],
@@ -79,55 +86,52 @@ export default function ProductsToggle() {
                 <div className="flex gap-8">
                   {/* Left - Content */}
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-montserrat">
-                      {streetSyncProduct.title}
-                    </h3>
-                    <p className="text-gray-700 leading-relaxed font-opensans">
+                    <p className="text-gray-700 leading-relaxed font-opensans mb-6">
                       {streetSyncProduct.description}
                     </p>
+                    <ul className="space-y-4">
+                      {streetSyncProduct.features.map((feature: string, index: number) => (
+                        <li key={index} className="flex items-start">
+                          <div className="w-3 h-3 bg-purple-600 mr-4 mt-1 flex-shrink-0"></div>
+                          <span className="text-gray-700 font-opensans leading-relaxed">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                   
-                  {/* Right - Image/Logo area */}
-                  <div className="flex-shrink-0 w-64 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-6 text-white flex flex-col justify-center items-center text-center">
-                    <div className="text-3xl font-bold mb-2 font-montserrat">
-                      StreetSync
-                    </div>
-                    <div className="text-sm opacity-90">
-                      {streetSyncProduct.subtitle}
-                    </div>
-                    <div className="text-xs mt-4 opacity-80">
-                      {streetSyncProduct.tagline}
-                    </div>
+                  {/* Right - Image area */}
+                  <div className="flex-shrink-0 w-80">
+                    <img 
+                      src="/assets/Screenshot 2025-05-16 at 10.40.01 PM.png_1751112067831.webp" 
+                      alt="StreetSync - Municipal worker with GPS tracking" 
+                      className="w-full h-64 object-cover rounded-lg"
+                    />
                   </div>
                 </div>
               ) : (
                 <div className="flex gap-8">
                   {/* Left - Content */}
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-montserrat">
-                      {parallelCampusProduct.title}
-                    </h3>
-                    <p className="text-gray-700 mb-4 font-opensans">
+                    <p className="text-gray-700 mb-6 font-opensans leading-relaxed">
                       {parallelCampusProduct.description}
                     </p>
-                    <ul className="space-y-3">
+                    <ul className="space-y-4">
                       {parallelCampusProduct.features.map((feature: string, index: number) => (
                         <li key={index} className="flex items-start">
-                          <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                          <span className="text-gray-700 font-opensans">{feature}</span>
+                          <div className="w-3 h-3 bg-purple-600 mr-4 mt-1 flex-shrink-0"></div>
+                          <span className="text-gray-700 font-opensans leading-relaxed">{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   
-                  {/* Right - Logo */}
-                  <div className="flex-shrink-0 w-64 bg-gradient-to-br from-teal-600 to-blue-700 rounded-lg p-6 text-white flex flex-col justify-center items-center text-center">
-                    <div className="text-2xl font-bold mb-2 font-montserrat">
-                      Parallel<br />Campus
-                    </div>
-                    <div className="text-sm opacity-90">
-                      {parallelCampusProduct.subtitle}
-                    </div>
+                  {/* Right - Image area */}
+                  <div className="flex-shrink-0 w-80">
+                    <img 
+                      src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop" 
+                      alt="Students and teacher in classroom" 
+                      className="w-full h-64 object-cover rounded-lg"
+                    />
                   </div>
                 </div>
               )}
