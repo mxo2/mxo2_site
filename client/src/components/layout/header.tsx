@@ -54,7 +54,7 @@ export default function Header() {
                 <img 
                   src={logoImage} 
                   alt="MXO2 Logo" 
-                  className="h-10 w-auto"
+                  className="h-16 w-auto"
                 />
               </div>
             </Link>
