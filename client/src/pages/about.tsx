@@ -226,113 +226,133 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Approach - Toggle Section */}
+      {/* Our Approach */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8 font-montserrat text-center">
-              Our Approach & Leadership
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-montserrat text-center">
+              Our Approach
             </h2>
+            <p className="text-xl text-gray-600 mb-12 text-center font-opensans">
+              Our approach is rooted in <strong>partnership, precision, and progress</strong>. We don't just implement 
+              technology — we align it with your business vision to ensure tangible outcomes.
+            </p>
             
-            {/* Toggle Buttons */}
-            <div className="flex justify-center mb-8">
-              <div className="bg-gray-100 rounded-lg p-1 flex">
-                <button
-                  onClick={() => setActiveToggle('approach')}
-                  className={`px-6 py-3 rounded-md font-semibold font-opensans transition-all ${
-                    activeToggle === 'approach'
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'text-gray-700 hover:text-gray-900'
-                  }`}
-                >
-                  Our Methodology
-                </button>
-                <button
-                  onClick={() => setActiveToggle('leadership')}
-                  className={`px-6 py-3 rounded-md font-semibold font-opensans transition-all ${
-                    activeToggle === 'leadership'
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'text-gray-700 hover:text-gray-900'
-                  }`}
-                >
-                  Leadership Team
-                </button>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-white rounded-lg p-6 shadow-lg">
+                <div className="w-12 h-12 bg-blue-900 rounded-lg mb-4 flex items-center justify-center">
+                  <Target className="text-white w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-3 font-montserrat">
+                  Understand First, Build Second
+                </h4>
+                <p className="text-gray-700 font-opensans">
+                  We start by deeply understanding your goals, operations, and challenges. Every solution is crafted 
+                  with context — no guesswork, no templates.
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-lg">
+                <div className="w-12 h-12 bg-blue-900 rounded-lg mb-4 flex items-center justify-center">
+                  <Rocket className="text-white w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-3 font-montserrat">
+                  Modular & Scalable Solutions
+                </h4>
+                <p className="text-gray-700 font-opensans">
+                  We design future-ready systems using flexible architectures. Whether it's ERP, cloud, or AI – 
+                  our solutions evolve as your business grows.
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-lg">
+                <div className="w-12 h-12 bg-blue-900 rounded-lg mb-4 flex items-center justify-center">
+                  <Handshake className="text-white w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-3 font-montserrat">
+                  Rapid Development, Continuous Improvement
+                </h4>
+                <p className="text-gray-700 font-opensans">
+                  Using agile and DevOps practices, we deliver fast without compromising quality. Iterative 
+                  development and feedback loops ensure you're always in control.
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-lg">
+                <div className="w-12 h-12 bg-blue-900 rounded-lg mb-4 flex items-center justify-center">
+                  <Target className="text-white w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-3 font-montserrat">
+                  Industry-Centric Customization
+                </h4>
+                <p className="text-gray-700 font-opensans">
+                  From manufacturing to education, government to fintech — we tailor technology to industry-specific 
+                  workflows and compliance needs.
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-lg">
+                <div className="w-12 h-12 bg-blue-900 rounded-lg mb-4 flex items-center justify-center">
+                  <Handshake className="text-white w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-3 font-montserrat">
+                  Transparent Collaboration
+                </h4>
+                <p className="text-gray-700 font-opensans">
+                  We work as an extension of your team — with open communication, dedicated account managers, 
+                  and clear milestones.
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-lg">
+                <div className="w-12 h-12 bg-blue-900 rounded-lg mb-4 flex items-center justify-center">
+                  <Rocket className="text-white w-6 h-6" />
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-3 font-montserrat">
+                  Measurable Impact
+                </h4>
+                <p className="text-gray-700 font-opensans">
+                  We focus on outcomes — increased efficiency, reduced costs, better decision-making, and competitive 
+                  advantage. We define success together, then deliver it.
+                </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Content based on active toggle */}
-            {activeToggle === 'approach' && (
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat">
-                    Strategic Digital Excellence
-                  </h3>
-                  <p className="text-gray-600 mb-6 font-opensans">
-                    Our approach is rooted in partnership, precision, and progress. We align technology 
-                    with your business vision to ensure tangible outcomes.
-                  </p>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-gray-700 font-opensans">Strategic assessment and planning aligned with business objectives</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-gray-700 font-opensans">Modular, scalable solutions that evolve with your business</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-gray-700 font-opensans">Rapid development with continuous improvement cycles</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-gray-700 font-opensans">Industry-specific customization and compliance</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex justify-center">
-                  <div className="w-80 h-64 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white text-center">
-                    <div>
-                      <div className="text-4xl font-bold mb-2">15+</div>
-                      <div className="text-lg">Years of Excellence</div>
-                      <div className="text-sm mt-2 opacity-90">Delivering measurable results</div>
-                    </div>
-                  </div>
+      {/* Leadership Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 font-montserrat">
+                  Meet Our CEO & Founder
+                </h2>
+                <h3 className="text-xl font-bold text-blue-600 mb-2 font-montserrat">Sam Panwar</h3>
+                <p className="text-gray-600 mb-4 font-opensans">Chief Executive Officer & Founder</p>
+                <p className="text-gray-700 font-opensans leading-relaxed mb-4">
+                  With over 15 years of experience in AI, cloud computing, and digital transformation, 
+                  Sam Panwar leads MXO2's vision of delivering cutting-edge technology solutions that 
+                  drive real business value.
+                </p>
+                <p className="text-gray-700 font-opensans leading-relaxed">
+                  Under his leadership, MXO2 has been recognized as one of CIO Applications' Top 10 AI 
+                  Solution Providers and has successfully delivered 100+ projects across multiple industries.
+                </p>
+              </div>
+              
+              <div className="flex justify-center">
+                <div className="w-80 h-80 bg-white rounded-lg shadow-lg overflow-hidden">
+                  <img 
+                    src={samImage}
+                    alt="Sam Panwar - CEO & Founder"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
-            )}
-
-            {activeToggle === 'leadership' && (
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat">
-                    Meet Our CEO & Founder
-                  </h3>
-                  <h4 className="text-xl font-bold text-blue-600 mb-2 font-montserrat">Sam Panwar</h4>
-                  <p className="text-gray-600 mb-4 font-opensans">Chief Executive Officer & Founder</p>
-                  <p className="text-gray-700 font-opensans leading-relaxed mb-4">
-                    With over 15 years of experience in AI, cloud computing, and digital transformation, 
-                    Sam Panwar leads MXO2's vision of delivering cutting-edge technology solutions that 
-                    drive real business value.
-                  </p>
-                  <p className="text-gray-700 font-opensans leading-relaxed">
-                    Under his leadership, MXO2 has been recognized as one of CIO Applications' Top 10 AI 
-                    Solution Providers and has successfully delivered 100+ projects across multiple industries.
-                  </p>
-                </div>
-                
-                <div className="flex justify-center">
-                  <div className="w-80 h-80 bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img 
-                      src={samImage}
-                      alt="Sam Panwar - CEO & Founder"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
+            </div>
           </div>
         </div>
       </section>
