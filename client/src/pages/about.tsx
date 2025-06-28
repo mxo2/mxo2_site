@@ -291,14 +291,15 @@ export default function About() {
               {activeToggle === 'media' && (
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat">Media & Events</h3>
-                  <div className="flex items-center justify-center h-64 bg-white rounded-lg border-2 border-dashed border-gray-300">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-purple-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                        <span className="text-purple-600 text-2xl">📺</span>
-                      </div>
-                      <p className="text-gray-500 font-opensans">Media coverage and event photos will be displayed here</p>
-                      <p className="text-sm text-gray-400 mt-2">Featured in leading tech publications and industry conferences</p>
-                    </div>
+                  <div className="bg-white rounded-lg p-6">
+                    <img 
+                      src="/assets/Screenshot 2025-06-28 at 5.47.32 PM_1751113062048.png" 
+                      alt="MXO2 Media Coverage and Events - Featured in leading publications and industry conferences" 
+                      className="w-full max-w-4xl mx-auto rounded-lg"
+                    />
+                    <p className="text-gray-600 font-opensans mt-4">
+                      Featured in leading tech publications and industry conferences including BETT London, Terra Sapiens Education, and National Conference events
+                    </p>
                   </div>
                 </div>
               )}
