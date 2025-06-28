@@ -1,6 +1,9 @@
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 
 export default function About() {
+  const [activeToggle, setActiveToggle] = useState<'clients' | 'media' | 'products'>('clients');
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -223,47 +226,100 @@ export default function About() {
         </div>
       </section>
 
-      {/* Recognition */}
+      {/* Recognition - Toggle Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8 font-montserrat">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8 font-montserrat text-center">
               Our Network & Recognition
             </h2>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-blue-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white text-2xl">🏢</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 font-montserrat">Clients</h3>
-                <p className="text-gray-700 font-opensans">
-                  Trusted by enterprises, governments, and startups worldwide
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-20 h-20 bg-purple-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white text-2xl">📺</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 font-montserrat">Media & Events</h3>
-                <p className="text-gray-700 font-opensans">
-                  Featured in leading tech publications and industry conferences
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-20 h-20 bg-red-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white text-2xl">🚀</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 font-montserrat">Our Brands</h3>
-                <p className="text-gray-700 font-opensans">
-                  Building innovative products like Parallel Campus and StreetSync
-                </p>
+            {/* Toggle Buttons */}
+            <div className="flex justify-center mb-8">
+              <div className="bg-gray-100 rounded-lg p-1 flex">
+                <button
+                  onClick={() => setActiveToggle('clients')}
+                  className={`px-6 py-3 rounded-md font-semibold font-opensans transition-all ${
+                    activeToggle === 'clients'
+                      ? 'bg-blue-600 text-white shadow-md'
+                      : 'text-gray-700 hover:text-gray-900'
+                  }`}
+                >
+                  Clients
+                </button>
+                <button
+                  onClick={() => setActiveToggle('media')}
+                  className={`px-6 py-3 rounded-md font-semibold font-opensans transition-all ${
+                    activeToggle === 'media'
+                      ? 'bg-blue-600 text-white shadow-md'
+                      : 'text-gray-700 hover:text-gray-900'
+                  }`}
+                >
+                  Media & Events
+                </button>
+                <button
+                  onClick={() => setActiveToggle('products')}
+                  className={`px-6 py-3 rounded-md font-semibold font-opensans transition-all ${
+                    activeToggle === 'products'
+                      ? 'bg-blue-600 text-white shadow-md'
+                      : 'text-gray-700 hover:text-gray-900'
+                  }`}
+                >
+                  Our Products
+                </button>
               </div>
             </div>
             
-            <div className="mt-12">
+            {/* Content Area */}
+            <div className="bg-gray-50 rounded-lg p-8 min-h-[400px]">
+              {activeToggle === 'clients' && (
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat">Our Clients</h3>
+                  <div className="bg-white rounded-lg p-6">
+                    <img 
+                      src="/assets/clients 1_1751112968066.jpg" 
+                      alt="MXO2 Client Portfolio - Trusted by enterprises, governments, and startups worldwide" 
+                      className="w-full max-w-4xl mx-auto rounded-lg"
+                    />
+                    <p className="text-gray-600 font-opensans mt-4">
+                      Trusted by enterprises, governments, and startups worldwide
+                    </p>
+                  </div>
+                </div>
+              )}
+              
+              {activeToggle === 'media' && (
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat">Media & Events</h3>
+                  <div className="flex items-center justify-center h-64 bg-white rounded-lg border-2 border-dashed border-gray-300">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-purple-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <span className="text-purple-600 text-2xl">📺</span>
+                      </div>
+                      <p className="text-gray-500 font-opensans">Media coverage and event photos will be displayed here</p>
+                      <p className="text-sm text-gray-400 mt-2">Featured in leading tech publications and industry conferences</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              {activeToggle === 'products' && (
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat">Our Products</h3>
+                  <div className="flex items-center justify-center h-64 bg-white rounded-lg border-2 border-dashed border-gray-300">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-red-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <span className="text-red-600 text-2xl">🚀</span>
+                      </div>
+                      <p className="text-gray-500 font-opensans">Product showcase images will be displayed here</p>
+                      <p className="text-sm text-gray-400 mt-2">Building innovative products like Parallel Campus and StreetSync</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            <div className="mt-12 text-center">
               <Badge variant="secondary" className="text-lg py-2 px-6 bg-blue-100 text-blue-800">
                 CIO Applications' Top 10 AI Solution Providers
               </Badge>
