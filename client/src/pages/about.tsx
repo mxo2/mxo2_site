@@ -47,33 +47,110 @@ export default function About() {
       <VisionMissionValues />
 
       {/* Company Overview */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8 font-montserrat">
-              Global Enterprises Trust MXO2
-            </h2>
-            
-            <div className="prose prose-lg max-w-none font-opensans text-gray-700 leading-relaxed space-y-6 text-left">
-              <p className="text-xl text-center mb-8">
-                Founded in 2010, Maximum Oxygen Inc. (MXO2) has earned its place among <strong>CIO Applications' Top 10 AI Solution Providers</strong> by delivering forward-thinking software and IT services worldwide.
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-montserrat">
+                Global Enterprises Trust MXO2
+              </h2>
+              <p className="text-xl lg:text-2xl text-gray-600 font-opensans max-w-4xl mx-auto leading-relaxed">
+                Recognized among <strong>CIO Applications' Top 10 AI Solution Providers</strong>, MXO2 delivers enterprise-grade 
+                technology solutions that transform business operations and drive sustainable growth.
               </p>
+            </div>
+            
+            <div className="grid lg:grid-cols-3 gap-8 mb-16">
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                <div className="text-blue-600 mb-6">
+                  <Target className="w-12 h-12" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-montserrat">Strategic Technology Partnership</h3>
+                <p className="text-gray-700 font-opensans leading-relaxed">
+                  We serve as a strategic technology partner for Fortune 500 companies, government agencies, and high-growth 
+                  organizations, delivering solutions that align with business objectives and regulatory requirements.
+                </p>
+              </div>
               
-              <div className="grid md:grid-cols-2 gap-8 mt-12">
-                <div className="bg-white p-6 rounded-lg shadow-lg">
-                  <h4 className="text-xl font-bold text-blue-600 mb-4 font-montserrat">Trusted by Industry Leaders</h4>
-                  <p>
-                    Over the past decade, we've partnered with enterprises, governments, institutions and startups to build 
-                    transformative digital solutions—from AI, blockchain and cloud platforms to CRM, e-commerce, and automation.
-                  </p>
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                <div className="text-purple-600 mb-6">
+                  <Rocket className="w-12 h-12" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-montserrat">Proven Track Record</h3>
+                <p className="text-gray-700 font-opensans leading-relaxed">
+                  Over 15 years of experience delivering mission-critical applications, cloud migrations, AI implementations, 
+                  and digital transformation initiatives across healthcare, education, finance, and government sectors.
+                </p>
+              </div>
+              
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                <div className="text-red-600 mb-6">
+                  <Handshake className="w-12 h-12" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-montserrat">Enterprise-Grade Delivery</h3>
+                <p className="text-gray-700 font-opensans leading-relaxed">
+                  Our solutions are built with enterprise security, scalability, and compliance at their core, ensuring 
+                  seamless integration with existing infrastructure and long-term operational excellence.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 lg:p-12 shadow-lg border border-gray-100">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-6 font-montserrat">
+                    Why Global Leaders Choose MXO2
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-gray-700 font-opensans">
+                        <strong>Technical Excellence:</strong> Deep expertise in cloud architectures, AI/ML, blockchain, and automation technologies
+                      </p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-gray-700 font-opensans">
+                        <strong>Industry Recognition:</strong> Named Top 10 AI Solution Provider with demonstrated thought leadership
+                      </p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-gray-700 font-opensans">
+                        <strong>End-to-End Capabilities:</strong> From strategy and architecture to implementation and ongoing support
+                      </p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-gray-700 font-opensans">
+                        <strong>Proven Methodologies:</strong> Agile development practices with enterprise governance and quality assurance
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 
-                <div className="bg-white p-6 rounded-lg shadow-lg">
-                  <h4 className="text-xl font-bold text-purple-600 mb-4 font-montserrat">Measurable Business Impact</h4>
-                  <p>
-                    Our work drives real business impact by streamlining operations, fortifying security, boosting transparency 
-                    and elevating customer experiences across multiple industries.
-                  </p>
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-lg">
+                  <h4 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat text-center">
+                    Client Success Metrics
+                  </h4>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
+                      <div className="text-sm text-gray-600 font-opensans">Client Retention Rate</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-purple-600 mb-2">40%</div>
+                      <div className="text-sm text-gray-600 font-opensans">Average Cost Reduction</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-red-600 mb-2">24/7</div>
+                      <div className="text-sm text-gray-600 font-opensans">Support Coverage</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
+                      <div className="text-sm text-gray-600 font-opensans">On-Time Delivery</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
