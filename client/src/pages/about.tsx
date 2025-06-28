@@ -109,25 +109,25 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-bold mb-12 font-montserrat">
-              Every month, MXO2 processes $10M+ in Digital Transformation Value
+              Delivering Digital Excellence Since 2010
             </h2>
             
             <div className="grid md:grid-cols-4 gap-8">
               <div>
-                <div className="text-4xl font-bold mb-2">$50M+</div>
-                <div className="text-blue-200">Annual revenue processed for clients</div>
+                <div className="text-4xl font-bold mb-2">15+</div>
+                <div className="text-blue-200">Years of Innovation</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold mb-2">100+</div>
+                <div className="text-blue-200">Successful Projects Delivered</div>
               </div>
               <div>
                 <div className="text-4xl font-bold mb-2">50+</div>
-                <div className="text-blue-200">Team size - 60% in AI/Cloud R&D</div>
+                <div className="text-blue-200">Enterprise Clients Served</div>
               </div>
               <div>
-                <div className="text-4xl font-bold mb-2">10K+</div>
-                <div className="text-blue-200">Platform end users across 4 continents</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-2">15+</div>
-                <div className="text-blue-200">Years of industry expertise</div>
+                <div className="text-4xl font-bold mb-2">24/7</div>
+                <div className="text-blue-200">Global Support Coverage</div>
               </div>
             </div>
           </div>
@@ -180,76 +180,41 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 font-montserrat text-center">
-              Recommended by Digital Transformation Leaders
+              Why Organizations Choose MXO2
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="text-6xl text-blue-600 mb-4">"</div>
-                <p className="text-gray-700 font-opensans text-lg mb-6 leading-relaxed">
-                  MXO2's AI automation and cloud migration services have increased our operational efficiency by 40% 
-                  and reduced our infrastructure costs significantly.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-bold">RK</span>
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-gray-900 font-montserrat">Rajesh Kumar</h5>
-                    <p className="text-gray-600 text-sm">CTO, Enterprise Solutions Ltd</p>
-                  </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div className="w-16 h-16 bg-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-white text-2xl">🎯</span>
                 </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-4 font-montserrat">Proven Expertise</h4>
+                <p className="text-gray-700 font-opensans">
+                  15 years of experience delivering AI, cloud, and automation solutions across multiple industries 
+                  with measurable business outcomes.
+                </p>
               </div>
               
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="text-6xl text-purple-600 mb-4">"</div>
-                <p className="text-gray-700 font-opensans text-lg mb-6 leading-relaxed">
-                  MXO2's wide range of technology integrations and AI solutions have completely automated our 
-                  business processes and improved decision-making across all departments.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-bold">AS</span>
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-gray-900 font-montserrat">Anita Sharma</h5>
-                    <p className="text-gray-600 text-sm">Director of Operations, TechFlow Industries</p>
-                  </div>
+              <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div className="w-16 h-16 bg-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-white text-2xl">🚀</span>
                 </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-4 font-montserrat">Innovation-First</h4>
+                <p className="text-gray-700 font-opensans">
+                  Featured among CIO Applications' Top 10 AI Solution Providers, consistently pushing the 
+                  boundaries of what technology can achieve.
+                </p>
               </div>
               
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="text-6xl text-red-600 mb-4">"</div>
-                <p className="text-gray-700 font-opensans text-lg mb-6 leading-relaxed">
-                  We saw digital transformation ROI of 300% within 18 months of implementing MXO2's 
-                  comprehensive AI and cloud solutions.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-bold">MG</span>
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-gray-900 font-montserrat">Michael Gupta</h5>
-                    <p className="text-gray-600 text-sm">CEO, InnovateNow Corp</p>
-                  </div>
+              <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div className="w-16 h-16 bg-red-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-white text-2xl">🤝</span>
                 </div>
-              </div>
-              
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="text-6xl text-teal-600 mb-4">"</div>
-                <p className="text-gray-700 font-opensans text-lg mb-6 leading-relaxed">
-                  We rate MXO2 Cloud and AI Automation 9/10 on ease-of-use and 10/10 on recommendation scale. 
-                  Outstanding technical expertise and support.
+                <h4 className="text-xl font-bold text-gray-900 mb-4 font-montserrat">Partnership Approach</h4>
+                <p className="text-gray-700 font-opensans">
+                  We work as an extension of your team, providing dedicated support and transparent 
+                  communication throughout every project.
                 </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-bold">LP</span>
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-gray-900 font-montserrat">Lisa Patel</h5>
-                    <p className="text-gray-600 text-sm">Head of Digital Innovation, Global Systems Inc</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -459,57 +424,53 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-montserrat">
-              Does MXO2 improve business profitability?
+              MXO2 Technology Solutions Portfolio
             </h2>
             <p className="text-xl text-gray-600 mb-12 font-opensans">
-              Our clients consistently achieve measurable results through our AI-driven digital transformation solutions
+              Comprehensive technology services covering AI, cloud migration, automation, and digital transformation
             </p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-5xl font-bold text-blue-600 mb-2">40%*</div>
+                <div className="text-5xl font-bold text-blue-600 mb-2">AI</div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3 font-montserrat">
-                  Operational Efficiency Gain
+                  Artificial Intelligence
                 </h4>
                 <p className="text-gray-700 font-opensans">
-                  Automated processes with AI-driven optimization and cloud integration.
+                  Machine learning, neural networks, and intelligent automation solutions.
                 </p>
               </div>
               
               <div className="text-center">
-                <div className="text-5xl font-bold text-purple-600 mb-2">50%*</div>
+                <div className="text-5xl font-bold text-purple-600 mb-2">Cloud</div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3 font-montserrat">
-                  Infrastructure Cost Reduction
+                  Cloud Migration
                 </h4>
                 <p className="text-gray-700 font-opensans">
-                  Reduced operational overhead through cloud migration and automation.
+                  AWS, Azure, and multi-cloud architecture deployment and optimization.
                 </p>
               </div>
               
               <div className="text-center">
-                <div className="text-5xl font-bold text-red-600 mb-2">300%*</div>
+                <div className="text-5xl font-bold text-red-600 mb-2">RPA</div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3 font-montserrat">
-                  Digital Transformation ROI
+                  Process Automation
                 </h4>
                 <p className="text-gray-700 font-opensans">
-                  Strong AI capabilities with measurable business impact and growth.
+                  Robotic process automation using UiPath and custom automation frameworks.
                 </p>
               </div>
               
               <div className="text-center">
-                <div className="text-5xl font-bold text-teal-600 mb-2">10K+*</div>
+                <div className="text-5xl font-bold text-teal-600 mb-2">Data</div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3 font-montserrat">
-                  Global Platform Users
+                  Analytics & BI
                 </h4>
                 <p className="text-gray-700 font-opensans">
-                  Users across 4 continents trust our comprehensive technology solutions.
+                  Business intelligence, data visualization, and predictive analytics solutions.
                 </p>
               </div>
             </div>
-            
-            <p className="text-sm text-gray-500 mt-8 font-opensans">
-              *Source: Case studies of Enterprise Solutions Ltd, TechFlow Industries, InnovateNow Corp
-            </p>
           </div>
         </div>
       </section>
