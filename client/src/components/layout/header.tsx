@@ -49,9 +49,9 @@ export default function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/">
-              <a className="text-2xl font-montserrat font-bold text-navy">
+              <div className="text-2xl font-montserrat font-bold text-navy cursor-pointer">
                 MXO<span className="text-cyan">2</span>
-              </a>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -59,8 +59,8 @@ export default function Header() {
               {navigation.map((item) => (
                 <div key={item.name} className="relative nav-item group">
                   <Link href={item.href}>
-                    <a
-                      className={`font-montserrat font-semibold hover:text-cyan transition-colors uppercase tracking-wider text-sm flex items-center ${
+                    <div
+                      className={`font-montserrat font-semibold hover:text-cyan transition-colors uppercase tracking-wider text-sm flex items-center cursor-pointer ${
                         location === item.href ? "text-cyan" : "text-navy"
                       }`}
                     >
@@ -80,7 +80,7 @@ export default function Header() {
                           />
                         </svg>
                       )}
-                    </a>
+                    </div>
                   </Link>
                   {item.hasMegaMenu && <MegaMenu />}
                 </div>
