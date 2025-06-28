@@ -125,12 +125,12 @@ export default function ProductsToggle() {
                     </ul>
                   </div>
                   
-                  {/* Right - Image area */}
-                  <div className="flex-shrink-0 w-80">
+                  {/* Right - Logo area */}
+                  <div className="flex-shrink-0 w-80 bg-black rounded-lg p-8 flex items-center justify-center">
                     <img 
-                      src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=250&fit=crop" 
-                      alt="Students and teacher in classroom" 
-                      className="w-full h-64 object-cover rounded-lg"
+                      src="/assets/logo_hd_1751112107139.png" 
+                      alt="Parallel Campus - Beyond Education" 
+                      className="max-w-full max-h-48 object-contain"
                     />
                   </div>
                 </div>
