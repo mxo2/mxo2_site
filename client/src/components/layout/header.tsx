@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import MegaMenu from "./mega-menu";
 import logoImage from "@assets/4ukey-for-android-mac_1751100463325.png";
 
 export default function Header() {
   const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Solutions", href: "/solutions" },
+    { name: "Services", href: "/solutions", hasMegaMenu: true },
+    { name: "Products", href: "/products" },
     { name: "Industries", href: "/industries" },
-    { name: "Resources", href: "/blog" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "Partnership", href: "/partnership" },
+    { name: "About Us", href: "/about" },
   ];
 
   return (
@@ -36,28 +38,35 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
-              <Link key={item.name} href={item.href}>
-                <a
-                  className={`text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-medium transition-colors py-6 ${
-                    location === item.href ? "text-[hsl(354,87%,51%)]" : ""
-                  }`}
-                >
-                  {item.name}
-                </a>
-              </Link>
+              <div key={item.name} className="relative">
+                {item.hasMegaMenu ? (
+                  <button
+                    className="flex items-center space-x-1 text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-medium transition-colors py-6 group"
+                    onMouseEnter={() => setIsMegaMenuOpen(true)}
+                    onMouseLeave={() => setIsMegaMenuOpen(false)}
+                  >
+                    <span>{item.name}</span>
+                    <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+                  </button>
+                ) : (
+                  <Link href={item.href}>
+                    <a
+                      className={`text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-medium transition-colors py-6 ${
+                        location === item.href ? "text-[hsl(354,87%,51%)]" : ""
+                      }`}
+                    >
+                      {item.name}
+                    </a>
+                  </Link>
+                )}
+              </div>
             ))}
           </nav>
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button
-              variant="outline"
-              className="border-[hsl(354,87%,51%)] text-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,51%)] hover:text-white font-opensans font-medium"
-            >
-              Login
-            </Button>
             <Button className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-medium">
-              Get Started
+              Talk to us
             </Button>
           </div>
 
@@ -103,6 +112,13 @@ export default function Header() {
           </div>
         )}
       </div>
+
+      {/* Mega Menu */}
+      <MegaMenu 
+        isOpen={isMegaMenuOpen} 
+        onMouseEnter={() => setIsMegaMenuOpen(true)}
+        onMouseLeave={() => setIsMegaMenuOpen(false)}
+      />
     </header>
   );
 }
