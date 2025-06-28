@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
+import { Target, Rocket, Handshake } from "lucide-react";
 
 export default function About() {
   const [activeToggle, setActiveToggle] = useState<'clients' | 'media' | 'products'>('clients');
@@ -185,8 +186,8 @@ export default function About() {
             
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-                <div className="w-16 h-16 bg-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-white text-2xl">🎯</span>
+                <div className="w-16 h-16 bg-blue-900 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <Target className="text-white w-8 h-8" />
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-4 font-montserrat">Proven Expertise</h4>
                 <p className="text-gray-700 font-opensans">
@@ -196,8 +197,8 @@ export default function About() {
               </div>
               
               <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-                <div className="w-16 h-16 bg-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-white text-2xl">🚀</span>
+                <div className="w-16 h-16 bg-blue-900 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <Rocket className="text-white w-8 h-8" />
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-4 font-montserrat">Innovation-First</h4>
                 <p className="text-gray-700 font-opensans">
@@ -207,8 +208,8 @@ export default function About() {
               </div>
               
               <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-                <div className="w-16 h-16 bg-red-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-white text-2xl">🤝</span>
+                <div className="w-16 h-16 bg-blue-900 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <Handshake className="text-white w-8 h-8" />
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-4 font-montserrat">Partnership Approach</h4>
                 <p className="text-gray-700 font-opensans">
