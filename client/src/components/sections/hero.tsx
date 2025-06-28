@@ -1,101 +1,74 @@
-import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import logoImage from "@assets/4ukey-for-android-mac_1751100463325.png";
+import { ArrowRight, Play } from "lucide-react";
+import aiEmployeeImage from "@assets/employee-using-ai-computing-simulation-2023-08-23-02-06-48-utc_1751104050861.jpg";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-700 to-red-600 min-h-[600px]">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-black opacity-20"></div>
-      <div className="absolute inset-0" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-      }}></div>
-
-      {/* Navigation Arrows */}
-      <button className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-3 transition-all">
-        <ChevronLeft className="w-6 h-6 text-white" />
-      </button>
-      <button className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-3 transition-all">
-        <ChevronRight className="w-6 h-6 text-white" />
-      </button>
-
-      <div className="container mx-auto px-4 relative z-10 min-h-[600px] flex items-center">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
-          {/* Left Content */}
-          <div className="text-white">
-            <h1 className="font-montserrat font-bold text-4xl lg:text-5xl xl:text-6xl leading-tight mb-6">
-              Enterprise-Grade AI Solutions,
-              <br />
-              <span className="text-cyan-300">Built for Real-World Impact</span>
+    <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-red-50">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-transparent to-red-600/10" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Content Section */}
+          <div className="space-y-8">
+            {/* Main headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              Built for{" "}
+              <span className="bg-gradient-to-r from-[hsl(220,72%,44%)] to-[hsl(354,87%,51%)] bg-clip-text text-transparent">
+                Real-World
+              </span>{" "}
+              Impact
             </h1>
-            <p className="text-lg lg:text-xl mb-8 text-gray-200 leading-relaxed max-w-2xl">
-              MXO2 and industry partners deliver intelligent solutions with enterprise-grade security, integration, and built-in observability.
+            
+            {/* Subtitle */}
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-opensans max-w-xl">
+              Transform your business with enterprise-grade cloud solutions, AI automation, 
+              and cybersecurity that scales with your ambitions.
             </p>
+            
+            {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-semibold px-8 py-3"
+                className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white px-8 py-4 text-lg font-opensans font-medium"
               >
-                Read press release
+                Start Your Journey
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-[hsl(220,72%,44%)] text-[hsl(220,72%,44%)] hover:bg-[hsl(220,72%,44%)] hover:text-white px-8 py-4 text-lg font-opensans font-medium"
+              >
+                <Play className="mr-2 w-5 h-5" />
+                Watch Demo
+              </Button>
+            </div>
+            
+            {/* Trust indicators */}
+            <div className="text-sm text-gray-500 font-opensans">
+              Trusted by 500+ enterprises worldwide
             </div>
           </div>
           
-          {/* Right Content - Professional Image Area */}
+          {/* Image Section */}
           <div className="relative">
-            <div className="relative bg-white bg-opacity-10 rounded-2xl p-8 backdrop-blur-sm border border-white border-opacity-20">
-              {/* Technology Logos */}
-              <div className="absolute top-4 right-4 flex items-center space-x-4">
-                <div className="bg-white rounded-lg p-2">
-                  <img src={logoImage} alt="MXO2" className="h-6 w-auto" />
-                </div>
-                <div className="bg-white rounded-lg px-3 py-1">
-                  <span className="font-montserrat font-bold text-gray-800">AI.tech</span>
-                </div>
-              </div>
-
-              {/* Professional Business Scene */}
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl h-80 flex items-center justify-center relative overflow-hidden">
-                {/* Simulated office background with geometric patterns */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50"></div>
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-200 to-blue-300 rounded-full -translate-y-8 translate-x-8 opacity-30"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-purple-200 to-pink-300 rounded-full translate-y-4 -translate-x-4 opacity-30"></div>
-                
-                {/* Central professional figure representation */}
-                <div className="relative z-10 text-center">
-                  <div className="bg-white rounded-2xl p-6 shadow-2xl mx-auto w-48 h-48 flex items-center justify-center mb-4">
-                    <div className="text-6xl font-bold bg-gradient-to-br from-cyan-600 to-blue-700 bg-clip-text text-transparent">
-                      AI
-                    </div>
-                  </div>
-                  <div className="bg-white rounded-lg px-4 py-2 shadow-lg">
-                    <span className="text-gray-700 font-semibold">Enterprise Solutions</span>
-                  </div>
-                </div>
-
-                {/* Floating tech elements */}
-                <div className="absolute top-12 left-8 bg-white rounded-lg p-2 shadow-lg">
-                  <div className="w-4 h-4 bg-green-500 rounded"></div>
-                </div>
-                <div className="absolute bottom-12 right-8 bg-white rounded-lg p-2 shadow-lg">
-                  <div className="w-4 h-4 bg-blue-500 rounded"></div>
-                </div>
-                <div className="absolute top-20 right-12 bg-white rounded-lg p-2 shadow-lg">
-                  <div className="w-4 h-4 bg-purple-500 rounded"></div>
-                </div>
-              </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src={aiEmployeeImage}
+                alt="Professional working with AI technology"
+                className="w-full h-auto object-cover"
+              />
+              {/* Overlay gradient for better visual effect */}
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent" />
             </div>
+            
+            {/* Floating elements for visual interest */}
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-[hsl(354,87%,51%)] rounded-full opacity-20 blur-xl" />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[hsl(220,72%,44%)] rounded-full opacity-20 blur-xl" />
           </div>
         </div>
-      </div>
-
-      {/* Carousel Dots */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        <div className="w-2 h-2 bg-white rounded-full"></div>
-        <div className="w-2 h-2 bg-white bg-opacity-50 rounded-full"></div>
-        <div className="w-2 h-2 bg-white bg-opacity-50 rounded-full"></div>
-        <div className="w-2 h-2 bg-white bg-opacity-50 rounded-full"></div>
       </div>
     </section>
   );
