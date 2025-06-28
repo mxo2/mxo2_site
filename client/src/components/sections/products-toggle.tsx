@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import streetSyncImage from "@assets/services_1751110232462.png";
+import parallelCampusLogo from "@assets/pc_logo_1751112090621.png";
 
 export default function ProductsToggle() {
   const [activeProduct, setActiveProduct] = useState<"street-sync" | "parallel-campus">("street-sync");
@@ -16,7 +18,7 @@ export default function ProductsToggle() {
     ],
     subtitle: "Empowering Municipal Workforce",
     tagline: "GPS-based Tracking Solution for Efficient Street Cleaning and Employee Management",
-    image: "/api/placeholder/400/250"
+    image: streetSyncImage
   };
 
   const parallelCampusProduct = {
@@ -29,7 +31,7 @@ export default function ProductsToggle() {
       "By combining ERP functionality with intelligent automation and generative AI, Parallel Campus transforms traditional education into a connected, data-informed experience for modern learning environments."
     ],
     subtitle: "Beyond Education",
-    image: "/api/placeholder/400/250"
+    image: parallelCampusLogo
   };
 
   return (

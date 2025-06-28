@@ -5,6 +5,7 @@ import samImage from "@assets/sam_1751113238654.png";
 import clientsImage from "@assets/clients 1_1751112968066.jpg";
 import instructureImage from "@assets/instracture_3_1751112701698.jpg";
 import designImage from "@assets/design_1751110232480.png";
+import mediaEventsImage from "@assets/design_1751110232480.png";
 
 export default function About() {
   const [activeToggle, setActiveToggle] = useState<'clients' | 'media' | 'products' | 'approach' | 'leadership'>('clients');
@@ -383,7 +384,7 @@ export default function About() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat">Our Clients</h3>
                   <div className="bg-white rounded-lg p-6">
                     <img 
-                      src="/assets/clients 1_1751112968066.jpg" 
+                      src={clientsImage} 
                       alt="MXO2 Client Portfolio - Trusted by enterprises, governments, and startups worldwide" 
                       className="w-full max-w-4xl mx-auto rounded-lg"
                     />
@@ -399,7 +400,7 @@ export default function About() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat">Media & Events</h3>
                   <div className="bg-white rounded-lg p-6">
                     <img 
-                      src="/assets/Screenshot 2025-06-28 at 5.47.32 PM_1751113062048.png" 
+                      src={mediaEventsImage} 
                       alt="MXO2 Media Coverage and Events - Featured in leading publications and industry conferences" 
                       className="w-full max-w-4xl mx-auto rounded-lg"
                     />
