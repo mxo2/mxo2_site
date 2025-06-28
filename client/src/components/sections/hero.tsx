@@ -35,7 +35,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="bg-red-600 hover:bg-red-700 text-white font-montserrat font-semibold px-8 py-3"
+                className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-semibold px-8 py-3"
               >
                 Read press release
               </Button>

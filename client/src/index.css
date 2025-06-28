@@ -15,7 +15,7 @@
   --card-foreground: hsl(220, 30%, 15%);
   --border: hsl(220, 13%, 91%);
   --input: hsl(220, 13%, 91%);
-  --primary: hsl(186, 100%, 39%);
+  --primary: hsl(354, 87%, 51%);
   --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(210, 20%, 96%);
   --secondary-foreground: hsl(220, 30%, 15%);
@@ -26,11 +26,13 @@
   --ring: hsl(220, 30%, 15%);
   --radius: 0.5rem;
   
-  /* MXO2 Brand Colors */
-  --navy: hsl(228, 37%, 17%);
-  --cyan: hsl(185, 100%, 39%);
-  --light-gray: hsl(210, 17%, 98%);
-  --medium-gray: hsl(218, 11%, 45%);
+  /* Rackspace Brand Colors */
+  --rackspace-red: hsl(354, 87%, 51%);
+  --rackspace-blue: hsl(220, 72%, 44%);
+  --rackspace-navy: hsl(215, 28%, 17%);
+  --rackspace-gray: hsl(0, 0%, 33%);
+  --rackspace-light-gray: hsl(0, 0%, 96%);
+  --rackspace-text: hsl(0, 0%, 20%);
 }
 
 .dark {
