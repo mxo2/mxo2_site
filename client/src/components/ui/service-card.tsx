@@ -19,9 +19,9 @@ export default function ServiceCard({ icon: Icon, title, description, link }: Se
         <h3 className="font-montserrat font-bold text-xl text-navy mb-4">{title}</h3>
         <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
         <Link href={link}>
-          <a className="font-montserrat font-semibold text-cyan hover:text-navy transition-colors uppercase text-sm flex items-center">
+          <span className="font-montserrat font-semibold text-cyan hover:text-navy transition-colors uppercase text-sm flex items-center cursor-pointer">
             Learn More <ArrowRight className="ml-2 w-4 h-4" />
-          </a>
+          </span>
         </Link>
       </CardContent>
     </Card>

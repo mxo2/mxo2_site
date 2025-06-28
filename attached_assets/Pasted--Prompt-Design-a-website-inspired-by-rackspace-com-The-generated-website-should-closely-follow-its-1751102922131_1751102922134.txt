@@ -1,0 +1,58 @@
+\Prompt:
+Design a website inspired by rackspace.com. The generated website should closely follow its structure, fonts, color palette, navigation, mega menu, header, footer, buttons, text styling, page layouts, and content sections. Additionally, the website must include a user-friendly CMS (Content Management System) with secure admin login, so that all sections, text, images, menus, and pages can be changed or modified through an admin panel without coding. Below are the detailed requirements:
+1. Overall Style & Layout:
+	•	Use a modern, clean, and corporate tech aesthetic.
+	•	Emphasize clarity, plenty of white space, and well-defined sections.
+	•	Use large hero banners, bold headings, and ample padding.
+2. Fonts:
+	•	Use a professional, sans-serif font family (e.g., Inter, Open Sans, or similar).
+	•	Headings should be bold, uppercase or with strong weight.
+	•	Body text should be regular, easily readable, and well-spaced.
+3. Color Palette:
+	•	Primary colors: Red (#E4002B), black, dark gray, light gray, and white.
+	•	Accent colors: Use subtle blues or greens for CTAs or highlights if needed.
+	•	Ensure high contrast for accessibility.
+4. Header & Mega Menu:
+	•	Sticky header with logo on the left, mega menu navigation centered or right-aligned.
+	•	Mega menu should have multiple main categories (like Solutions, Products, Partners, Resources, Company), each revealing a large dropdown with grouped links, icons, and featured items.
+	•	Include utility links: Login, Contact, Language selector.
+5. Buttons:
+	•	Prominent, pill-shaped or rounded rectangle buttons.
+	•	Use primary red for main CTAs (“Get Started”, “Contact Sales”), with white or black text.
+	•	Use secondary outlined buttons for less important actions.
+6. Hero Section:
+	•	Large hero banner with bold headline, supporting subheadline, main CTA button.
+	•	Option for a supporting image, illustration, or subtle animation on the right.
+7. Content Sections:
+	•	Grid or card-based layouts for Solutions, Products, or Services.
+	•	Feature sections with icons, headlines, descriptions, and links to details.
+	•	Customer testimonials, logos of clients, and case studies with images and quotes.
+	•	Resource highlights: blogs, guides, events, whitepapers in card layouts.
+8. Page Templates:
+	•	Home: Hero, featured solutions/services, client logos, testimonials, resource highlights, CTAs.
+	•	Solutions/Products: Listing page with filters, detail page with tabs (Overview, Features, Pricing, FAQ).
+	•	About/Company: Mission, team, news, careers.
+	•	Contact: Easy-to-use form, office locations, support links.
+	•	Resources: Searchable resource hub with blog, guides, events.
+9. Footer:
+	•	Large, multi-column footer with links grouped by Products, Solutions, Company, Resources, Support, and Legal.
+	•	Social media icons, copyright notice, privacy policy, and terms.
+10. Icons & Imagery:
+	•	Use simple, line or flat icons consistent with tech/corporate themes.
+	•	Use authentic images for people/teams, and vector illustrations for abstract solutions.
+11. Responsive & Accessibility:
+	•	All layouts must be fully responsive (desktop, tablet, mobile).
+	•	Ensure accessible contrast, alt text for images, and logical heading structure.
+12. Animation:
+	•	Subtle hover effects on buttons, links, and cards.
+	•	Smooth transitions for mega menu dropdowns.
+13. Additional Features:
+	•	Include search bar in the header or mega menu.
+	•	Callout for support or live chat in a fixed corner.
+14. CMS/Admin Panel Requirements:
+	•	Website must be powered by an integrated CMS (such as Drupal, WordPress, Strapi, or a custom admin panel).
+	•	Secure admin login for website administrators.
+	•	Admin panel should allow easy editing and management of all pages, menus, sections, images, testimonials, resource cards, and SEO/meta content.
+	•	Enable content managers to add, remove, or update menu items, banners, homepage blocks, and any featured sections without coding.
+	•	CMS should also support user management and roles/permissions for team members.
+End Goal: The output should be a full website structure visually and functionally mirroring [rackspace.com], with all the above elements and a robust CMS for easy ongoing management. Generate sample pages with placeholder text and images where necessary.

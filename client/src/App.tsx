@@ -14,25 +14,38 @@ import BlogPost from "@/pages/blog-post";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
+import AdminLogin from "@/pages/admin/login";
 
 function Router() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1 pt-32">
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/solutions" component={Solutions} />
-          <Route path="/solutions/:category" component={SolutionDetail} />
-          <Route path="/industries" component={Industries} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/blog/:slug" component={BlogPost} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route component={NotFound} />
-        </Switch>
-      </main>
-      <Footer />
+      <Switch>
+        {/* Admin routes without main layout */}
+        <Route path="/admin/login" component={AdminLogin} />
+        
+        {/* Main site routes with layout */}
+        <Route>
+          {() => (
+            <>
+              <Header />
+              <main className="flex-1 pt-32">
+                <Switch>
+                  <Route path="/" component={Home} />
+                  <Route path="/solutions" component={Solutions} />
+                  <Route path="/solutions/:category" component={SolutionDetail} />
+                  <Route path="/industries" component={Industries} />
+                  <Route path="/blog" component={Blog} />
+                  <Route path="/blog/:slug" component={BlogPost} />
+                  <Route path="/about" component={About} />
+                  <Route path="/contact" component={Contact} />
+                  <Route component={NotFound} />
+                </Switch>
+              </main>
+              <Footer />
+            </>
+          )}
+        </Route>
+      </Switch>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { pgTable, text, serial, integer, boolean, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, boolean, timestamp, varchar } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -7,7 +7,42 @@ export const users = pgTable("users", {
   username: text("username").notNull().unique(),
   password: text("password").notNull(),
   email: text("email").notNull().unique(),
-  role: text("role").notNull().default("user"),
+  role: text("role").notNull().default("user"), // admin, editor, user
+  firstName: text("first_name"),
+  lastName: text("last_name"),
+  lastLogin: timestamp("last_login"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});
+
+// CMS Content Blocks for flexible page building
+export const contentBlocks = pgTable("content_blocks", {
+  id: serial("id").primaryKey(),
+  type: text("type").notNull(), // hero, features, testimonials, cta, text, image
+  title: text("title"),
+  content: text("content"),
+  imageUrl: text("image_url"),
+  buttonText: text("button_text"),
+  buttonUrl: text("button_url"),
+  order: integer("order").notNull().default(0),
+  pageId: integer("page_id").references(() => pages.id),
+  published: boolean("published").notNull().default(true),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});
+
+// Menu system for dynamic navigation
+export const menuItems = pgTable("menu_items", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  url: text("url").notNull(),
+  parentId: integer("parent_id").references(() => menuItems.id),
+  order: integer("order").notNull().default(0),
+  icon: text("icon"),
+  description: text("description"),
+  featured: boolean("featured").notNull().default(false),
+  megaMenu: boolean("mega_menu").notNull().default(false),
+  published: boolean("published").notNull().default(true),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 
@@ -71,6 +106,7 @@ export const technologies = pgTable("technologies", {
 export const insertUserSchema = createInsertSchema(users).omit({
   id: true,
   createdAt: true,
+  updatedAt: true,
 });
 
 export const insertBlogPostSchema = createInsertSchema(blogPosts).omit({
@@ -97,12 +133,25 @@ export const insertTechnologySchema = createInsertSchema(technologies).omit({
   id: true,
 });
 
+export const insertContentBlockSchema = createInsertSchema(contentBlocks).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export const insertMenuItemSchema = createInsertSchema(menuItems).omit({
+  id: true,
+  createdAt: true,
+});
+
 export type User = typeof users.$inferSelect;
 export type BlogPost = typeof blogPosts.$inferSelect;
 export type Page = typeof pages.$inferSelect;
 export type Service = typeof services.$inferSelect;
 export type Industry = typeof industries.$inferSelect;
 export type Technology = typeof technologies.$inferSelect;
+export type ContentBlock = typeof contentBlocks.$inferSelect;
+export type MenuItem = typeof menuItems.$inferSelect;
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type InsertBlogPost = z.infer<typeof insertBlogPostSchema>;
@@ -110,3 +159,5 @@ export type InsertPage = z.infer<typeof insertPageSchema>;
 export type InsertService = z.infer<typeof insertServiceSchema>;
 export type InsertIndustry = z.infer<typeof insertIndustrySchema>;
 export type InsertTechnology = z.infer<typeof insertTechnologySchema>;
+export type InsertContentBlock = z.infer<typeof insertContentBlockSchema>;
+export type InsertMenuItem = z.infer<typeof insertMenuItemSchema>;
