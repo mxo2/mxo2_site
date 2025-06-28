@@ -321,41 +321,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Leadership Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 font-montserrat">
-                  Meet Our CEO & Founder
-                </h2>
-                <h3 className="text-xl font-bold text-blue-600 mb-2 font-montserrat">Sam Panwar</h3>
-                <p className="text-gray-600 mb-4 font-opensans">Chief Executive Officer & Founder</p>
-                <p className="text-gray-700 font-opensans leading-relaxed mb-4">
-                  With over 15 years of experience in AI, cloud computing, and digital transformation, 
-                  Sam Panwar leads MXO2's vision of delivering cutting-edge technology solutions that 
-                  drive real business value.
-                </p>
-                <p className="text-gray-700 font-opensans leading-relaxed">
-                  Under his leadership, MXO2 has been recognized as one of CIO Applications' Top 10 AI 
-                  Solution Providers and has successfully delivered 100+ projects across multiple industries.
-                </p>
-              </div>
-              
-              <div className="flex justify-center">
-                <div className="w-80 h-80 bg-white rounded-lg shadow-lg overflow-hidden">
-                  <img 
-                    src={samImage}
-                    alt="Sam Panwar - CEO & Founder"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Recognition - Toggle Section */}
       <section className="py-16 bg-white">
