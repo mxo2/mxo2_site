@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Phone } from "lucide-react";
 import MegaMenu from "./mega-menu";
+import logoImage from "@assets/4ukey-for-android-mac_1751100463325.png";
 
 export default function Header() {
   const [location] = useLocation();
@@ -49,8 +50,12 @@ export default function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/">
-              <div className="text-2xl font-montserrat font-bold text-navy cursor-pointer">
-                MXO<span className="text-cyan">2</span>
+              <div className="cursor-pointer">
+                <img 
+                  src={logoImage} 
+                  alt="MXO2 Logo" 
+                  className="h-10 w-auto"
+                />
               </div>
             </Link>
 

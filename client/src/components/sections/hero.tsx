@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import logoImage from "@assets/4ukey-for-android-mac_1751100463325.png";
 
 export default function Hero() {
   return (
@@ -46,8 +47,8 @@ export default function Hero() {
             <div className="relative bg-white bg-opacity-10 rounded-2xl p-8 backdrop-blur-sm border border-white border-opacity-20">
               {/* Technology Logos */}
               <div className="absolute top-4 right-4 flex items-center space-x-4">
-                <div className="bg-white rounded-lg px-3 py-1">
-                  <span className="font-montserrat font-bold text-gray-800">MXO<span className="text-cyan-600">2</span></span>
+                <div className="bg-white rounded-lg p-2">
+                  <img src={logoImage} alt="MXO2" className="h-6 w-auto" />
                 </div>
                 <div className="bg-white rounded-lg px-3 py-1">
                   <span className="font-montserrat font-bold text-gray-800">AI.tech</span>
