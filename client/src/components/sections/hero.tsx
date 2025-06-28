@@ -4,7 +4,7 @@ import aiEmployeeImage from "@assets/employee-using-ai-computing-simulation-2023
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[500px] overflow-hidden bg-gradient-to-r from-blue-600 via-purple-700 to-red-600">
+    <section className="relative min-h-[500px] overflow-hidden bg-gradient-to-r from-blue-600 via-purple-700 to-red-600 -mt-40 pt-40">
       {/* Background image on the right */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 flex">

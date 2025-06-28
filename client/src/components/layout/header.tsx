@@ -19,17 +19,31 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+      {/* Top utility bar */}
+      <div className="bg-gray-900 text-white py-2">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-end space-x-6 text-sm">
+            <a href="#" className="hover:text-cyan-400 transition-colors">INVESTORS</a>
+            <a href="#" className="hover:text-cyan-400 transition-colors">CALL US</a>
+            <a href="#" className="hover:text-cyan-400 transition-colors">MARKETPLACE</a>
+            <a href="#" className="hover:text-cyan-400 transition-colors">LOG IN & SUPPORT</a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main navigation */}
+      <div className="bg-white border-b border-gray-200">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <div className="flex items-center">
             <Link href="/">
               <a className="flex items-center space-x-3">
                 <img 
                   src={logoImage} 
                   alt="MXO2 Logo" 
-                  className="h-16 w-auto"
+                  className="h-24 w-auto"
                 />
               </a>
             </Link>
@@ -111,6 +125,7 @@ export default function Header() {
             </div>
           </div>
         )}
+        </div>
       </div>
 
       {/* Mega Menu */}

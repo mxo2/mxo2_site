@@ -28,7 +28,7 @@ function Router() {
           {() => (
             <>
               <Header />
-              <main className="flex-1 pt-32">
+              <main className="flex-1 pt-40">
                 <Switch>
                   <Route path="/" component={Home} />
                   <Route path="/solutions" component={Solutions} />
