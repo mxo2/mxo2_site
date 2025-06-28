@@ -1,4 +1,5 @@
 import { useState } from "react";
+import o2LogoPath from "@assets/ChatGPT Image May 16, 2025, 10_05_12 PM_1751105442990.webp";
 
 export default function SolutionsGrid() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -40,14 +41,12 @@ export default function SolutionsGrid() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - O2 Logo */}
           <div className="flex justify-center lg:justify-start">
-            <div className="relative">
-              <div className="text-8xl lg:text-9xl font-bold text-cyan-400 opacity-90">
-                <span className="text-cyan-300">oxygen</span>
-                <div className="text-6xl lg:text-7xl -mt-4">
-                  <span style={{ backgroundColor: 'hsl(224, 46%, 22%)', color: 'hsl(224, 46%, 22%)' }}>.</span>
-                  <span className="text-cyan-400">2</span>
-                </div>
-              </div>
+            <div className="relative w-full max-w-md">
+              <img 
+                src={o2LogoPath} 
+                alt="Oxygen O2 Logo" 
+                className="w-full h-auto object-contain"
+              />
             </div>
           </div>
 
