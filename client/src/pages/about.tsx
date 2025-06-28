@@ -12,7 +12,7 @@ export default function About() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[500px] overflow-hidden">
+      <section className="relative h-[400px] overflow-hidden">
         <div className="absolute inset-0 flex">
           {/* Left side - Gradient */}
           <div className="w-1/2 bg-gradient-to-br from-blue-600 via-purple-600 to-red-500 flex items-center justify-center text-white">
@@ -20,75 +20,25 @@ export default function About() {
               <h1 className="text-3xl lg:text-4xl font-bold mb-4 font-montserrat leading-tight">
                 Built by Tech Entrepreneurs, for Digital Innovators
               </h1>
-              <p className="text-lg lg:text-xl font-opensans opacity-90 mb-4">
+              <p className="text-lg lg:text-xl font-opensans opacity-90">
                 Steering the Oxygen Flow
-              </p>
-              <p className="text-base font-opensans opacity-80">
-                Sam Panwar - CEO & Founder of MXO2
               </p>
             </div>
           </div>
           
-          {/* Right side - Founder Profile */}
-          <div className="w-1/2 relative bg-gray-100 flex items-center justify-center">
-            <div className="text-center px-6">
-              <div className="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden shadow-xl border-4 border-white">
-                <img 
-                  src={samImage}
-                  alt="Sam Panwar - CEO & Founder" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 font-montserrat mb-1">Sam Panwar</h3>
-              <p className="text-gray-600 font-opensans text-sm mb-3">CEO, Founder</p>
-              <p className="text-xs text-gray-700 font-opensans leading-relaxed">
-                IT visionary with 17 years experience turning complex challenges into scalable solutions. 
-                Founder of MXO2 and Parallel Campus, empowering organizations with AI, cloud, and automation.
-              </p>
-            </div>
+          {/* Right side - Infrastructure Image */}
+          <div className="w-1/2 relative">
+            <img 
+              src={instructureImage} 
+              alt="Infrastructure team training" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-20"></div>
           </div>
         </div>
         
         {/* Diagonal separator */}
         <div className="absolute top-0 left-1/2 w-32 h-full bg-gradient-to-br from-blue-600 via-purple-600 to-red-500 transform -skew-x-12 -translate-x-16"></div>
-      </section>
-
-      {/* Detailed Sam Panwar Profile Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="flex justify-center">
-                <div className="w-80 h-80 rounded-lg overflow-hidden shadow-xl">
-                  <img 
-                    src={samImage}
-                    alt="Sam Panwar - CEO & Founder of MXO2" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-montserrat">
-                  Sam Panwar - CEO & Founder of MXO2
-                </h2>
-                <h3 className="text-xl font-bold text-blue-600 mb-6 font-montserrat">
-                  Sam Panwar - CEO, Founder
-                </h3>
-                <p className="text-gray-700 font-opensans leading-relaxed text-lg">
-                  I'm Sam Panwar, an IT visionary and entrepreneur with 17 years of experience turning complex 
-                  challenges into simple, scalable solutions. As the founder of Maximum Oxygen Inc. (MXO2)—named 
-                  one of CIO Applications' Top 10 AI Solution Providers—and Parallel Campus, I empower organizations 
-                  worldwide to leverage cloud architectures, AI, blockchain, and automation for real, measurable impact.
-                </p>
-                <p className="text-gray-700 font-opensans leading-relaxed text-lg mt-4">
-                  When I'm not architecting end-to-end digital platforms or guiding startups to market-fit, you'll 
-                  find me mentoring emerging tech talent at hackathons and community events.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Vision, Mission, Values Section */}
@@ -382,7 +332,7 @@ export default function About() {
             
             {/* Toggle Buttons */}
             <div className="flex justify-center mb-8">
-              <div className="bg-gray-100 rounded-lg p-1 flex">
+              <div className="bg-gray-100 rounded-lg p-1 flex flex-wrap">
                 <button
                   onClick={() => setActiveToggle('clients')}
                   className={`px-6 py-3 rounded-md font-semibold font-opensans transition-all ${
@@ -412,6 +362,16 @@ export default function About() {
                   }`}
                 >
                   Our Products
+                </button>
+                <button
+                  onClick={() => setActiveToggle('leadership')}
+                  className={`px-6 py-3 rounded-md font-semibold font-opensans transition-all ${
+                    activeToggle === 'leadership'
+                      ? 'bg-blue-600 text-white shadow-md'
+                      : 'text-gray-700 hover:text-gray-900'
+                  }`}
+                >
+                  Leadership
                 </button>
               </div>
             </div>
@@ -460,6 +420,39 @@ export default function About() {
                       </div>
                       <p className="text-gray-500 font-opensans">Product showcase images will be displayed here</p>
                       <p className="text-sm text-gray-400 mt-2">Building innovative products like Parallel Campus and StreetSync</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {activeToggle === 'leadership' && (
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat text-center">Sam Panwar - CEO & Founder of MXO2</h3>
+                  <div className="grid lg:grid-cols-2 gap-8 items-center">
+                    <div className="flex justify-center">
+                      <div className="w-80 h-80 rounded-lg overflow-hidden shadow-xl">
+                        <img 
+                          src={samImage}
+                          alt="Sam Panwar - CEO & Founder of MXO2" 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-xl font-bold text-blue-600 mb-4 font-montserrat">
+                        Sam Panwar - CEO, Founder
+                      </h4>
+                      <p className="text-gray-700 font-opensans leading-relaxed mb-4">
+                        I'm Sam Panwar, an IT visionary and entrepreneur with 17 years of experience turning complex 
+                        challenges into simple, scalable solutions. As the founder of Maximum Oxygen Inc. (MXO2)—named 
+                        one of CIO Applications' Top 10 AI Solution Providers—and Parallel Campus, I empower organizations 
+                        worldwide to leverage cloud architectures, AI, blockchain, and automation for real, measurable impact.
+                      </p>
+                      <p className="text-gray-700 font-opensans leading-relaxed">
+                        When I'm not architecting end-to-end digital platforms or guiding startups to market-fit, you'll 
+                        find me mentoring emerging tech talent at hackathons and community events.
+                      </p>
                     </div>
                   </div>
                 </div>
