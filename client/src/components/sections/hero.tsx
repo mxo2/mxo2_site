@@ -4,71 +4,70 @@ import aiEmployeeImage from "@assets/employee-using-ai-computing-simulation-2023
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-red-50">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-transparent to-red-600/10" />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content Section */}
-          <div className="space-y-8">
-            {/* Main headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Built for{" "}
-              <span className="bg-gradient-to-r from-[hsl(220,72%,44%)] to-[hsl(354,87%,51%)] bg-clip-text text-transparent">
-                Real-World
-              </span>{" "}
-              Impact
-            </h1>
-            
-            {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-opensans max-w-xl">
-              Transform your business with enterprise-grade cloud solutions, AI automation, 
-              and cybersecurity that scales with your ambitions.
-            </p>
-            
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white px-8 py-4 text-lg font-opensans font-medium"
-              >
-                Start Your Journey
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-[hsl(220,72%,44%)] text-[hsl(220,72%,44%)] hover:bg-[hsl(220,72%,44%)] hover:text-white px-8 py-4 text-lg font-opensans font-medium"
-              >
-                <Play className="mr-2 w-5 h-5" />
-                Watch Demo
-              </Button>
-            </div>
-            
-            {/* Trust indicators */}
-            <div className="text-sm text-gray-500 font-opensans">
-              Trusted by 500+ enterprises worldwide
-            </div>
-          </div>
+    <section className="relative min-h-[500px] overflow-hidden bg-gradient-to-r from-blue-600 via-purple-700 to-red-600">
+      {/* Background image on the right */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 flex">
+          {/* Left content area with gradient background */}
+          <div className="w-3/5 bg-gradient-to-r from-blue-600 via-purple-700 to-red-600"></div>
           
-          {/* Image Section */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src={aiEmployeeImage}
-                alt="Professional working with AI technology"
-                className="w-full h-auto object-cover"
-              />
-              {/* Overlay gradient for better visual effect */}
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent" />
-            </div>
-            
-            {/* Floating elements for visual interest */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-[hsl(354,87%,51%)] rounded-full opacity-20 blur-xl" />
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[hsl(220,72%,44%)] rounded-full opacity-20 blur-xl" />
+          {/* Right image area with diagonal clip */}
+          <div 
+            className="flex-1 relative"
+            style={{
+              clipPath: 'polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%)'
+            }}
+          >
+            <img 
+              src={aiEmployeeImage}
+              alt="Professional working with AI technology"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-blue-900/10 to-blue-900/30"></div>
           </div>
         </div>
+      </div>
+
+      {/* Navigation arrows */}
+      <button className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-3 transition-all">
+        <ArrowRight className="w-6 h-6 text-white rotate-180" />
+      </button>
+      <button className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-3 transition-all">
+        <ArrowRight className="w-6 h-6 text-white" />
+      </button>
+
+      {/* Content overlay */}
+      <div className="relative z-10 min-h-[500px] flex items-center">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl text-white">
+            <h1 className="font-montserrat font-bold text-4xl lg:text-5xl xl:text-6xl leading-tight mb-6">
+              Enterprise-Grade AI Agents,
+              <br />
+              <span className="text-cyan-300">Built for Real-World Impact</span>
+            </h1>
+            
+            <p className="text-lg lg:text-xl mb-8 text-gray-200 leading-relaxed max-w-2xl font-opensans">
+              MXO2 and industry partners deliver intelligent solutions with enterprise-grade security, integration, and built-in observability.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <Button 
+                size="lg" 
+                className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-semibold px-8 py-3"
+              >
+                Read press release
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Carousel dots */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+        <div className="w-2 h-2 bg-white rounded-full"></div>
+        <div className="w-2 h-2 bg-white bg-opacity-50 rounded-full"></div>
+        <div className="w-2 h-2 bg-white bg-opacity-50 rounded-full"></div>
+        <div className="w-2 h-2 bg-white bg-opacity-50 rounded-full"></div>
       </div>
     </section>
   );
