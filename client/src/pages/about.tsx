@@ -4,15 +4,33 @@ export default function About() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-red-500 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 font-montserrat">
-            Fueling Growth with Digital Oxygen
-          </h1>
-          <p className="text-xl lg:text-2xl font-opensans opacity-90 max-w-3xl mx-auto">
-            Empowering the Future with Technology-Driven Innovation
-          </p>
+      <section className="relative h-[600px] overflow-hidden">
+        <div className="absolute inset-0 flex">
+          {/* Left side - Gradient */}
+          <div className="w-1/2 bg-gradient-to-br from-blue-600 via-purple-600 to-red-500 flex items-center justify-center text-white">
+            <div className="text-center px-8">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-6 font-montserrat leading-tight">
+                Fueling Growth with Digital Oxygen
+              </h1>
+              <p className="text-xl lg:text-2xl font-opensans opacity-90">
+                Empowering the Future with Technology-Driven Innovation
+              </p>
+            </div>
+          </div>
+          
+          {/* Right side - Infrastructure Image */}
+          <div className="w-1/2 relative">
+            <img 
+              src="/assets/instracture_3_1751112701698.jpg" 
+              alt="Infrastructure team training" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+          </div>
         </div>
+        
+        {/* Diagonal separator */}
+        <div className="absolute top-0 left-1/2 w-32 h-full bg-gradient-to-br from-blue-600 via-purple-600 to-red-500 transform -skew-x-12 -translate-x-16"></div>
       </section>
 
       {/* Main Content */}
