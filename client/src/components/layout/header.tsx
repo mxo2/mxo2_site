@@ -1,143 +1,108 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Phone } from "lucide-react";
-import MegaMenu from "./mega-menu";
+import { Menu, X } from "lucide-react";
 import logoImage from "@assets/4ukey-for-android-mac_1751100463325.png";
 
 export default function Header() {
   const [location] = useLocation();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Solutions", href: "/solutions", hasMegaMenu: true },
+    { name: "Solutions", href: "/solutions" },
     { name: "Industries", href: "/industries" },
-    { name: "Blog", href: "/blog" },
-    { name: "About Us", href: "/about" },
-    { name: "Contact Us", href: "/contact" },
-  ];
-
-  const utilityLinks = [
-    { name: "Call Us", href: "tel:+1234567890", icon: Phone },
-    { name: "Investors", href: "#" },
-    { name: "Marketplace", href: "#" },
+    { name: "Resources", href: "/blog" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <header className="bg-white shadow-lg fixed w-full top-0 z-50">
-      {/* Top utility bar */}
-      <div className="bg-navy text-white py-2">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-end space-x-6 text-sm">
-            {utilityLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="hover:text-cyan transition-colors flex items-center gap-1"
-              >
-                {link.icon && <link.icon className="w-3 h-3" />}
-                {link.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Main navigation */}
-      <nav className="bg-white py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <div className="flex items-center">
             <Link href="/">
-              <div className="cursor-pointer">
+              <a className="flex items-center space-x-3">
                 <img 
                   src={logoImage} 
                   alt="MXO2 Logo" 
                   className="h-16 w-auto"
                 />
-              </div>
+              </a>
             </Link>
+          </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
-              {navigation.map((item) => (
-                <div key={item.name} className="relative nav-item group">
-                  <Link href={item.href}>
-                    <div
-                      className={`font-montserrat font-semibold hover:text-cyan transition-colors uppercase tracking-wider text-sm flex items-center cursor-pointer ${
-                        location === item.href ? "text-cyan" : "text-navy"
-                      }`}
-                    >
-                      {item.name}
-                      {item.hasMegaMenu && (
-                        <svg
-                          className="ml-1 w-3 h-3"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      )}
-                    </div>
-                  </Link>
-                  {item.hasMegaMenu && <MegaMenu />}
-                </div>
-              ))}
-            </div>
-
-            {/* Contact CTA */}
-            <div className="hidden lg:block">
-              <Link href="/contact">
-                <Button className="bg-cyan hover:bg-navy text-white font-montserrat font-semibold">
-                  Contact Us
-                </Button>
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            {navigation.map((item) => (
+              <Link key={item.name} href={item.href}>
+                <a
+                  className={`text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-medium transition-colors py-6 ${
+                    location === item.href ? "text-[hsl(354,87%,51%)]" : ""
+                  }`}
+                >
+                  {item.name}
+                </a>
               </Link>
-            </div>
+            ))}
+          </nav>
 
-            {/* Mobile menu button */}
-            <div className="lg:hidden">
-              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Menu className="h-6 w-6 text-navy" />
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-80">
-                  <div className="flex flex-col space-y-4 mt-8">
-                    {navigation.map((item) => (
-                      <Link key={item.name} href={item.href}>
-                        <a
-                          className="text-lg font-montserrat font-semibold text-navy hover:text-cyan transition-colors"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {item.name}
-                        </a>
-                      </Link>
-                    ))}
-                    <div className="pt-4 border-t">
-                      <Link href="/contact">
-                        <Button 
-                          className="w-full bg-cyan hover:bg-navy text-white font-montserrat font-semibold"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          Contact Us
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </SheetContent>
-              </Sheet>
-            </div>
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <Button
+              variant="outline"
+              className="border-[hsl(354,87%,51%)] text-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,51%)] hover:text-white font-opensans font-medium"
+            >
+              Login
+            </Button>
+            <Button className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-medium">
+              Get Started
+            </Button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-gray-700 hover:text-[hsl(354,87%,51%)] transition-colors"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
-      </nav>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="lg:hidden border-t border-gray-200 py-4">
+            <div className="space-y-4">
+              {navigation.map((item) => (
+                <Link key={item.name} href={item.href}>
+                  <a
+                    className={`block text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-medium transition-colors ${
+                      location === item.href ? "text-[hsl(354,87%,51%)]" : ""
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                </Link>
+              ))}
+              <div className="pt-4 space-y-2">
+                <Button
+                  variant="outline"
+                  className="w-full border-[hsl(354,87%,51%)] text-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,51%)] hover:text-white font-opensans font-medium"
+                >
+                  Login
+                </Button>
+                <Button className="w-full bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-medium">
+                  Get Started
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </header>
   );
 }
