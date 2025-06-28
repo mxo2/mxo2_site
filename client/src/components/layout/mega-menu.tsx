@@ -3,18 +3,18 @@ import { ChevronRight } from "lucide-react";
 
 export default function MegaMenu() {
   return (
-    <div className="absolute top-full left-0 w-full bg-white shadow-2xl border-t-4 border-red-600 z-50">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid lg:grid-cols-3 gap-12">
+    <div className="absolute top-full left-0 w-full bg-white shadow-2xl border-t-4 border-red-600 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+      <div className="container mx-auto px-6 py-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {/* Left Column - Primary Categories */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             {/* Cloud */}
             <div className="border-l-4 border-red-600 pl-4">
               <Link href="/solutions/cloud">
-                <div className="group cursor-pointer">
+                <div className="cursor-pointer">
                   <div className="flex items-center mb-2">
-                    <h3 className="font-montserrat font-bold text-lg text-gray-900 group-hover:text-red-600 transition-colors">
-                      CLOUD <ChevronRight className="w-4 h-4 ml-1 inline" />
+                    <h3 className="font-montserrat font-bold text-base text-gray-900 hover:text-red-600 transition-colors">
+                      CLOUD <ChevronRight className="w-3 h-3 ml-1 inline" />
                     </h3>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -27,10 +27,10 @@ export default function MegaMenu() {
             {/* Applications */}
             <div className="border-l-4 border-gray-300 pl-4">
               <Link href="/solutions/applications">
-                <div className="group cursor-pointer">
+                <div className="cursor-pointer">
                   <div className="flex items-center mb-2">
-                    <h3 className="font-montserrat font-bold text-lg text-gray-900 group-hover:text-red-600 transition-colors">
-                      APPLICATIONS <ChevronRight className="w-4 h-4 ml-1 inline" />
+                    <h3 className="font-montserrat font-bold text-base text-gray-900 hover:text-red-600 transition-colors">
+                      APPLICATIONS <ChevronRight className="w-3 h-3 ml-1 inline" />
                     </h3>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -43,10 +43,10 @@ export default function MegaMenu() {
             {/* AI */}
             <div className="border-l-4 border-gray-300 pl-4">
               <Link href="/solutions/ai">
-                <div className="group cursor-pointer">
+                <div className="cursor-pointer">
                   <div className="flex items-center mb-2">
-                    <h3 className="font-montserrat font-bold text-lg text-gray-900 group-hover:text-red-600 transition-colors">
-                      AI <ChevronRight className="w-4 h-4 ml-1 inline" />
+                    <h3 className="font-montserrat font-bold text-base text-gray-900 hover:text-red-600 transition-colors">
+                      AI <ChevronRight className="w-3 h-3 ml-1 inline" />
                     </h3>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -59,14 +59,14 @@ export default function MegaMenu() {
             {/* Data */}
             <div className="border-l-4 border-gray-300 pl-4">
               <Link href="/solutions/data">
-                <div className="group cursor-pointer">
+                <div className="cursor-pointer">
                   <div className="flex items-center mb-2">
-                    <h3 className="font-montserrat font-bold text-lg text-gray-900 group-hover:text-red-600 transition-colors">
-                      DATA <ChevronRight className="w-4 h-4 ml-1 inline" />
+                    <h3 className="font-montserrat font-bold text-base text-gray-900 hover:text-red-600 transition-colors">
+                      DATA <ChevronRight className="w-3 h-3 ml-1 inline" />
                     </h3>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Gain actionable insights with data management, engineering, intelligence and powerful artificial intelligence (AI)/machine learning toolkits
+                    Gain actionable insights with data management, engineering, intelligence and powerful AI/machine learning toolkits
                   </p>
                 </div>
               </Link>
@@ -75,10 +75,10 @@ export default function MegaMenu() {
             {/* Cyber Security & Resilience */}
             <div className="border-l-4 border-gray-300 pl-4">
               <Link href="/solutions/cybersecurity">
-                <div className="group cursor-pointer">
+                <div className="cursor-pointer">
                   <div className="flex items-center mb-2">
-                    <h3 className="font-montserrat font-bold text-lg text-gray-900 group-hover:text-red-600 transition-colors">
-                      CYBER SECURITY & RESILIENCE <ChevronRight className="w-4 h-4 ml-1 inline" />
+                    <h3 className="font-montserrat font-bold text-base text-gray-900 hover:text-red-600 transition-colors">
+                      CYBER SECURITY & RESILIENCE <ChevronRight className="w-3 h-3 ml-1 inline" />
                     </h3>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -91,8 +91,8 @@ export default function MegaMenu() {
 
           {/* Middle Column - Services */}
           <div>
-            <h3 className="font-montserrat font-bold text-lg text-gray-900 mb-6">SERVICES</h3>
-            <div className="space-y-6">
+            <h3 className="font-montserrat font-bold text-base text-gray-900 mb-4">SERVICES</h3>
+            <div className="space-y-4">
               <div>
                 <Link href="/services/cloud-adoption">
                   <h4 className="font-semibold text-red-600 hover:text-red-700 mb-1">Cloud Adoption and Migration</h4>
@@ -151,8 +151,8 @@ export default function MegaMenu() {
 
           {/* Right Column - Technology */}
           <div>
-            <h3 className="font-montserrat font-bold text-lg text-gray-900 mb-6">TECHNOLOGY</h3>
-            <div className="space-y-6">
+            <h3 className="font-montserrat font-bold text-base text-gray-900 mb-4">TECHNOLOGY</h3>
+            <div className="space-y-4">
               <div>
                 <Link href="/technology/private-cloud">
                   <h4 className="font-semibold text-red-600 hover:text-red-700 mb-1">Private Cloud</h4>
