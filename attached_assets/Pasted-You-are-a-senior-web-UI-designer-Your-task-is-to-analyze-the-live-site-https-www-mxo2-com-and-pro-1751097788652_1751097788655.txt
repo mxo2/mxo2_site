@@ -1,0 +1,50 @@
+You are a senior web/UI designer. Your task is to analyze the live site https://www.mxo2.com and produce a pixel-perfect redesign specification and high-fidelity mockups (in Figma or exportable HTML/CSS) to be implemented in Drupal. The goals:
+
+1. **Overall Layout & Style**  
+   - Maintain the existing clean, corporate style: full-width hero banner, skewed section dividers, card-style feature blocks, icon integrations.  
+   - Preserve the color palette (deep navy #1a1f3b, cyan accents #00c2cb, white backgrounds).  
+   - Use the same typography hierarchy:  
+     - Headings: Montserrat Bold, uppercase for mega-menu and section titles  
+     - Body: Open Sans Regular  
+     - Buttons: Montserrat Semi-Bold  
+   - Implement a 12-column Bootstrap-style grid with consistent gutter spacing (24px).
+
+2. **Header & Mega-Menu**  
+   - Fixed header with logo left, top-right utility links (Call Us, Investors, Marketplace), main nav centered: Solutions, Industries, Blog, About Us, Contact Us.  
+   - On hover “Solutions,” open a full-width mega-menu broken into three columns:  
+     - **Cloud**  
+       - Services: Cloud Migration; Cloud Optimization; Cloud Cost Audit; Managed Cloud Services  
+       - Technology: Microsoft Azure; AWS; DevOps & CI/CD; Terraform / Docker / Kubernetes  
+     - **Applications**  
+       - Services: Legacy Application Modernization; SaaS Development; Workflow Automation; ERP Implementation; eCommerce Development; CRM Development  
+       - Technology: React.js / Vue.js / Next.js; Node.js / Django / Frappe / Laravel; ERPNext; PostgreSQL / MariaDB / MongoDB / Redis; Docker / Nginx / PM2 / GitHub Actions  
+     - **AI & IoT**  
+       - Services: RPA; AI Model Integration; Data Analytics & Insights; IoT Architecture Design  
+       - Technology: OpenAI / TensorFlow / Scikit-Learn; MQTT / Edge Devices / REST; Power BI / Looker / Pandas  
+   - Mega-menu should be keyboard accessible, with subtle fade-in animation and clear column separators.
+
+3. **Pages & Sections**  
+   - **Home**: Hero with tagline, “Breathing Life Into Businesses,” three feature cards (Cloud, AI & Automation, Cybersecurity) linking to Solutions pages; Industry logos carousel; “Our Services” overview cards; partner logos strip; footer with sitemap and social links.  
+   - **Solutions**: Landing page summarizing Cloud, Applications, AI & IoT — each with a brief intro, icon, “Learn More” link to its dedicated sub-page.  
+   - **Cloud / Applications / AI & IoT**: Three separate solution detail pages with stacked layout: intro banner, Services grid (icons + descriptions), Technology stack list (logos + captions), case study highlights.  
+   - **Industries**: Grid of industry cards (Manufacturing, Education, Government & Export, Retail & eCommerce, Trading & Finance, Fintech) linking to individual industry pages.  
+   - **Blog**: Article listing with featured images; single post template with sidebar “Related Resources.”  
+   - **About Us** & **Contact Us**: Keep current copy and layout but refresh styling to match the new header and footer.
+
+4. **Responsive & Accessibility**  
+   - Fully responsive breakpoints at 1200px, 992px, 768px, 576px.  
+   - Mega-menu collapses to an accordion on mobile.  
+   - All images must include alt text; all interactive elements keyboard navigable; WCAG AA contrast ratios.
+
+5. **Drupal Implementation Notes**  
+   - Use Views for Blog listing and Industry cards.  
+   - Mega-menu built with a custom block and responsive Twig template.  
+   - Leverage Paragraphs module for Services & Technology sections.  
+   - Ensure menu items are translatable via Drupal’s localization.  
+
+Please produce:  
+- A style guide file (colors, typography, buttons, form elements)  
+- Wireframes for desktop, tablet, mobile  
+- High-fidelity mockups of Home, a Solution detail page, and the mega-menu states  
+- Exportable CSS variables and component classes  
+- A brief implementation handoff document for Drupal themers.
