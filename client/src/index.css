@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(220, 30%, 15%);
+  --muted: hsl(210, 20%, 96%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(220, 30%, 15%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(220, 30%, 15%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(220, 13%, 91%);
+  --primary: hsl(186, 100%, 39%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(210, 20%, 96%);
+  --secondary-foreground: hsl(220, 30%, 15%);
+  --accent: hsl(210, 20%, 96%);
+  --accent-foreground: hsl(220, 30%, 15%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(220, 30%, 15%);
+  --radius: 0.5rem;
+  
+  /* MXO2 Brand Colors */
+  --navy: hsl(228, 37%, 17%);
+  --cyan: hsl(185, 100%, 39%);
+  --light-gray: hsl(210, 17%, 98%);
+  --medium-gray: hsl(218, 11%, 45%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 4%, 16%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --popover: hsl(240, 10%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 4%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 4%, 16%);
+  --input: hsl(240, 4%, 16%);
+  --primary: hsl(186, 100%, 39%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 4%, 16%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 4%, 16%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 5%, 84%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-opensans antialiased bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat;
+  }
+}
+
+/* Custom utilities */
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-opensans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.text-navy {
+  color: var(--navy);
+}
+
+.bg-navy {
+  background-color: var(--navy);
+}
+
+.text-cyan {
+  color: var(--cyan);
+}
+
+.bg-cyan {
+  background-color: var(--cyan);
+}
+
+.text-light-gray {
+  color: var(--light-gray);
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+
+.text-medium-gray {
+  color: var(--medium-gray);
+}
+
+.bg-medium-gray {
+  background-color: var(--medium-gray);
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--navy) 0%, hsl(210, 40%, 30%) 50%, var(--navy) 100%);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(26, 31, 59, 0.15);
+}
+
+/* Skewed sections */
+.skew-section {
+  position: relative;
+}
+
+.skew-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: inherit;
+  transform: skewY(-1deg);
+  transform-origin: top left;
+}
+
+/* Logo hover effects */
+.logo-hover {
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.logo-hover:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Mega menu animations */
+.mega-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.mega-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Navigation hover states */
+.nav-item:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
