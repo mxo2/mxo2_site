@@ -8,6 +8,7 @@ import Footer from "@/components/layout/footer";
 import Home from "@/pages/home";
 import Solutions from "@/pages/solutions";
 import SolutionDetail from "@/pages/solution-detail";
+import CloudMigration from "@/pages/cloud-migration";
 import Industries from "@/pages/industries";
 import Blog from "@/pages/blog";
 import BlogPost from "@/pages/blog-post";
@@ -33,6 +34,7 @@ function Router() {
                   <Route path="/" component={Home} />
                   <Route path="/solutions" component={Solutions} />
                   <Route path="/solutions/:category" component={SolutionDetail} />
+                  <Route path="/cloud-migration" component={CloudMigration} />
                   <Route path="/industries" component={Industries} />
                   <Route path="/blog" component={Blog} />
                   <Route path="/blog/:slug" component={BlogPost} />
