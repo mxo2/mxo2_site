@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { Target, Rocket, Handshake } from "lucide-react";
+import VisionMissionValues from "@/components/sections/vision-mission-values";
 import samImage from "@assets/sam_1751113238654.png";
 import clientsImage from "@assets/clients 1_1751112968066.jpg";
 import instructureImage from "@assets/instracture_3_1751112701698.jpg";
@@ -43,37 +44,7 @@ export default function About() {
       </section>
 
       {/* Vision, Mission, Values Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-12">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-montserrat">Vision</h3>
-                <div className="w-16 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p className="text-gray-700 font-opensans text-lg">
-                  Help enterprises increase their digital transformation profitability through AI-driven innovation.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-montserrat">Mission</h3>
-                <div className="w-16 h-1 bg-purple-600 mx-auto mb-6"></div>
-                <p className="text-gray-700 font-opensans text-lg">
-                  Push limits of what AI, cloud, and automation platforms can do for business growth.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 font-montserrat">Values</h3>
-                <div className="w-16 h-1 bg-red-600 mx-auto mb-6"></div>
-                <p className="text-gray-700 font-opensans text-lg">
-                  Excellence, Innovation, Agility, and Transparency.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <VisionMissionValues />
 
       {/* Company Overview */}
       <section className="py-16 bg-gray-50">
