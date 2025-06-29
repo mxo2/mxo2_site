@@ -45,33 +45,54 @@ export default function MegaMenu({ isOpen, activeMenu, onMouseEnter, onMouseLeav
   // Render Products menu
   if (activeMenu === "Products") {
     return (
-      <div 
-        className="absolute top-full left-0 right-0 bg-white border-t-4 border-[hsl(354,87%,51%)] shadow-2xl z-50"
+      <div
+        className="absolute top-full left-1/2 transform -translate-x-1/2 bg-white shadow-2xl border border-gray-200 rounded-lg z-40 min-w-[800px] max-w-4xl"
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
-        <div className="container mx-auto px-4 py-12">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">PRODUCTS</h2>
-            <p className="text-gray-600">Innovative solutions designed to transform your business operations</p>
+        <div className="px-6 py-6">
+          <div className="mb-6">
+            <h2 className="font-opensans font-bold text-lg text-gray-900 mb-2 uppercase tracking-wide">
+              PRODUCTS
+            </h2>
+            <p className="text-sm text-gray-600">Innovative solutions designed to transform your business operations</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {products.map((product) => (
               <Link key={product.name} href={product.href}>
                 <a className="group block">
-                  <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[hsl(354,87%,51%)] hover:shadow-lg transition-all duration-300">
-                    <div className="text-4xl mb-4">{product.icon}</div>
-                    <h3 className="font-bold text-xl text-gray-900 mb-2 group-hover:text-[hsl(354,87%,51%)] transition-colors">
-                      {product.name}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {product.description}
-                    </p>
+                  <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div className="text-2xl flex-shrink-0">{product.icon}</div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-sm text-[hsl(208,70%,56%)] group-hover:text-[hsl(354,87%,51%)] transition-colors mb-1">
+                        {product.name}
+                      </h3>
+                      <p className="text-xs text-gray-600 leading-relaxed">
+                        {product.description}
+                      </p>
+                    </div>
+                    <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity mt-1 flex-shrink-0" />
                   </div>
                 </a>
               </Link>
             ))}
+          </div>
+
+          {/* Bottom CTA Section */}
+          <div className="mt-6 pt-4 border-t border-gray-200 text-center">
+            <div className="flex items-center justify-center space-x-4">
+              <Link href="/contact">
+                <a className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white px-4 py-2 rounded-md font-opensans font-medium transition-colors text-sm">
+                  Talk to an Expert
+                </a>
+              </Link>
+              <Link href="/products">
+                <a className="text-[hsl(220,72%,44%)] hover:text-[hsl(220,72%,35%)] font-opensans font-medium transition-colors text-sm">
+                  View All Products →
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
