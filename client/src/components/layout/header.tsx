@@ -43,7 +43,7 @@ export default function Header() {
                   <img 
                     src={logoImage} 
                     alt="MXO2 Logo" 
-                    className="h-20 w-auto"
+                    className="h-24 w-auto"
                   />
                   <span className="text-lg font-bold text-blue-600 animate-bounce">AI</span>
                 </a>
