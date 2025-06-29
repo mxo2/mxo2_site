@@ -9,10 +9,11 @@ export default function Header() {
   const [location] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   const navigation = [
-    { name: "Services", href: "/solutions", hasMegaMenu: true },
-    { name: "Products", href: "/products" },
+    { name: "Solutions", href: "/solutions", hasMegaMenu: true },
+    { name: "Products", href: "/products", hasMegaMenu: true },
     { name: "Industries", href: "/industries" },
     { name: "Partnership", href: "/partnership" },
     { name: "About Us", href: "/about" },
@@ -69,7 +70,10 @@ export default function Header() {
                     {item.hasMegaMenu ? (
                       <button
                         className="flex items-center space-x-1 text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-bold text-lg uppercase tracking-wide transition-colors py-6 group"
-                        onMouseEnter={() => setIsMegaMenuOpen(true)}
+                        onMouseEnter={() => {
+                          setIsMegaMenuOpen(true);
+                          setActiveMenu(item.name);
+                        }}
                         onMouseLeave={() => setIsMegaMenuOpen(false)}
                       >
                         <span>{item.name}</span>
@@ -151,8 +155,12 @@ export default function Header() {
       {/* Mega Menu */}
       <MegaMenu
         isOpen={isMegaMenuOpen}
+        activeMenu={activeMenu}
         onMouseEnter={() => setIsMegaMenuOpen(true)}
-        onMouseLeave={() => setIsMegaMenuOpen(false)}
+        onMouseLeave={() => {
+          setIsMegaMenuOpen(false);
+          setActiveMenu(null);
+        }}
       />
     </header>
   );
