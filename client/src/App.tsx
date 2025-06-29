@@ -16,6 +16,9 @@ import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
 import AdminLogin from "@/pages/admin/login";
+import CloudOptimization from "@/pages/services/cloud-optimization";
+import RPA from "@/pages/services/rpa";
+import LegacyModernization from "@/pages/services/legacy-modernization";
 
 function Router() {
   return (
@@ -35,6 +38,9 @@ function Router() {
                   <Route path="/solutions" component={Solutions} />
                   <Route path="/solutions/:category" component={SolutionDetail} />
                   <Route path="/cloud-migration" component={CloudMigration} />
+                  <Route path="/services/cloud-optimization" component={CloudOptimization} />
+                  <Route path="/services/rpa" component={RPA} />
+                  <Route path="/services/legacy-modernization" component={LegacyModernization} />
                   <Route path="/industries" component={Industries} />
                   <Route path="/blog" component={Blog} />
                   <Route path="/blog/:slug" component={BlogPost} />
