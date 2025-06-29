@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { DownloadModal } from "@/components/ui/download-modal";
 import { Link } from "wouter";
 import { 
   Building, 
@@ -23,6 +25,8 @@ import {
 } from "lucide-react";
 
 export default function Industries() {
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
+
   const industries = [
     {
       icon: Heart,
@@ -444,13 +448,28 @@ export default function Industries() {
                 Schedule Consultation
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-              <Button size="lg" variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg"
+                onClick={() => setIsDownloadModalOpen(true)}
+              >
                 Download Industry Guide
               </Button>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Download Modal */}
+      <DownloadModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+        title="Industry Transformation Guide"
+        description="Comprehensive guide to digital transformation across healthcare, manufacturing, finance, retail, government, and technology sectors."
+        downloadUrl="/downloads/mxo2-industry-transformation-guide.pdf"
+        fileName="MXO2-Industry-Transformation-Guide.pdf"
+      />
     </div>
   );
 }
