@@ -16,7 +16,11 @@ import {
   type InsertPage, 
   type InsertService, 
   type InsertIndustry, 
-  type InsertTechnology 
+  type InsertTechnology,
+  type ChatConversation,
+  type InsertChatConversation,
+  type ChatLead,
+  type InsertChatLead
 } from "@shared/schema";
 
 // Extended storage interface for CMS functionality
@@ -60,6 +64,12 @@ export interface IStorage {
   createTechnology(technology: InsertTechnology): Promise<Technology>;
   updateTechnology(id: number, technology: Partial<InsertTechnology>): Promise<Technology | undefined>;
   deleteTechnology(id: number): Promise<boolean>;
+
+  // Chat methods
+  createChatConversation(conversation: InsertChatConversation): Promise<ChatConversation>;
+  getChatConversationsBySession(sessionId: string): Promise<ChatConversation[]>;
+  createChatLead(lead: InsertChatLead): Promise<ChatLead>;
+  getAllChatLeads(): Promise<ChatLead[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -69,6 +79,8 @@ export class MemStorage implements IStorage {
   private services: Map<number, Service>;
   private industries: Map<number, Industry>;
   private technologies: Map<number, Technology>;
+  private chatConversations: Map<number, ChatConversation>;
+  private chatLeads: Map<number, ChatLead>;
   private currentId: number;
 
   constructor() {
@@ -78,6 +90,8 @@ export class MemStorage implements IStorage {
     this.services = new Map();
     this.industries = new Map();
     this.technologies = new Map();
+    this.chatConversations = new Map();
+    this.chatLeads = new Map();
     this.currentId = 1;
 
     // Initialize with some sample data
@@ -411,6 +425,40 @@ export class MemStorage implements IStorage {
 
   async deleteTechnology(id: number): Promise<boolean> {
     return this.technologies.delete(id);
+  }
+
+  // Chat conversation methods
+  async createChatConversation(insertConversation: InsertChatConversation): Promise<ChatConversation> {
+    const id = this.currentId++;
+    const conversation: ChatConversation = {
+      ...insertConversation,
+      id,
+      timestamp: new Date()
+    };
+    this.chatConversations.set(id, conversation);
+    return conversation;
+  }
+
+  async getChatConversationsBySession(sessionId: string): Promise<ChatConversation[]> {
+    return Array.from(this.chatConversations.values())
+      .filter(conversation => conversation.sessionId === sessionId)
+      .sort((a, b) => (a.timestamp?.getTime() || 0) - (b.timestamp?.getTime() || 0));
+  }
+
+  async createChatLead(insertLead: InsertChatLead): Promise<ChatLead> {
+    const id = this.currentId++;
+    const lead: ChatLead = {
+      ...insertLead,
+      id,
+      createdAt: new Date()
+    };
+    this.chatLeads.set(id, lead);
+    return lead;
+  }
+
+  async getAllChatLeads(): Promise<ChatLead[]> {
+    return Array.from(this.chatLeads.values())
+      .sort((a, b) => (b.createdAt?.getTime() || 0) - (a.createdAt?.getTime() || 0));
   }
 }
 

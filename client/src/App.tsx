@@ -4,6 +4,7 @@ import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CookiesConsent } from "@/components/ui/cookies-consent";
+import AIChatbot from "@/components/ui/ai-chatbot";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import Home from "@/pages/home";
@@ -93,6 +94,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <CookiesConsent />
+        <AIChatbot />
         <Router />
       </TooltipProvider>
     </QueryClientProvider>

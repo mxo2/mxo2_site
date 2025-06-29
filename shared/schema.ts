@@ -103,6 +103,30 @@ export const technologies = pgTable("technologies", {
   order: integer("order").notNull().default(0),
 });
 
+export const chatConversations = pgTable("chat_conversations", {
+  id: serial("id").primaryKey(),
+  sessionId: text("session_id").notNull(),
+  userMessage: text("user_message").notNull(),
+  botResponse: text("bot_response").notNull(),
+  intent: text("intent"), // sales, support, general
+  timestamp: timestamp("timestamp").defaultNow(),
+  userEmail: text("user_email"),
+  userName: text("user_name"),
+  servicesInterested: text("services_interested").array(),
+});
+
+export const chatLeads = pgTable("chat_leads", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  servicesInterested: text("services_interested").array(),
+  conversationId: text("conversation_id"),
+  source: text("source").default("chatbot"),
+  status: text("status").default("new"), // new, contacted, qualified, closed
+  createdAt: timestamp("created_at").defaultNow(),
+  notes: text("notes"),
+});
+
 export const insertUserSchema = createInsertSchema(users).omit({
   id: true,
   createdAt: true,
@@ -144,6 +168,16 @@ export const insertMenuItemSchema = createInsertSchema(menuItems).omit({
   createdAt: true,
 });
 
+export const insertChatConversationSchema = createInsertSchema(chatConversations).omit({
+  id: true,
+  timestamp: true,
+});
+
+export const insertChatLeadSchema = createInsertSchema(chatLeads).omit({
+  id: true,
+  createdAt: true,
+});
+
 export type User = typeof users.$inferSelect;
 export type BlogPost = typeof blogPosts.$inferSelect;
 export type Page = typeof pages.$inferSelect;
@@ -152,6 +186,8 @@ export type Industry = typeof industries.$inferSelect;
 export type Technology = typeof technologies.$inferSelect;
 export type ContentBlock = typeof contentBlocks.$inferSelect;
 export type MenuItem = typeof menuItems.$inferSelect;
+export type ChatConversation = typeof chatConversations.$inferSelect;
+export type ChatLead = typeof chatLeads.$inferSelect;
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type InsertBlogPost = z.infer<typeof insertBlogPostSchema>;
@@ -161,3 +197,5 @@ export type InsertIndustry = z.infer<typeof insertIndustrySchema>;
 export type InsertTechnology = z.infer<typeof insertTechnologySchema>;
 export type InsertContentBlock = z.infer<typeof insertContentBlockSchema>;
 export type InsertMenuItem = z.infer<typeof insertMenuItemSchema>;
+export type InsertChatConversation = z.infer<typeof insertChatConversationSchema>;
+export type InsertChatLead = z.infer<typeof insertChatLeadSchema>;

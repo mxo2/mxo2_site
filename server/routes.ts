@@ -7,8 +7,11 @@ import {
   insertPageSchema, 
   insertServiceSchema, 
   insertIndustrySchema, 
-  insertTechnologySchema 
+  insertTechnologySchema,
+  insertChatConversationSchema,
+  insertChatLeadSchema
 } from "@shared/schema";
+import { processChatMessage, generateSessionId } from "./ai-service";
 
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -208,6 +211,77 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ error: "Invalid contact form data", details: error.errors });
       }
       res.status(500).json({ error: "Failed to submit contact form" });
+    }
+  });
+
+  // Chat API routes
+  app.post("/api/chat/message", async (req, res) => {
+    try {
+      const { message, sessionId } = req.body;
+      
+      if (!message) {
+        return res.status(400).json({ error: "Message is required" });
+      }
+
+      // Get conversation history
+      const conversations = sessionId 
+        ? await storage.getChatConversationsBySession(sessionId)
+        : [];
+
+      const conversationHistory = conversations.map(conv => [
+        { role: 'user' as const, content: conv.userMessage },
+        { role: 'assistant' as const, content: conv.botResponse }
+      ]).flat();
+
+      // Process message with AI
+      const aiResponse = await processChatMessage(message, conversationHistory);
+
+      // Generate session ID if not provided
+      const finalSessionId = sessionId || generateSessionId();
+
+      // Save conversation
+      const conversation = await storage.createChatConversation({
+        sessionId: finalSessionId,
+        userMessage: message,
+        botResponse: aiResponse.message,
+        intent: aiResponse.intent
+      });
+
+      res.json({
+        response: aiResponse.message,
+        sessionId: finalSessionId,
+        intent: aiResponse.intent,
+        needsUserInfo: aiResponse.needsUserInfo,
+        suggestedServices: aiResponse.suggestedServices
+      });
+
+    } catch (error) {
+      console.error('Chat API Error:', error);
+      res.status(500).json({ 
+        error: "Sorry, I'm experiencing technical difficulties. Please try again later." 
+      });
+    }
+  });
+
+  app.post("/api/chat/lead", async (req, res) => {
+    try {
+      const validatedData = insertChatLeadSchema.parse(req.body);
+      const lead = await storage.createChatLead(validatedData);
+      res.status(201).json(lead);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: "Invalid lead data", details: error.errors });
+      }
+      res.status(500).json({ error: "Failed to create lead" });
+    }
+  });
+
+  app.get("/api/chat/leads", async (req, res) => {
+    try {
+      const leads = await storage.getAllChatLeads();
+      res.json(leads);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch leads" });
     }
   });
 

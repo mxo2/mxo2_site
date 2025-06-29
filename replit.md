@@ -118,8 +118,8 @@ Changelog:
 - Professional routing for all service pages
 
 **In Progress:**
-- Additional service pages for remaining mega menu items
-- Technology pages for cloud platforms, AI frameworks, development tools
+- AI-enabled chatbot with OpenAI integration for sales and support
+- Database integration for chat conversation storage and lead capture
 
 **Next Steps:**
 - Complete all service pages from mega menu
