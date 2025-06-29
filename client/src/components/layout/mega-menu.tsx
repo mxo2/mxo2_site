@@ -67,15 +67,15 @@ export default function MegaMenu({ isOpen, onMouseEnter, onMouseLeave }: MegaMen
       <div className="px-6 py-6">
         {/* Tab Navigation */}
         <div className="flex justify-center mb-6">
-          <div className="flex bg-gray-100 rounded-lg p-1">
+          <div className="flex space-x-1">
             {Object.keys(menuData).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-2 rounded-md font-montserrat font-medium transition-colors ${
+                className={`px-6 py-2 border font-montserrat font-medium transition-colors ${
                   activeTab === tab
-                    ? "bg-[hsl(354,87%,51%)] text-white"
-                    : "text-gray-700 hover:text-[hsl(354,87%,51%)]"
+                    ? "border-blue-600 bg-blue-600 text-white"
+                    : "border-gray-800 text-gray-800 hover:border-blue-600 hover:text-blue-600 bg-white"
                 }`}
               >
                 {tab}
