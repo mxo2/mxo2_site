@@ -35,54 +35,57 @@ export default function Header() {
       {/* Main navigation */}
       <div className="bg-white border-b border-gray-200">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <div className="flex items-center">
-            <Link href="/">
-              <a className="flex items-center space-x-3">
-                <img 
-                  src={logoImage} 
-                  alt="MXO2 Logo" 
-                  className="h-24 w-auto"
-                />
-              </a>
-            </Link>
-          </div>
+          <div className="flex items-center h-24">
+            {/* Logo with AI */}
+            <div className="flex items-center mr-8">
+              <Link href="/">
+                <a className="flex items-center space-x-2">
+                  <img 
+                    src={logoImage} 
+                    alt="MXO2 Logo" 
+                    className="h-16 w-auto"
+                  />
+                  <span className="text-2xl font-bold text-blue-600 animate-bounce">AI</span>
+                </a>
+              </Link>
+            </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <div key={item.name} className="relative">
-                {item.hasMegaMenu ? (
-                  <button
-                    className="flex items-center space-x-1 text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-semibold text-sm uppercase tracking-wide transition-colors py-6 group"
-                    onMouseEnter={() => setIsMegaMenuOpen(true)}
-                    onMouseLeave={() => setIsMegaMenuOpen(false)}
-                  >
-                    <span>{item.name}</span>
-                    <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
-                  </button>
-                ) : (
-                  <Link href={item.href}>
-                    <a
-                      className={`text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-semibold text-sm uppercase tracking-wide transition-colors py-6 ${
-                        location === item.href ? "text-[hsl(354,87%,51%)]" : ""
-                      }`}
-                    >
-                      {item.name}
-                    </a>
-                  </Link>
-                )}
+            {/* Desktop Navigation - Full width */}
+            <nav className="hidden lg:flex items-center justify-between flex-1">
+              <div className="flex items-center space-x-12">
+                {navigation.map((item) => (
+                  <div key={item.name} className="relative">
+                    {item.hasMegaMenu ? (
+                      <button
+                        className="flex items-center space-x-1 text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-bold text-lg uppercase tracking-wide transition-colors py-6 group"
+                        onMouseEnter={() => setIsMegaMenuOpen(true)}
+                        onMouseLeave={() => setIsMegaMenuOpen(false)}
+                      >
+                        <span>{item.name}</span>
+                        <ChevronDown className="w-5 h-5 group-hover:rotate-180 transition-transform" />
+                      </button>
+                    ) : (
+                      <Link href={item.href}>
+                        <a
+                          className={`text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-bold text-lg uppercase tracking-wide transition-colors py-6 ${
+                            location === item.href ? "text-[hsl(354,87%,51%)]" : ""
+                          }`}
+                        >
+                          {item.name}
+                        </a>
+                      </Link>
+                    )}
+                  </div>
+                ))}
               </div>
-            ))}
-          </nav>
-
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <Button className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-medium">
-              Talk to us
-            </Button>
-          </div>
+              
+              {/* CTA Buttons */}
+              <div className="flex items-center space-x-4">
+                <Button className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-bold text-lg px-8 py-3">
+                  Talk to us
+                </Button>
+              </div>
+            </nav>
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
