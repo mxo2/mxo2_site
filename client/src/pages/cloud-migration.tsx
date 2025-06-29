@@ -429,7 +429,7 @@ export default function CloudMigration() {
       </section>
 
       {/* Migration Types Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <Tabs defaultValue="infrastructure" className="w-full">
