@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Cloud, Shield, Zap, Target, CheckCircle, Users, Award, TrendingUp } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ArrowRight, Cloud, Shield, Zap, Target, CheckCircle, Users, Award, TrendingUp, ChevronDown } from "lucide-react";
 import aiEmployeeImage from "@assets/employee-using-ai-computing-simulation-2023-08-23-02-06-48-utc_1751104050861.jpg";
 import awsLogo from "@assets/aws_1751108372357.png";
 import azureLogo from "@assets/azure_1751108372358.png";
@@ -226,6 +227,187 @@ export default function CloudMigration() {
               <p className="text-gray-600 font-opensans leading-relaxed">
                 Post-migration optimization, performance tuning, cost management, and ongoing 24/7 support.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Cloud Migration Services Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8 font-montserrat">
+                  Our Cloud Migration Services
+                </h2>
+              </div>
+              
+              <div className="space-y-4">
+                <Accordion type="multiple" className="w-full">
+                  <AccordionItem value="assessment" className="border border-gray-200 rounded-lg bg-white">
+                    <AccordionTrigger className="px-6 py-4 bg-blue-600 text-white rounded-t-lg hover:bg-blue-700 [&[data-state=open]]:rounded-b-none">
+                      <span className="font-semibold">Cloud Readiness Assessment</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 py-6 bg-white rounded-b-lg">
+                      <p className="text-gray-700 mb-4 font-opensans">
+                        Before moving a single workload, we ensure you're fully prepared:
+                      </p>
+                      <ul className="space-y-4 text-gray-700 font-opensans">
+                        <li>
+                          <strong className="text-gray-900">• Comprehensive Asset Discovery</strong>
+                          <br />
+                          We scan your on-prem environment—servers, VMs, storage volumes, network devices, and inter-application dependencies—so nothing is overlooked. Using industry-leading tools, we produce an up-to-the-minute inventory and performance baseline.
+                        </li>
+                        <li>
+                          <strong className="text-gray-900">• Business Alignment & Success Criteria</strong>
+                          <br />
+                          Together we define clear KPIs (e.g., target TCO reduction, availability SLAs, performance improvements) and capture any regulatory or compliance needs (GDPR, PCI-DSS, HIPAA). This ensures your cloud migration directly supports your strategic goals.
+                        </li>
+                        <li>
+                          <strong className="text-gray-900">• Tailored Migration Roadmap</strong>
+                          <br />
+                          Based on the inventory and your objectives, we craft a prioritized, phased plan. Each workload is classified for the optimal strategy—lift-and-shift for quick wins, refactoring to leverage cloud PaaS, or repurchasing via SaaS replacements—so you maximize ROI and minimize risk.
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="infrastructure" className="border border-gray-200 rounded-lg bg-white">
+                    <AccordionTrigger className="px-6 py-4 bg-blue-600 text-white rounded-t-lg hover:bg-blue-700 [&[data-state=open]]:rounded-b-none">
+                      <span className="font-semibold">Infrastructure & Database Migration</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 py-6 bg-white rounded-b-lg">
+                      <div className="grid lg:grid-cols-2 gap-6">
+                        <div>
+                          <p className="text-gray-700 mb-4 font-opensans">
+                            Moving your foundation safely and efficiently:
+                          </p>
+                          <ul className="space-y-4 text-gray-700 font-opensans">
+                            <li>
+                              <strong className="text-gray-900">• Infrastructure Migration ("Lift & Shift")</strong>
+                              <br />
+                              We migrate VMware or Hyper-V virtual machines into Azure VMs or AWS EC2 with minimal downtime. Using native cloud migration tools (Azure Migrate, AWS Server Migration Service), we automate replication, validate performance, and coordinate cut-over windows that fit your maintenance windows.
+                            </li>
+                            <li>
+                              <strong className="text-gray-900">• Database Platform Modernization</strong>
+                              <br />
+                              From SQL Server and Oracle to MySQL and PostgreSQL, we transition both schema and data into managed cloud databases (Azure SQL Database, Amazon RDS, Aurora). We handle schema conversion, data validation, and incremental replication to achieve zero-data-loss cut-over.
+                            </li>
+                            <li>
+                              <strong className="text-gray-900">• Seamless Cut-Over Planning</strong>
+                              <br />
+                              Our migration playbook includes runbooks, test scripts, and rollback plans. We conduct full dress rehearsals to confirm replication speeds, failover procedures, and application functionality—ensuring your go-live is smooth and predictable.
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="flex items-center justify-center">
+                          <img 
+                            src={aiEmployeeImage}
+                            alt="Infrastructure migration in progress"
+                            className="w-full max-w-sm rounded-lg shadow-lg"
+                          />
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="application" className="border border-gray-200 rounded-lg bg-white">
+                    <AccordionTrigger className="px-6 py-4 bg-blue-600 text-white rounded-t-lg hover:bg-blue-700 [&[data-state=open]]:rounded-b-none">
+                      <span className="font-semibold">Application Migration & Modernization</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 py-6 bg-white rounded-b-lg">
+                      <p className="text-gray-700 mb-4 font-opensans">
+                        Evolve your apps from monoliths to cloud-native services:
+                      </p>
+                      <ul className="space-y-4 text-gray-700 font-opensans">
+                        <li>
+                          <strong className="text-gray-900">• Rehosting for Fast Results</strong>
+                          <br />
+                          We lift entire application stacks into the cloud "as-is" to realize immediate scalability and cost savings, while you start recouping benefits within weeks.
+                        </li>
+                        <li>
+                          <strong className="text-gray-900">• Refactoring & Containerization</strong>
+                          <br />
+                          We break down monolithic apps into microservices or container images, orchestrated by Kubernetes (AKS/EKS) or managed app services (Azure App Service, AWS Fargate). This improves resilience, accelerates deployments, and standardizes CI/CD.
+                        </li>
+                        <li>
+                          <strong className="text-gray-900">• Rearchitecting to Cloud-Native</strong>
+                          <br />
+                          For mission-critical systems, we redesign using serverless functions (Azure Functions, AWS Lambda), event-driven architectures (Event Grid, EventBridge, SNS/SQS), and managed data services—delivering maximum cloud elasticity and minimized ops overhead.
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="optimization" className="border border-gray-200 rounded-lg bg-white">
+                    <AccordionTrigger className="px-6 py-4 bg-blue-600 text-white rounded-t-lg hover:bg-blue-700 [&[data-state=open]]:rounded-b-none">
+                      <span className="font-semibold">Post-Migration Optimization (Cloud CA)</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 py-6 bg-white rounded-b-lg">
+                      <div className="grid lg:grid-cols-2 gap-6">
+                        <div>
+                          <p className="text-gray-700 mb-4 font-opensans">
+                            Achieve peak efficiency with ongoing cost and performance tuning:
+                          </p>
+                          <ul className="space-y-4 text-gray-700 font-opensans">
+                            <li>
+                              <strong className="text-gray-900">• Resource Rightsizing</strong>
+                              <br />
+                              We continuously analyze CPU, memory, and storage utilization to identify over-provisioned or idle resources—then automatically adjust instance types or scale settings for optimal cost/performance.
+                            </li>
+                            <li>
+                              <strong className="text-gray-900">• FinOps Framework & Governance</strong>
+                              <br />
+                              With tagging standards, budget alerts, and show-back/charge-back reporting, we embed FinOps best practices into your teams. Monthly cost reviews and anomaly detection keep budgets under control.
+                            </li>
+                            <li>
+                              <strong className="text-gray-900">• Continuous Security & Performance Hardening</strong>
+                              <br />
+                              We enforce encryption at rest/in transit, fine-grained IAM policies, and vulnerability scanning. At the same time, we tune load balancers, database caches, and CDN rules so your applications deliver consistent, high-speed experiences.
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="flex items-center justify-center">
+                          <img 
+                            src={aiEmployeeImage}
+                            alt="Cloud optimization and monitoring"
+                            className="w-full max-w-sm rounded-lg shadow-lg"
+                          />
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="managed" className="border border-gray-200 rounded-lg bg-white">
+                    <AccordionTrigger className="px-6 py-4 bg-blue-600 text-white rounded-t-lg hover:bg-blue-700 [&[data-state=open]]:rounded-b-none">
+                      <span className="font-semibold">Managed Cloud Operations</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 py-6 bg-white rounded-b-lg">
+                      <p className="text-gray-700 mb-4 font-opensans">
+                        Full-lifecycle support so you can focus on innovation:
+                      </p>
+                      <ul className="space-y-4 text-gray-700 font-opensans">
+                        <li>
+                          <strong className="text-gray-900">• 24x7 Monitoring & Incident Response</strong>
+                          <br />
+                          Our NOC leverages Azure Monitor, AWS CloudWatch, and third-party tools to detect anomalies, trigger alerts, and resolve incidents—often before users notice an issue.
+                        </li>
+                        <li>
+                          <strong className="text-gray-900">• Backup, DR & Cross-Region Failover</strong>
+                          <br />
+                          We implement fully automated backups, periodic DR drills, and cross-region replication strategies to meet your RTO/RPO targets—ensuring business continuity under any scenario.
+                        </li>
+                        <li>
+                          <strong className="text-gray-900">• Patch Management & Compliance Reporting</strong>
+                          <br />
+                          Regular OS and platform patching is orchestrated with automated approval workflows. We also generate compliance and audit reports (ISO, SOC2, GDPR, PCI) on demand.
+                        </li>
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </div>
             </div>
           </div>
         </div>
