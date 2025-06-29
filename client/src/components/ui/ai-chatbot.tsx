@@ -71,11 +71,8 @@ export default function AIChatbot() {
 
   const chatMutation = useMutation({
     mutationFn: async (message: string) => {
-      const response = await apiRequest("/api/chat/message", {
-        method: "POST",
-        body: JSON.stringify({ message, sessionId })
-      });
-      return response as ChatResponse;
+      const response = await apiRequest("POST", "/api/chat/message", { message, sessionId });
+      return await response.json() as ChatResponse;
     },
     onSuccess: (data) => {
       setSessionId(data.sessionId);
@@ -104,15 +101,12 @@ export default function AIChatbot() {
 
   const leadMutation = useMutation({
     mutationFn: async (leadData: LeadForm) => {
-      const response = await apiRequest("/api/chat/lead", {
-        method: "POST",
-        body: JSON.stringify({
-          ...leadData,
-          conversationId: sessionId,
-          source: "chatbot"
-        })
+      const response = await apiRequest("POST", "/api/chat/lead", {
+        ...leadData,
+        conversationId: sessionId,
+        source: "chatbot"
       });
-      return response;
+      return await response.json();
     },
     onSuccess: () => {
       setShowLeadForm(false);
@@ -204,7 +198,7 @@ export default function AIChatbot() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Bot className="w-5 h-5" />
-              <CardTitle className="text-lg">MXO2 Assistant</CardTitle>
+              <CardTitle className="text-lg">O2 Assist</CardTitle>
             </div>
             <div className="flex gap-1">
               <Button
