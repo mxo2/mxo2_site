@@ -101,86 +101,275 @@ export default function StreetSync() {
         </div>
       </section>
 
-      {/* Product Highlights Section */}
+      {/* Product Overview Section */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Product Highlights</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive GPS tracking solution transforming municipal workforce management
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Comprehensive GPS Employee Tracking for Sweepers</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              GPS-based Tracking Solution for Efficient Street Cleaning and Employee Management
             </p>
           </div>
 
-          {/* Key Features Grid */}
+          {/* Core Features Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <div className="text-center">
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Real-Time GPS</h3>
-              <p className="text-gray-600">Live location tracking with precision accuracy for all field workers</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Real-time GPS Tracking</h3>
+              <p className="text-gray-600 text-sm">Efficient route management with live location updates</p>
             </div>
 
-            <div className="text-center">
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Eye className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Live Work Status</h3>
+              <p className="text-gray-600 text-sm">Provides live updates on location and work status</p>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <BarChart3 className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Analytics Dashboard</h3>
-              <p className="text-gray-600">Comprehensive reporting and performance analytics</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Performance Monitoring</h3>
+              <p className="text-gray-600 text-sm">Monitors employee performance and time management</p>
             </div>
 
-            <div className="text-center">
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
+                <Clock className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Workforce Management</h3>
-              <p className="text-gray-600">Complete employee monitoring and task assignment</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Geofencing</h3>
-              <p className="text-gray-600">Automated alerts and boundary monitoring</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Accurate Reporting</h3>
+              <p className="text-gray-600 text-sm">Accurate reporting of hours worked and areas covered</p>
             </div>
           </div>
 
-          {/* Product Image Showcase */}
+          {/* Why StreetSync Benefits */}
           <div className="bg-white rounded-2xl shadow-xl p-8 mb-16">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-6">StreetSync™ in Action</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Municipal Worker Equipped</h4>
-                      <p className="text-gray-600">Each field worker carries GPS-enabled devices for continuous monitoring</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Safety Compliance</h4>
-                      <p className="text-gray-600">High-visibility gear with integrated tracking technology</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Professional Standards</h4>
-                      <p className="text-gray-600">Maintaining municipal service quality with digital oversight</p>
-                    </div>
-                  </div>
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Why StreetSync Tracker?</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BarChart3 className="w-10 h-10 text-green-600" />
                 </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-3">Increased Productivity</h4>
+                <p className="text-gray-600">Streamline routes and reduce idle time, boosting the overall efficiency of street sweepers</p>
               </div>
-              <div className="lg:order-first">
-                <img 
-                  src={streetSyncImage} 
-                  alt="StreetSync Municipal Worker with GPS Tracking" 
-                  className="w-full rounded-xl shadow-lg"
-                />
+
+              <div className="text-center">
+                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Eye className="w-10 h-10 text-blue-600" />
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-3">Real-Time Monitoring</h4>
+                <p className="text-gray-600">Track employee location and progress in real-time, ensuring compliance with daily tasks</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-10 h-10 text-purple-600" />
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-3">Cost-Effective Operations</h4>
+                <p className="text-gray-600">Optimize manpower allocation, reduce operational costs, and improve service delivery</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-10 h-10 text-orange-600" />
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-3">Accountability</h4>
+                <p className="text-gray-600">Automatic recording of work data for accurate payroll and compliance checks</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-10 h-10 text-red-600" />
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-3">Public Satisfaction</h4>
+                <p className="text-gray-600">Enhanced visibility of municipal cleaning operations, leading to improved public perception and trust</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Detailed Reporting Section */}
+          <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
+            <h3 className="text-3xl font-bold mb-8 text-center">Detailed Reporting for Informed Decision-Making</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold mb-2">Work Completion Reports</h4>
+                <p className="text-blue-100 text-sm">Track daily cleaning tasks and area coverage</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <BarChart3 className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold mb-2">Performance Analytics</h4>
+                <p className="text-blue-100 text-sm">Insights into individual and team performance, helping identify improvement areas</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Clock className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold mb-2">Time Tracking</h4>
+                <p className="text-blue-100 text-sm">Detailed logs of time spent at each location, ensuring optimal productivity</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold mb-2">Compliance Reports</h4>
+                <p className="text-blue-100 text-sm">Ensure adherence to safety and work-hour regulations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Device Features Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Advanced Device Features</h2>
+              <p className="text-xl text-gray-600">
+                Professional-grade GPS tracking devices designed for municipal operations
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                  <Clock className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Long-lasting Inbuilt Battery</h3>
+                <p className="text-gray-600">Extended operation time for continuous tracking</p>
+              </div>
+
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Voice Monitoring</h3>
+                <p className="text-gray-600">Inbuilt voice monitoring mic for communication</p>
+              </div>
+
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Panic Alerts</h3>
+                <p className="text-gray-600">Emergency alert system for worker safety</p>
+              </div>
+
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Light Weight Design</h3>
+                <p className="text-gray-600">Portable and comfortable for daily use</p>
+              </div>
+
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Two-Way Calling</h3>
+                <p className="text-gray-600">Direct communication between field and office</p>
+              </div>
+
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                  <MapPin className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Asset Tracking</h3>
+                <p className="text-gray-600">Complete equipment and vehicle monitoring</p>
+              </div>
+
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                  <Eye className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Real-Time Location</h3>
+                <p className="text-gray-600">Precise GPS tracking with live updates</p>
+              </div>
+
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Emergency Response</h3>
+                <p className="text-gray-600">Instant emergency alert and response system</p>
+              </div>
+
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                  <BarChart3 className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">History Playback</h3>
+                <p className="text-gray-600">Complete route history and timeline analysis</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Integration & Support Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Seamless Integration & Scalable Support</h2>
+              <p className="text-xl text-gray-600">
+                Easy implementation with comprehensive support for growing municipal operations
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Quick GPS Device Setup</h3>
+                <p className="text-gray-600 text-center">Plug-and-play installation on sweeper equipment with minimal downtime</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Intuitive Mobile App</h3>
+                <p className="text-gray-600 text-center">Designed for ease of use by non-technical employees to ensure accurate tracking</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <BarChart3 className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Cloud-Based Dashboard</h3>
+                <p className="text-gray-600 text-center">Real-time access to employee locations and geofence activity from any device</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">24/7 Dedicated Support</h3>
+                <p className="text-gray-600 text-center">Ongoing technical assistance and training to resolve issues quickly and effectively</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <ArrowRight className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Future-Ready & Scalable</h3>
+                <p className="text-gray-600 text-center">Easily expandable to support additional wards, routes, or employee roles as your municipality grows</p>
               </div>
             </div>
           </div>
