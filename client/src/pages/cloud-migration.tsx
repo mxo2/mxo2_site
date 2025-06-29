@@ -178,8 +178,8 @@ export default function CloudMigration() {
           
           <div className="grid lg:grid-cols-4 gap-8">
             <div className="text-center group">
-              <div className="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
-                <Target className="w-10 h-10 text-blue-600" />
+              <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                <Target className="w-8 h-8 text-white" />
               </div>
               <div className="bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
                 Phase 1
@@ -191,8 +191,8 @@ export default function CloudMigration() {
             </div>
             
             <div className="text-center group">
-              <div className="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
-                <Shield className="w-10 h-10 text-purple-600" />
+              <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                <Shield className="w-8 h-8 text-white" />
               </div>
               <div className="bg-purple-600 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
                 Phase 2
@@ -204,8 +204,8 @@ export default function CloudMigration() {
             </div>
             
             <div className="text-center group">
-              <div className="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
-                <Zap className="w-10 h-10 text-green-600" />
+              <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                <Zap className="w-8 h-8 text-white" />
               </div>
               <div className="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
                 Phase 3
@@ -217,8 +217,8 @@ export default function CloudMigration() {
             </div>
             
             <div className="text-center group">
-              <div className="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:bg-red-200 transition-colors">
-                <TrendingUp className="w-10 h-10 text-red-600" />
+              <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                <TrendingUp className="w-8 h-8 text-white" />
               </div>
               <div className="bg-red-600 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
                 Phase 4
