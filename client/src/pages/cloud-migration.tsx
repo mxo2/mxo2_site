@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight, Cloud, Shield, Zap, Target, CheckCircle, Users, Award, TrendingUp, ChevronDown } from "lucide-react";
 import aiEmployeeImage from "@assets/employee-using-ai-computing-simulation-2023-08-23-02-06-48-utc_1751104050861.jpg";
 import awsLogo from "@assets/aws_1751108372357.png";
@@ -423,6 +424,240 @@ export default function CloudMigration() {
                 </Accordion>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Migration Types Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <Tabs defaultValue="infrastructure" className="w-full">
+              <TabsList className="grid w-full grid-cols-4 mb-12 bg-gray-100 p-1 rounded-lg">
+                <TabsTrigger value="infrastructure" className="font-opensans font-medium text-sm">
+                  Infrastructure Migration
+                </TabsTrigger>
+                <TabsTrigger value="database" className="font-opensans font-medium text-sm">
+                  Database Migration
+                </TabsTrigger>
+                <TabsTrigger value="application" className="font-opensans font-medium text-sm">
+                  Application Migration
+                </TabsTrigger>
+                <TabsTrigger value="office365" className="font-opensans font-medium text-sm">
+                  Office 365 Migration
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="infrastructure" className="mt-8">
+                <div className="grid lg:grid-cols-3 gap-8">
+                  <div className="lg:col-span-2">
+                    <h3 className="text-3xl font-bold text-blue-600 mb-4 font-montserrat">
+                      Infrastructure Migration
+                    </h3>
+                    <p className="text-blue-600 mb-8 font-opensans">
+                      Migrate your servers, storage, and network to Azure or AWS with confidence and minimal downtime.
+                    </p>
+                    
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Lift & Shift:</h4>
+                        <p className="text-gray-700 mb-4 font-opensans">
+                          Automate VM replication (Azure Migrate/AWS SMS) and cut over during planned windows.
+                        </p>
+                        
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Network & Security:</h4>
+                        <p className="text-gray-700 font-opensans">
+                          Mirror your topology in VNet/VPC, set up VPN/Direct Connect, and enforce cloud-native firewall rules.
+                        </p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Right-Size & Replatform:</h4>
+                        <p className="text-gray-700 mb-4 font-opensans">
+                          Convert images to cloud format, choose optimal VM families, and tier storage for cost and performance.
+                        </p>
+                        
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">High Availability & DR:</h4>
+                        <p className="text-gray-700 font-opensans">
+                          Spread critical workloads across availability zones, enable automated failover, and run periodic DR drills.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img 
+                      src={aiEmployeeImage}
+                      alt="Infrastructure migration visualization"
+                      className="w-full max-w-sm rounded-lg shadow-lg"
+                    />
+                  </div>
+                </div>
+              </TabsContent>
+
+              <TabsContent value="database" className="mt-8">
+                <div className="grid lg:grid-cols-3 gap-8">
+                  <div className="lg:col-span-2">
+                    <h3 className="text-3xl font-bold text-blue-600 mb-4 font-montserrat">
+                      Database Migration
+                    </h3>
+                    <p className="text-blue-600 mb-8 font-opensans">
+                      Seamlessly move your on-premises databases to managed cloud services with minimal downtime and complete data integrity.
+                    </p>
+                    
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Assessment & Planning:</h4>
+                        <p className="text-gray-700 mb-4 font-opensans">
+                          Inventory schemas, stored procedures, and data volumes; choose the right target (Azure SQL, Amazon RDS, Aurora).
+                        </p>
+                        
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Continuous Data Replication:</h4>
+                        <p className="text-gray-700 font-opensans">
+                          Set up near-real-time change data capture to keep source and target in sync until cut-over.
+                        </p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Schema Conversion & Compatibility:</h4>
+                        <p className="text-gray-700 mb-4 font-opensans">
+                          Use tools (Azure DMS, AWS SCT) to translate objects and SQL dialects, then validate with automated tests.
+                        </p>
+                        
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Post-Migration Optimization:</h4>
+                        <p className="text-gray-700 font-opensans">
+                          Tune indexes, update statistics, enable automated backups & point-in-time recovery, and configure monitoring/alerts.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img 
+                      src={aiEmployeeImage}
+                      alt="Database migration process"
+                      className="w-full max-w-sm rounded-lg shadow-lg"
+                    />
+                  </div>
+                </div>
+              </TabsContent>
+
+              <TabsContent value="application" className="mt-8">
+                <div className="grid lg:grid-cols-3 gap-8">
+                  <div className="lg:col-span-2">
+                    <h3 className="text-3xl font-bold text-blue-600 mb-4 font-montserrat">
+                      Application Migration
+                    </h3>
+                    <p className="text-blue-600 mb-8 font-opensans">
+                      Move your legacy applications into the cloud—quickly, securely, and with minimal refactor effort.
+                    </p>
+                    
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Assess & Plan:</h4>
+                        <p className="text-gray-700 mb-4 font-opensans">
+                          Map out all application components, dependencies, and business requirements to decide between rehosting, refactoring, or replatforming.
+                        </p>
+                        
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Modernize & Integrate:</h4>
+                        <p className="text-gray-700 font-opensans">
+                          • PaaS/Serverless: Migrate core modules to managed platforms (App Service, Elastic Beanstalk) or Functions/Lambda to cut ops overhead.
+                          <br /><br />
+                          • API Enablement: Swap hard-coded links for REST/GraphQL or event-driven integrations (Event Grid, SNS/SQS).
+                        </p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Rehost & Refactor:</h4>
+                        <p className="text-gray-700 mb-4 font-opensans">
+                          Lift & Shift: Move applications "as-is" onto cloud VMs or managed app services for rapid scalability.
+                          <br /><br />
+                          • Containerize: Break monoliths into Docker/Kubernetes containers (AKS/EKS) to improve portability and resilience.
+                        </p>
+                        
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Validate & Optimize:</h4>
+                        <p className="text-gray-700 font-opensans">
+                          • Run blue-green or canary deployments, functional tests, and performance benchmarks for zero-downtime cut-over.
+                          <br /><br />
+                          • Tune autoscaling, logging, and monitoring (App Insights, CloudWatch) to ensure smooth, cost-effective operation.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img 
+                      src={aiEmployeeImage}
+                      alt="Application migration and modernization"
+                      className="w-full max-w-sm rounded-lg shadow-lg"
+                    />
+                  </div>
+                </div>
+              </TabsContent>
+
+              <TabsContent value="office365" className="mt-8">
+                <div className="grid lg:grid-cols-3 gap-8">
+                  <div className="lg:col-span-2">
+                    <h3 className="text-3xl font-bold text-blue-600 mb-4 font-montserrat">
+                      Office 365 Migration
+                    </h3>
+                    <p className="text-blue-600 mb-8 font-opensans">
+                      Migrate your servers, storage, and network to Azure or AWS with confidence and minimal downtime.
+                    </p>
+                    
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Assess & Plan:</h4>
+                        <p className="text-gray-700 mb-4 font-opensans">
+                          Audit current email, file shares, and collaboration workloads.
+                          <br /><br />
+                          Define business goals, user groups, and required Office 365 licenses.
+                          <br /><br />
+                          Map dependencies (mailboxes, public folders, OneDrive, Teams chat) and set success criteria.
+                        </p>
+                        
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Data Migration:</h4>
+                        <p className="text-gray-700 font-opensans">
+                          Email: Migrate mailboxes via cutover, staged, or hybrid Exchange migration.
+                          <br /><br />
+                          Files: Sync or bulk-migrate file shares and home drives to OneDrive and SharePoint Online.
+                          <br /><br />
+                          Collaboration: Transition Skype for Business to Teams, preserving chat history where possible.
+                        </p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Prepare & Configure:</h4>
+                        <p className="text-gray-700 mb-4 font-opensans">
+                          Provision your Office 365 tenant and assign domains.
+                          <br /><br />
+                          Configure Azure AD Connect for secure directory sync and SSO.
+                          <br /><br />
+                          Set up Exchange Online policies, Teams configuration, and security controls (MFA, DLP, retention).
+                        </p>
+                        
+                        <h4 className="text-lg font-bold text-gray-900 mb-4 font-montserrat">Validate, Train & Optimize:</h4>
+                        <p className="text-gray-700 font-opensans">
+                          Conduct pilot user tests: send/receive mail, access files, join Teams meetings.
+                          <br /><br />
+                          Provide end-user training on Outlook, OneDrive, Teams, and SharePoint best practices.
+                          <br /><br />
+                          Monitor adoption metrics, tune security settings, and refine governance (naming conventions, retention).
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img 
+                      src={aiEmployeeImage}
+                      alt="Office 365 migration and collaboration"
+                      className="w-full max-w-sm rounded-lg shadow-lg"
+                    />
+                  </div>
+                </div>
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
       </section>
