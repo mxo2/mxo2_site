@@ -26,6 +26,7 @@ import SaaSApplicationDevelopment from "@/pages/services/saas-development";
 import MicrosoftAzure from "@/pages/technology/azure";
 import AmazonAWS from "@/pages/technology/aws";
 import AIFrameworks from "@/pages/technology/ai-frameworks";
+import StreetSync from "@/pages/products/street-sync";
 
 function Router() {
   return (
@@ -55,6 +56,7 @@ function Router() {
                   <Route path="/technology/azure" component={MicrosoftAzure} />
                   <Route path="/technology/aws" component={AmazonAWS} />
                   <Route path="/technology/ai-frameworks" component={AIFrameworks} />
+                  <Route path="/products/street-sync" component={StreetSync} />
                   <Route path="/industries" component={Industries} />
                   <Route path="/blog" component={Blog} />
                   <Route path="/blog/:slug" component={BlogPost} />
