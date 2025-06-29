@@ -38,69 +38,65 @@ export default function StreetSync() {
   return (
     <div className="min-h-screen">
       {/* Hero Banner - Split Layout */}
-      <section className="relative min-h-[400px] overflow-hidden -mt-40 pt-40">
-        <div className="grid lg:grid-cols-2 min-h-[400px]">
-          {/* Left Side - MXO2 Color Scheme */}
-          <div className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 flex items-center">
-            {/* Layered Background Effects */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-800/30 via-transparent to-blue-900/40"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent"></div>
+      <section className="relative min-h-[500px] overflow-hidden -mt-40 pt-40">
+        <div className="grid lg:grid-cols-2 min-h-[500px]">
+          {/* Left Side - Street/Urban Background */}
+          <div className="relative bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 flex items-center">
+            {/* Urban street texture overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-800/60 via-gray-800/40 to-slate-900/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
             
-            {/* Geometric Pattern */}
-            <div className="absolute inset-0 opacity-10">
+            {/* Street grid pattern */}
+            <div className="absolute inset-0 opacity-15">
               <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <defs>
-                  <pattern id="hex-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
-                    <polygon points="10,0 20,6 20,14 10,20 0,14 0,6" fill="none" stroke="white" strokeWidth="0.5"/>
+                  <pattern id="street-grid" width="25" height="25" patternUnits="userSpaceOnUse">
+                    <path d="M 25 0 L 0 0 0 25" fill="none" stroke="white" strokeWidth="0.5"/>
                   </pattern>
                 </defs>
-                <rect width="100" height="100" fill="url(#hex-pattern)" />
+                <rect width="100" height="100" fill="url(#street-grid)" />
               </svg>
             </div>
 
-            <div className="relative z-10 px-8 lg:px-12">
-              <Badge className="bg-blue-600/30 text-white border-blue-400/50 hover:bg-blue-600/40 mb-4">
-                <MapPin className="w-4 h-4 mr-2" />
-                GPS-Based Tracking Solution
-              </Badge>
-              
-              <h1 className="font-montserrat font-bold text-4xl lg:text-5xl text-white mb-3">
-                StreetSync<sup className="text-lg">®</sup>
-              </h1>
-              
-              <h2 className="font-montserrat text-2xl lg:text-3xl text-white font-medium mb-4">
-                Empowering
-                <br />
-                Municipal Workforce
-              </h2>
-              
-              <p className="text-lg text-white/90 mb-6 font-opensans leading-relaxed">
-                GPS-based Tracking Solution for Efficient Street Cleaning 
-                and Employee Management
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3">
-                  Get Demo
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3">
+            <div className="relative z-10 px-8 lg:px-12 max-w-lg">
+              <div className="mb-6">
+                <Badge className="bg-blue-600 text-white hover:bg-blue-700 mb-6 px-4 py-2">
                   <MapPin className="w-4 h-4 mr-2" />
-                  Live Demo
-                </Button>
+                  Municipal GPS Tracking
+                </Badge>
+                
+                <h1 className="font-montserrat font-bold text-5xl lg:text-6xl text-white mb-4 leading-tight">
+                  StreetSync<sup className="text-2xl">®</sup>
+                </h1>
+                
+                <p className="text-xl text-gray-200 mb-8 font-opensans leading-relaxed">
+                  Advanced GPS tracking solution for municipal workforce management and street cleaning operations
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 text-lg">
+                    Request Demo
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg">
+                    View Features
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Person Image */}
-          <div className="relative bg-gray-100 flex items-center justify-center">
+          {/* Right Side - Clean Product Image */}
+          <div className="relative bg-white flex items-center justify-center overflow-hidden">
             <img 
               src={streetSyncImage} 
-              alt="StreetSync Municipal Worker" 
-              className="w-full h-full object-cover"
+              alt="StreetSync - Municipal Worker with GPS Tracking Technology" 
+              className="w-full h-full object-cover object-center"
             />
-            {/* Overlay for branding on image */}
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/20"></div>
+            {/* Subtle brand overlay */}
+            <div className="absolute top-8 right-8 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+              <p className="text-sm font-semibold text-gray-800">Empowering Municipal Workforce</p>
+            </div>
           </div>
         </div>
       </section>
