@@ -24,7 +24,7 @@ export default function MegaMenu({ isOpen, activeMenu, onMouseEnter, onMouseLeav
     },
     {
       name: "Parallel Campus AI",
-      href: "/products/parallel-campus-ai", 
+      href: "/products/parallel-campus", 
       description: "AI-powered education platform for intelligent learning",
       icon: "🎓"
     },
