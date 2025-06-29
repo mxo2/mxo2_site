@@ -19,7 +19,7 @@ export default function BlogSection() {
       id: 3,
       title: "Multi-Cloud Strategy: How AI Orchestration Optimizes Workload Distribution",
       category: "AI SOLUTIONS",
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=250&fit=crop&crop=focalpoint&auto=format&q=60",
       link: "/insights/ai-multi-cloud-orchestration"
     }
   ];
