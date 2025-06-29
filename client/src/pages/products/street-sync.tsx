@@ -40,11 +40,11 @@ export default function StreetSync() {
       {/* Hero Banner - Split Layout */}
       <section className="relative min-h-[400px] overflow-hidden -mt-40 pt-40">
         <div className="grid lg:grid-cols-2 min-h-[400px]">
-          {/* Left Side - Mixed Color Layers (Home Page Style) */}
-          <div className="relative bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900 flex items-center">
+          {/* Left Side - MXO2 Color Scheme */}
+          <div className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 flex items-center">
             {/* Layered Background Effects */}
-            <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 via-transparent to-cyan-600/20"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-800/30 via-transparent to-blue-900/40"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent"></div>
             
             {/* Geometric Pattern */}
             <div className="absolute inset-0 opacity-10">
@@ -59,7 +59,7 @@ export default function StreetSync() {
             </div>
 
             <div className="relative z-10 px-8 lg:px-12">
-              <Badge className="bg-white/20 text-white hover:bg-white/30 mb-4">
+              <Badge className="bg-blue-600/30 text-white border-blue-400/50 hover:bg-blue-600/40 mb-4">
                 <MapPin className="w-4 h-4 mr-2" />
                 GPS-Based Tracking Solution
               </Badge>
