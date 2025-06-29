@@ -60,11 +60,11 @@ export default function MegaMenu({ isOpen, onMouseEnter, onMouseLeave }: MegaMen
 
   return (
     <div
-      className="absolute top-full left-0 w-full bg-white shadow-2xl border-t border-gray-200 z-40"
+      className="absolute top-full left-1/2 transform -translate-x-1/2 bg-white shadow-2xl border border-gray-200 rounded-lg z-40 min-w-[800px] max-w-4xl"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="container mx-auto px-4 py-6">
+      <div className="px-6 py-6">
         {/* Tab Navigation */}
         <div className="flex justify-center mb-6">
           <div className="flex bg-gray-100 rounded-lg p-1">
@@ -85,7 +85,7 @@ export default function MegaMenu({ isOpen, onMouseEnter, onMouseLeave }: MegaMen
         </div>
 
         {/* Tab Content */}
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid grid-cols-2 gap-8">
           {/* Services Column */}
           <div>
             <h2 className="font-montserrat font-bold text-lg text-gray-900 mb-4 text-center border-b border-[hsl(354,87%,51%)] pb-2">
@@ -144,25 +144,18 @@ export default function MegaMenu({ isOpen, onMouseEnter, onMouseLeave }: MegaMen
         </div>
 
         {/* Bottom CTA Section */}
-        <div className="mt-8 pt-6 border-t border-gray-200">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-6">
-              <div className="text-sm text-gray-600 font-opensans">
-                <span className="font-semibold text-gray-900">Need help choosing?</span> Our experts can guide you to the right solution.
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Link href="/contact">
-                <a className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white px-6 py-2 rounded-md font-opensans font-medium transition-colors">
-                  Talk to an Expert
-                </a>
-              </Link>
-              <Link href="/solutions">
-                <a className="text-[hsl(220,72%,44%)] hover:text-[hsl(220,72%,35%)] font-opensans font-medium transition-colors">
-                  View All Solutions →
-                </a>
-              </Link>
-            </div>
+        <div className="mt-6 pt-4 border-t border-gray-200 text-center">
+          <div className="flex items-center justify-center space-x-4">
+            <Link href="/contact">
+              <a className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white px-4 py-2 rounded-md font-opensans font-medium transition-colors text-sm">
+                Talk to an Expert
+              </a>
+            </Link>
+            <Link href="/solutions">
+              <a className="text-[hsl(220,72%,44%)] hover:text-[hsl(220,72%,35%)] font-opensans font-medium transition-colors text-sm">
+                View All Solutions →
+              </a>
+            </Link>
           </div>
         </div>
       </div>
