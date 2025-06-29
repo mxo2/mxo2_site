@@ -29,6 +29,7 @@ import AIFrameworks from "@/pages/technology/ai-frameworks";
 import StreetSync from "@/pages/products/street-sync";
 import ParallelCampus from "@/pages/products/parallel-campus";
 import IndustrialERP from "@/pages/products/industrial-erp";
+import CRM from "@/pages/products/crm";
 
 function Router() {
   return (
@@ -61,6 +62,7 @@ function Router() {
                   <Route path="/products/street-sync" component={StreetSync} />
         <Route path="/products/parallel-campus" component={ParallelCampus} />
         <Route path="/products/industrial-erp" component={IndustrialERP} />
+        <Route path="/products/crm" component={CRM} />
                   <Route path="/industries" component={Industries} />
                   <Route path="/blog" component={Blog} />
                   <Route path="/blog/:slug" component={BlogPost} />
