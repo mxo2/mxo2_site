@@ -21,7 +21,10 @@ import RPA from "@/pages/services/rpa";
 import LegacyModernization from "@/pages/services/legacy-modernization";
 import AIIntegration from "@/pages/services/ai-integration";
 import TradingAutomation from "@/pages/services/trading-automation";
+import DataAnalytics from "@/pages/services/data-analytics";
+import SaaSApplicationDevelopment from "@/pages/services/saas-development";
 import MicrosoftAzure from "@/pages/technology/azure";
+import AmazonAWS from "@/pages/technology/aws";
 import AIFrameworks from "@/pages/technology/ai-frameworks";
 
 function Router() {
@@ -47,7 +50,10 @@ function Router() {
                   <Route path="/services/legacy-modernization" component={LegacyModernization} />
                   <Route path="/services/ai-integration" component={AIIntegration} />
                   <Route path="/services/trading-automation" component={TradingAutomation} />
+                  <Route path="/services/data-analytics" component={DataAnalytics} />
+                  <Route path="/services/saas-development" component={SaaSApplicationDevelopment} />
                   <Route path="/technology/azure" component={MicrosoftAzure} />
+                  <Route path="/technology/aws" component={AmazonAWS} />
                   <Route path="/technology/ai-frameworks" component={AIFrameworks} />
                   <Route path="/industries" component={Industries} />
                   <Route path="/blog" component={Blog} />

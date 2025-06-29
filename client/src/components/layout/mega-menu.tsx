@@ -47,8 +47,7 @@ export default function MegaMenu({ isOpen, onMouseEnter, onMouseLeave }: MegaMen
         { name: "Legacy Application Modernization", href: "/services/legacy-modernization", description: "Upgrade outdated software to modern, scalable platforms." },
         { name: "SaaS Application Development", href: "/services/saas-development", description: "Design, build, and manage scalable multi-tenant SaaS platforms." },
         { name: "Workflow Automation", href: "/services/workflow-automation", description: "Digitize manual business processes to enhance productivity." },
-        { name: "ERP Implementation", href: "/services/erp-implementation", description: "Deploy and tailor ERP systems for manufacturing, education, government." },
-        { name: "Ecommerce Development", href: "/services/ecommerce", description: "Build secure, high-performance online storefronts with integrated payments." }
+        { name: "ERP Implementation", href: "/services/erp-implementation", description: "Deploy and tailor ERP systems for manufacturing, education, government." }
       ],
       technologies: [
         { name: "Frontend Frameworks", href: "/technology/frontend", description: "React.js / Vue.js / Next.js – Build dynamic, responsive interfaces with modern JavaScript stacks." },
