@@ -35,41 +35,103 @@ export default function StreetSync() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-[500px] overflow-hidden bg-gradient-to-r from-emerald-600 via-green-700 to-teal-800 -mt-40 pt-40">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="100" height="100" fill="url(#grid)" />
-          </svg>
+      {/* Hero Banner - MXO2 Branding */}
+      <section className="relative min-h-[600px] overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 -mt-40 pt-40">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
         </div>
 
-        <div className="relative z-10 min-h-[500px] flex items-center">
+        <div className="relative z-10 min-h-[600px] flex items-center">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center text-white">
-              <Badge className="bg-white/20 text-white hover:bg-white/30 mb-6">
-                <MapPin className="w-4 h-4 mr-2" />
-                GPS-Based Tracking Solution
-              </Badge>
-              
-              <h1 className="font-montserrat font-bold text-4xl lg:text-5xl xl:text-6xl leading-tight mb-6">
-                Street Sync Tracker
-                <br />
-                <span className="text-emerald-300">Efficient Street Cleaning & Employee Management</span>
-              </h1>
-              
-              <p className="text-lg lg:text-xl mb-8 text-emerald-100 leading-relaxed max-w-3xl mx-auto font-opensans">
-                Real-time GPS tracking for efficient route management with live updates on location, work status, and comprehensive employee performance monitoring.
-              </p>
-              
-              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 text-lg">
-                Get Street Sync Demo
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+            {/* MXO2 Branding Header */}
+            <div className="text-center mb-16">
+              <h2 className="font-montserrat text-2xl lg:text-3xl text-white mb-2">
+                Breathing Life into Businesses:
+              </h2>
+              <h3 className="font-montserrat text-xl lg:text-2xl text-blue-300 mb-1">
+                Maximum Oxygen Inc's Decade-Long
+              </h3>
+              <h3 className="font-montserrat text-xl lg:text-2xl text-blue-300">
+                Journey in IT Solutions<sup className="text-sm">TM</sup>
+              </h3>
+            </div>
+
+            {/* Main Product Content */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Product Info */}
+              <div className="text-white">
+                <Badge className="bg-emerald-600 text-white hover:bg-emerald-700 mb-6">
+                  <MapPin className="w-4 h-4 mr-2" />
+                  GPS-Based Tracking Solution
+                </Badge>
+                
+                <h1 className="font-montserrat font-bold text-4xl lg:text-5xl leading-tight mb-6">
+                  Street Sync Tracker
+                </h1>
+                
+                <h2 className="text-2xl lg:text-3xl text-emerald-300 mb-8 font-opensans">
+                  GPS-based Tracking Solution for Efficient Street Cleaning and Employee Management
+                </h2>
+
+                {/* Key Features List */}
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-emerald-400 mt-1 flex-shrink-0" />
+                    <p className="text-lg">Real-time GPS tracking for efficient route management</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-emerald-400 mt-1 flex-shrink-0" />
+                    <p className="text-lg">Provides live updates on location and work status</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-emerald-400 mt-1 flex-shrink-0" />
+                    <p className="text-lg">Monitors employee performance and time management</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-emerald-400 mt-1 flex-shrink-0" />
+                    <p className="text-lg">Accurate reporting of hours worked and areas covered</p>
+                  </div>
+                </div>
+                
+                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 text-lg">
+                  Get Street Sync Demo
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </div>
+
+              {/* Right Column - Visual Representation */}
+              <div className="relative">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                  <h3 className="font-bold text-2xl text-white mb-6 text-center">
+                    Comprehensive GPS Employee Tracking for Sweepers
+                  </h3>
+                  
+                  {/* Dashboard Preview Mockup */}
+                  <div className="bg-gray-900 rounded-lg p-4 mb-4">
+                    <div className="bg-emerald-500 h-2 w-full rounded mb-2"></div>
+                    <div className="grid grid-cols-3 gap-2 mb-3">
+                      <div className="bg-blue-400 h-16 rounded flex items-center justify-center">
+                        <MapPin className="w-8 h-8 text-white" />
+                      </div>
+                      <div className="bg-green-400 h-16 rounded flex items-center justify-center">
+                        <Users className="w-8 h-8 text-white" />
+                      </div>
+                      <div className="bg-yellow-400 h-16 rounded flex items-center justify-center">
+                        <Clock className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+                    <div className="bg-gray-700 h-12 rounded mb-2"></div>
+                    <div className="bg-gray-700 h-8 rounded"></div>
+                  </div>
+                  
+                  <p className="text-center text-blue-200 text-sm">
+                    Real-time dashboard for monitoring street cleaning operations
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -124,8 +186,155 @@ export default function StreetSync() {
         </div>
       </section>
 
-      {/* Key Features Section */}
+      {/* Dashboard Features Section */}
       <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-montserrat font-bold text-3xl lg:text-4xl text-gray-900 mb-4 text-center">
+              Our Solutions Dashboard
+            </h2>
+            <p className="text-center text-gray-600 mb-12 text-lg">
+              Complete monitoring and management system for street cleaning operations
+            </p>
+
+            {/* Dashboard Preview */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
+              <div className="grid lg:grid-cols-2 gap-8">
+                {/* Dashboard Mockup */}
+                <div className="bg-gray-900 rounded-xl p-6">
+                  <div className="bg-blue-600 text-white p-3 rounded-lg mb-4">
+                    <h3 className="font-bold text-lg">Manager Dashboard</h3>
+                  </div>
+                  
+                  {/* Dashboard Elements */}
+                  <div className="space-y-4">
+                    <div className="bg-gray-800 rounded-lg p-4">
+                      <div className="flex items-center space-x-3 mb-2">
+                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                        <span className="text-white text-sm">Device Battery Level</span>
+                      </div>
+                      <div className="flex items-center space-x-3 mb-2">
+                        <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                        <span className="text-white text-sm">Geofencing Area</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                        <span className="text-white text-sm">Employee Live Location</span>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-800 rounded-lg p-4">
+                      <span className="text-emerald-400 text-sm font-medium">Employee In Their Area</span>
+                    </div>
+                    
+                    <div className="bg-gray-800 rounded-lg p-4">
+                      <span className="text-blue-400 text-sm font-medium">Employee Total Duration in Location</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Dashboard Features */}
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="font-bold text-xl mb-4">Centralized Management</h3>
+                    <p className="text-gray-700 mb-4">This centralized dashboard allows office managers to:</p>
+                    <ul className="space-y-2">
+                      <li className="flex items-start space-x-3">
+                        <CheckCircle className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
+                        <span>Monitor Live Location of all field employees in real time</span>
+                      </li>
+                      <li className="flex items-start space-x-3">
+                        <CheckCircle className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
+                        <span>View Geofenced Areas to ensure employees stay within assigned zones</span>
+                      </li>
+                      <li className="flex items-start space-x-3">
+                        <CheckCircle className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
+                        <span>Track Live Activity on the Map, including route movement and stopovers</span>
+                      </li>
+                      <li className="flex items-start space-x-3">
+                        <CheckCircle className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
+                        <span>Check Device Status: Active, Idle, or Offline</span>
+                      </li>
+                      <li className="flex items-start space-x-3">
+                        <CheckCircle className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
+                        <span>Make Informed Decisions using visual maps, live status, and device analytics</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Additional Dashboard Features */}
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              {/* Employee Visit History */}
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h3 className="font-bold text-xl mb-4">Employee Visit History</h3>
+                <p className="text-gray-600 mb-4">Stops • Idle Time • Movement Tracking</p>
+                <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                  <div className="space-y-2">
+                    <div className="bg-blue-500 h-3 rounded w-full"></div>
+                    <div className="bg-green-500 h-3 rounded w-3/4"></div>
+                    <div className="bg-yellow-500 h-3 rounded w-1/2"></div>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600">
+                  This section displays the detailed history of an employee's movement including daily, weekly, and 30-day logs showing routes taken, idle durations, and stop locations.
+                </p>
+              </div>
+
+              {/* Geofencing Window */}
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h3 className="font-bold text-xl mb-4">Geofencing Window</h3>
+                <p className="text-gray-600 mb-4">Satellite View • Easy Fence Creation</p>
+                <div className="bg-gray-100 rounded-lg p-4 mb-4 relative">
+                  <div className="absolute inset-4 border-2 border-dashed border-emerald-500 rounded"></div>
+                  <div className="h-24 bg-gradient-to-br from-green-200 to-blue-200 rounded"></div>
+                </div>
+                <p className="text-sm text-gray-600">
+                  This section demonstrates how to define a geofence around a specific location using satellite imagery for precision and ease.
+                </p>
+              </div>
+            </div>
+
+            {/* Live Tracking Features */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Employee Live Location */}
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h3 className="font-bold text-xl mb-4">Employee Live Location</h3>
+                <div className="bg-gray-900 rounded-lg p-4 mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-emerald-400 text-sm">Battery: 85%</span>
+                    <span className="text-blue-400 text-sm">Speed: 12 km/h</span>
+                  </div>
+                  <div className="bg-gray-700 h-16 rounded flex items-center justify-center">
+                    <MapPin className="w-8 h-8 text-emerald-400" />
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600">
+                  This section displays the real-time location of each device, along with technical metrics such as battery status, speed, and sensor activity.
+                </p>
+              </div>
+
+              {/* Street View */}
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h3 className="font-bold text-xl mb-4">Street View</h3>
+                <div className="bg-gradient-to-b from-blue-400 to-green-400 rounded-lg p-4 mb-4">
+                  <div className="bg-white/20 h-16 rounded flex items-center justify-center">
+                    <Eye className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600">
+                  This section provides a real-time street-level view of the location where the device is currently active, enhancing situational awareness.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-montserrat font-bold text-3xl lg:text-4xl text-gray-900 mb-12 text-center">
