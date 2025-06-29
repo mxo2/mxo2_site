@@ -179,7 +179,7 @@ export default function CloudMigration() {
           
           <div className="grid lg:grid-cols-4 gap-8">
             <div className="text-center group">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+              <div className="bg-blue-900 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                 <Target className="w-8 h-8 text-white" />
               </div>
               <div className="bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
@@ -192,10 +192,10 @@ export default function CloudMigration() {
             </div>
             
             <div className="text-center group">
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+              <div className="bg-blue-900 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <div className="bg-purple-600 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+              <div className="bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
                 Phase 2
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 font-montserrat">Security & Compliance</h3>
@@ -205,10 +205,10 @@ export default function CloudMigration() {
             </div>
             
             <div className="text-center group">
-              <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+              <div className="bg-blue-900 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                 <Zap className="w-8 h-8 text-white" />
               </div>
-              <div className="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+              <div className="bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
                 Phase 3
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 font-montserrat">Migration Execution</h3>
@@ -218,10 +218,10 @@ export default function CloudMigration() {
             </div>
             
             <div className="text-center group">
-              <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+              <div className="bg-blue-900 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
-              <div className="bg-red-600 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+              <div className="bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
                 Phase 4
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 font-montserrat">Optimization & Support</h3>
