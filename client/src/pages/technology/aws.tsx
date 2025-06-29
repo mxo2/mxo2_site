@@ -18,10 +18,7 @@ export default function AmazonAWS() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactForm) => {
-      return apiRequest("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({ ...data, service: "Amazon Web Services (AWS)" }),
-      });
+      return apiRequest("POST", "/api/contact", { ...data, service: "Amazon Web Services (AWS)" });
     },
     onSuccess: () => {
       reset();

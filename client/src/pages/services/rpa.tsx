@@ -18,10 +18,7 @@ export default function RPA() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactForm) => {
-      return apiRequest("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({ ...data, service: "Robotic Process Automation (RPA)" }),
-      });
+      return apiRequest("POST", "/api/contact", { ...data, service: "Robotic Process Automation (RPA)" });
     },
     onSuccess: () => {
       reset();
@@ -36,30 +33,12 @@ export default function RPA() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[500px] overflow-hidden bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-800 -mt-40 pt-40">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="100" height="100" fill="url(#grid)" />
-          </svg>
-        </div>
-
+      <section className="relative min-h-[500px] overflow-hidden bg-gradient-to-r from-blue-600 via-purple-700 to-red-600 -mt-40 pt-40">
         <div className="relative z-10 min-h-[500px] flex items-center">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center text-white">
-              <Badge className="bg-white/20 text-white hover:bg-white/30 mb-6">
-                <Bot className="w-4 h-4 mr-2" />
-                Intelligent Automation
-              </Badge>
-              
               <h1 className="font-montserrat font-bold text-4xl lg:text-5xl xl:text-6xl leading-tight mb-6">
                 Robotic Process Automation
-                <br />
-                <span className="text-purple-300">Automate with Intelligence</span>
               </h1>
               
               <p className="text-lg lg:text-xl mb-8 text-purple-100 leading-relaxed max-w-3xl mx-auto font-opensans">

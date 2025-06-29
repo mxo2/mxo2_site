@@ -18,10 +18,7 @@ export default function AIIntegration() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactForm) => {
-      return apiRequest("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({ ...data, service: "AI Model Integration" }),
-      });
+      return apiRequest("POST", "/api/contact", { ...data, service: "AI Model Integration" });
     },
     onSuccess: () => {
       reset();

@@ -19,10 +19,7 @@ export default function CRM() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactForm) => {
-      return apiRequest("/api/contact", {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
+      return apiRequest("POST", "/api/contact", data);
     },
     onSuccess: () => {
       reset();

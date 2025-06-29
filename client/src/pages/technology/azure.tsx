@@ -18,10 +18,7 @@ export default function MicrosoftAzure() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactForm) => {
-      return apiRequest("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({ ...data, service: "Microsoft Azure Solutions" }),
-      });
+      return apiRequest("POST", "/api/contact", { ...data, service: "Microsoft Azure Solutions" });
     },
     onSuccess: () => {
       reset();

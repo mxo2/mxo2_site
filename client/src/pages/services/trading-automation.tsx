@@ -18,10 +18,7 @@ export default function TradingAutomation() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactForm) => {
-      return apiRequest("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({ ...data, service: "Trading Automation Platform" }),
-      });
+      return apiRequest("POST", "/api/contact", { ...data, service: "Trading Automation Platform" });
     },
     onSuccess: () => {
       reset();

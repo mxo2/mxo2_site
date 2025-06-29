@@ -29,13 +29,10 @@ export function DownloadModal({ isOpen, onClose, title, description, downloadUrl
 
   const downloadMutation = useMutation({
     mutationFn: async (data: DownloadForm) => {
-      return apiRequest("/api/downloads", {
-        method: "POST",
-        body: JSON.stringify({
-          ...data,
-          resource: fileName,
-          downloadUrl
-        }),
+      return apiRequest("POST", "/api/downloads", {
+        ...data,
+        resource: fileName,
+        downloadUrl
       });
     },
     onSuccess: () => {

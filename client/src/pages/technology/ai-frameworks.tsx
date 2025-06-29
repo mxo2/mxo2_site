@@ -18,10 +18,7 @@ export default function AIFrameworks() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactForm) => {
-      return apiRequest("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({ ...data, service: "AI Frameworks & ML Solutions" }),
-      });
+      return apiRequest("POST", "/api/contact", { ...data, service: "AI Frameworks & ML Solutions" });
     },
     onSuccess: () => {
       reset();

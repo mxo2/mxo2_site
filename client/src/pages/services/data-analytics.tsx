@@ -18,10 +18,7 @@ export default function DataAnalytics() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactForm) => {
-      return apiRequest("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({ ...data, service: "Data Analytics & Insights" }),
-      });
+      return apiRequest("POST", "/api/contact", { ...data, service: "Data Analytics & Insights" });
     },
     onSuccess: () => {
       reset();

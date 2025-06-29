@@ -18,10 +18,7 @@ export default function SaaSApplicationDevelopment() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactForm) => {
-      return apiRequest("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({ ...data, service: "SaaS Application Development" }),
-      });
+      return apiRequest("POST", "/api/contact", { ...data, service: "SaaS Application Development" });
     },
     onSuccess: () => {
       reset();
