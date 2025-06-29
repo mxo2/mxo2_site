@@ -35,7 +35,7 @@ export default function Header() {
       {/* Main navigation */}
       <div className="bg-white border-b border-gray-200">
         <div className="container mx-auto px-4">
-          <div className="flex items-center h-24">
+          <div className="flex items-center h-28">
             {/* Logo with AI */}
             <div className="flex items-center">
               <Link href="/">
@@ -43,10 +43,10 @@ export default function Header() {
                   <img 
                     src={logoImage} 
                     alt="MXO2 Logo" 
-                    className="h-16 w-auto"
+                    className="h-20 w-auto"
                   />
-                  <div className="w-px h-8 bg-gray-300"></div>
-                  <span className="text-xl font-bold animate-bounce bg-gradient-to-r from-red-500 via-blue-600 to-purple-600 bg-clip-text text-transparent">AI</span>
+                  <div className="w-px h-10 bg-gray-300"></div>
+                  <span className="text-2xl font-bold animate-bounce bg-gradient-to-r from-red-500 via-blue-600 to-purple-600 bg-clip-text text-transparent">AI</span>
                 </a>
               </Link>
             </div>
