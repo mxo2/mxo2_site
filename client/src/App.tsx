@@ -19,6 +19,9 @@ import AdminLogin from "@/pages/admin/login";
 import CloudOptimization from "@/pages/services/cloud-optimization";
 import RPA from "@/pages/services/rpa";
 import LegacyModernization from "@/pages/services/legacy-modernization";
+import AIIntegration from "@/pages/services/ai-integration";
+import MicrosoftAzure from "@/pages/technology/azure";
+import AIFrameworks from "@/pages/technology/ai-frameworks";
 
 function Router() {
   return (
@@ -41,6 +44,9 @@ function Router() {
                   <Route path="/services/cloud-optimization" component={CloudOptimization} />
                   <Route path="/services/rpa" component={RPA} />
                   <Route path="/services/legacy-modernization" component={LegacyModernization} />
+                  <Route path="/services/ai-integration" component={AIIntegration} />
+                  <Route path="/technology/azure" component={MicrosoftAzure} />
+                  <Route path="/technology/ai-frameworks" component={AIFrameworks} />
                   <Route path="/industries" component={Industries} />
                   <Route path="/blog" component={Blog} />
                   <Route path="/blog/:slug" component={BlogPost} />
