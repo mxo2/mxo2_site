@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, MapPin, Clock, Shield, Users, CheckCircle, BarChart3, Eye } from "lucide-react";
+
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -35,101 +36,72 @@ export default function StreetSync() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Banner - MXO2 Branding */}
-      <section className="relative min-h-[600px] overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 -mt-40 pt-40">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
+      {/* Hero Banner with Actual Street Sync Image */}
+      <section className="relative min-h-[700px] overflow-hidden -mt-40 pt-40">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-600 via-orange-700 to-orange-800">
+          {/* Pattern overlay */}
+          <div className="absolute inset-0 opacity-20">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <defs>
+                <pattern id="street-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <circle cx="10" cy="10" r="1" fill="white" opacity="0.3"/>
+                </pattern>
+              </defs>
+              <rect width="100" height="100" fill="url(#street-pattern)" />
+            </svg>
+          </div>
         </div>
 
-        <div className="relative z-10 min-h-[600px] flex items-center">
+        <div className="relative z-10 min-h-[700px] flex items-center">
           <div className="container mx-auto px-4">
-            {/* MXO2 Branding Header */}
-            <div className="text-center mb-16">
-              <h2 className="font-montserrat text-2xl lg:text-3xl text-white mb-2">
-                Breathing Life into Businesses:
-              </h2>
-              <h3 className="font-montserrat text-xl lg:text-2xl text-blue-300 mb-1">
-                Maximum Oxygen Inc's Decade-Long
-              </h3>
-              <h3 className="font-montserrat text-xl lg:text-2xl text-blue-300">
-                Journey in IT Solutions<sup className="text-sm">TM</sup>
-              </h3>
-            </div>
-
-            {/* Main Product Content */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left Column - Product Info */}
-              <div className="text-white">
-                <Badge className="bg-emerald-600 text-white hover:bg-emerald-700 mb-6">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  GPS-Based Tracking Solution
-                </Badge>
-                
-                <h1 className="font-montserrat font-bold text-4xl lg:text-5xl leading-tight mb-6">
-                  Street Sync Tracker
+            <div className="max-w-2xl">
+              {/* Street Sync Branding */}
+              <div className="mb-8">
+                <h1 className="font-montserrat font-bold text-5xl lg:text-6xl text-white mb-4">
+                  StreetSync<sup className="text-2xl">TM</sup>
                 </h1>
                 
-                <h2 className="text-2xl lg:text-3xl text-emerald-300 mb-8 font-opensans">
-                  GPS-based Tracking Solution for Efficient Street Cleaning and Employee Management
+                <h2 className="font-montserrat text-3xl lg:text-4xl text-white font-medium mb-6">
+                  Empowering
+                  <br />
+                  Municipal Workforce
                 </h2>
+                
+                <p className="text-xl lg:text-2xl text-white/90 mb-8 font-opensans">
+                  GPS-based Tracking Solution for Efficient Street Cleaning 
+                  and Employee Management
+                </p>
 
-                {/* Key Features List */}
-                <div className="space-y-4 mb-8">
+                {/* Key Features */}
+                <div className="space-y-3 mb-8">
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-emerald-400 mt-1 flex-shrink-0" />
-                    <p className="text-lg">Real-time GPS tracking for efficient route management</p>
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-white">Real-time GPS tracking for efficient route management</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-emerald-400 mt-1 flex-shrink-0" />
-                    <p className="text-lg">Provides live updates on location and work status</p>
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-white">Provides live updates on location and work status</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-emerald-400 mt-1 flex-shrink-0" />
-                    <p className="text-lg">Monitors employee performance and time management</p>
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-white">Monitors employee performance and time management</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-emerald-400 mt-1 flex-shrink-0" />
-                    <p className="text-lg">Accurate reporting of hours worked and areas covered</p>
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-white">Accurate reporting of hours worked and areas covered</p>
                   </div>
                 </div>
                 
-                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 text-lg">
-                  Get Street Sync Demo
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </div>
-
-              {/* Right Column - Visual Representation */}
-              <div className="relative">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                  <h3 className="font-bold text-2xl text-white mb-6 text-center">
-                    Comprehensive GPS Employee Tracking for Sweepers
-                  </h3>
-                  
-                  {/* Dashboard Preview Mockup */}
-                  <div className="bg-gray-900 rounded-lg p-4 mb-4">
-                    <div className="bg-emerald-500 h-2 w-full rounded mb-2"></div>
-                    <div className="grid grid-cols-3 gap-2 mb-3">
-                      <div className="bg-blue-400 h-16 rounded flex items-center justify-center">
-                        <MapPin className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="bg-green-400 h-16 rounded flex items-center justify-center">
-                        <Users className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="bg-yellow-400 h-16 rounded flex items-center justify-center">
-                        <Clock className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
-                    <div className="bg-gray-700 h-12 rounded mb-2"></div>
-                    <div className="bg-gray-700 h-8 rounded"></div>
-                  </div>
-                  
-                  <p className="text-center text-blue-200 text-sm">
-                    Real-time dashboard for monitoring street cleaning operations
-                  </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 text-lg">
+                    Get Street Sync Demo
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4">
+                    <MapPin className="w-5 h-5 mr-2" />
+                    View Live Demo
+                  </Button>
                 </div>
               </div>
             </div>
