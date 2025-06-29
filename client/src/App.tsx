@@ -20,6 +20,7 @@ import CloudOptimization from "@/pages/services/cloud-optimization";
 import RPA from "@/pages/services/rpa";
 import LegacyModernization from "@/pages/services/legacy-modernization";
 import AIIntegration from "@/pages/services/ai-integration";
+import TradingAutomation from "@/pages/services/trading-automation";
 import MicrosoftAzure from "@/pages/technology/azure";
 import AIFrameworks from "@/pages/technology/ai-frameworks";
 
@@ -45,6 +46,7 @@ function Router() {
                   <Route path="/services/rpa" component={RPA} />
                   <Route path="/services/legacy-modernization" component={LegacyModernization} />
                   <Route path="/services/ai-integration" component={AIIntegration} />
+                  <Route path="/services/trading-automation" component={TradingAutomation} />
                   <Route path="/technology/azure" component={MicrosoftAzure} />
                   <Route path="/technology/ai-frameworks" component={AIFrameworks} />
                   <Route path="/industries" component={Industries} />

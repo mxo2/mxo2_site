@@ -32,6 +32,7 @@ export default function MegaMenu({ isOpen, onMouseEnter, onMouseLeave }: MegaMen
       services: [
         { name: "Robotic Process Automation (RPA)", href: "/services/rpa", description: "Automate repetitive tasks with intelligent bots." },
         { name: "AI Model Integration", href: "/services/ai-integration", description: "Deploy NLP, prediction, and classification models in production." },
+        { name: "Trading Automation Platform", href: "/services/trading-automation", description: "Automate trading strategies across Python, AmiBroker, TradingView, and Excel." },
         { name: "Data Analytics & Insights", href: "/services/data-analytics", description: "Derive actionable intelligence from structured and unstructured data." },
         { name: "IoT Architecture Design", href: "/services/iot-architecture", description: "Build connected systems for real-time monitoring and control." }
       ],
