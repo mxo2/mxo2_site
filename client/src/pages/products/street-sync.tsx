@@ -105,6 +105,92 @@ export default function StreetSync() {
         </div>
       </section>
 
+      {/* Product Highlights Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Product Highlights</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive GPS tracking solution transforming municipal workforce management
+            </p>
+          </div>
+
+          {/* Key Features Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Real-Time GPS</h3>
+              <p className="text-gray-600">Live location tracking with precision accuracy for all field workers</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <BarChart3 className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Analytics Dashboard</h3>
+              <p className="text-gray-600">Comprehensive reporting and performance analytics</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Workforce Management</h3>
+              <p className="text-gray-600">Complete employee monitoring and task assignment</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Geofencing</h3>
+              <p className="text-gray-600">Automated alerts and boundary monitoring</p>
+            </div>
+          </div>
+
+          {/* Product Image Showcase */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-16">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-6">StreetSync™ in Action</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Municipal Worker Equipped</h4>
+                      <p className="text-gray-600">Each field worker carries GPS-enabled devices for continuous monitoring</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Safety Compliance</h4>
+                      <p className="text-gray-600">High-visibility gear with integrated tracking technology</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Professional Standards</h4>
+                      <p className="text-gray-600">Maintaining municipal service quality with digital oversight</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:order-first">
+                <img 
+                  src={streetSyncImage} 
+                  alt="StreetSync Municipal Worker with GPS Tracking" 
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Street Sync Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
