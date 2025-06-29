@@ -37,21 +37,21 @@ export default function Header() {
         <div className="container mx-auto px-4">
           <div className="flex items-center h-24">
             {/* Logo with AI */}
-            <div className="flex items-center mr-8">
+            <div className="flex items-center">
               <Link href="/">
                 <a className="flex items-center space-x-2">
                   <img 
                     src={logoImage} 
                     alt="MXO2 Logo" 
-                    className="h-16 w-auto"
+                    className="h-20 w-auto"
                   />
-                  <span className="text-2xl font-bold text-blue-600 animate-bounce">AI</span>
+                  <span className="text-lg font-bold text-blue-600 animate-bounce">AI</span>
                 </a>
               </Link>
             </div>
 
-            {/* Desktop Navigation - Full width */}
-            <nav className="hidden lg:flex items-center justify-between flex-1">
+            {/* Desktop Navigation - Centered */}
+            <nav className="hidden lg:flex items-center justify-center flex-1">
               <div className="flex items-center space-x-12">
                 {navigation.map((item) => (
                   <div key={item.name} className="relative">
@@ -78,14 +78,14 @@ export default function Header() {
                   </div>
                 ))}
               </div>
-              
-              {/* CTA Buttons */}
-              <div className="flex items-center space-x-4">
-                <Button className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-bold text-lg px-8 py-3">
-                  Talk to us
-                </Button>
-              </div>
             </nav>
+
+            {/* CTA Buttons */}
+            <div className="hidden lg:flex items-center space-x-4">
+              <Button className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-bold text-lg px-8 py-3">
+                Talk to us
+              </Button>
+            </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
