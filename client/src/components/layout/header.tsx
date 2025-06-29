@@ -55,7 +55,7 @@ export default function Header() {
               <div key={item.name} className="relative">
                 {item.hasMegaMenu ? (
                   <button
-                    className="flex items-center space-x-1 text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-medium transition-colors py-6 group"
+                    className="flex items-center space-x-1 text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-semibold text-sm uppercase tracking-wide transition-colors py-6 group"
                     onMouseEnter={() => setIsMegaMenuOpen(true)}
                     onMouseLeave={() => setIsMegaMenuOpen(false)}
                   >
@@ -65,7 +65,7 @@ export default function Header() {
                 ) : (
                   <Link href={item.href}>
                     <a
-                      className={`text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-medium transition-colors py-6 ${
+                      className={`text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-semibold text-sm uppercase tracking-wide transition-colors py-6 ${
                         location === item.href ? "text-[hsl(354,87%,51%)]" : ""
                       }`}
                     >
