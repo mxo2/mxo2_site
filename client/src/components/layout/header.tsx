@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import MegaMenu from "./mega-menu";
-import logoImage from "@assets/mxo2_logo_transparent.svg";
+import logoImage from "@assets/logo_1751173873529.png";
 
 export default function Header() {
   const [location] = useLocation();
@@ -51,7 +51,7 @@ export default function Header() {
                   <img
                     src={logoImage}
                     alt="MXO2 Logo"
-                    className="h-20 w-auto"
+                    className="h-24 w-auto"
                   />
                   <div className="w-px h-10 bg-gray-300"></div>
                   <span className="text-2xl font-bold animate-bounce bg-gradient-to-r from-red-500 via-blue-600 to-purple-600 bg-clip-text text-transparent">
