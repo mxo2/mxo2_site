@@ -35,6 +35,7 @@ import CRM from "@/pages/products/crm";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsConditions from "@/pages/terms-conditions";
 import CookiesPolicy from "@/pages/cookies-policy";
+import Partnership from "@/pages/partnership";
 
 function Router() {
   return (
@@ -69,6 +70,7 @@ function Router() {
         <Route path="/products/industrial-erp" component={IndustrialERP} />
         <Route path="/products/crm" component={CRM} />
                   <Route path="/industries" component={Industries} />
+                  <Route path="/partnership" component={Partnership} />
                   <Route path="/privacy-policy" component={PrivacyPolicy} />
                   <Route path="/terms-conditions" component={TermsConditions} />
                   <Route path="/cookies-policy" component={CookiesPolicy} />
