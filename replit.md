@@ -129,6 +129,14 @@ Changelog:
   - Sample enterprise content including Azure partnerships and AI automation
   - Page title changed from "Partnership Insights" to "Blog" per user request
   - Navigation menu updated from "Partnership" to "Blogs" for clarity
+- June 30, 2025. **MXO2 WORKSPACE PRODUCT PAGE**: New business communication platform:
+  - Complete product page with title "Oxygen to your MX Record"
+  - Adapted SmarterMail content structure for MXO2 Workspace branding
+  - Enterprise email server, calendaring, chat, video conferencing features
+  - Cross-platform support (Linux, Windows, Docker, Cloud)
+  - Security & compliance section (SOX, HIPAA, GDPR)
+  - Added to Products mega menu as flagship offering
+  - Page accessible at /workspace route
 
 ## Current Implementation Status
 
