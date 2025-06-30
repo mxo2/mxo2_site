@@ -3,7 +3,7 @@ interface FrappeLead {
   email_id: string;
   company_name?: string;
   mobile_no?: string;
-  source: string;
+  source?: string;
   status: string;
   custom_service_interest?: string;
   custom_message?: string;
@@ -58,7 +58,6 @@ export class FrappeCRMService {
       email_id: formData.email,
       company_name: formData.company || '',
       mobile_no: formData.phone || '',
-      source: 'Website Contact Form',
       status: 'Lead', // Default status for new leads
       custom_service_interest: formData.service || '',
       custom_message: formData.message || '',
@@ -78,7 +77,6 @@ Additional Notes: ${chatData.notes || 'None'}`;
       email_id: chatData.email,
       company_name: '',
       mobile_no: '',
-      source: 'Website Chatbot',
       status: 'Lead',
       custom_service_interest: servicesText,
       custom_message: notes,
