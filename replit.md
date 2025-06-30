@@ -128,6 +128,7 @@ Changelog:
   - API endpoints for blog management and content retrieval
   - Sample enterprise content including Azure partnerships and AI automation
   - Page title changed from "Partnership Insights" to "Blog" per user request
+  - Navigation menu updated from "Partnership" to "Blogs" for clarity
 
 ## Current Implementation Status
 
