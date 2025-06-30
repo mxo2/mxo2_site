@@ -98,7 +98,14 @@ Add additional custom fields by modifying the mapping functions in `server/frapp
 
 ### Common Issues:
 
-1. **Authentication Errors (401/403)**:
+1. **Permission Error (403) - "User Guest does not have doctype access"**:
+   - **CRITICAL**: The API user needs Lead creation permissions
+   - Go to https://crm.mxo2.com/app/user
+   - Find the user associated with your API key
+   - Add "Lead" permissions: Create, Read, Write
+   - Ensure the role has "Lead" document type access
+
+2. **Authentication Errors (401/403)**:
    - Check API credentials are correct
    - Verify user permissions in Frappe CRM
    - Ensure API access is enabled for the user
