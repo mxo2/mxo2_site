@@ -161,6 +161,9 @@ Changelog:
   - Main blog page (/blog) now displays our comprehensive blog posts
   - All navigation links properly connect to actual blog post content
   - Eliminated duplicate blog systems for streamlined user experience
+  - Removed unused partnership blog routes and sample data
+  - Latest insights from home page now sync perfectly with blog content
+  - Clean separation between functional blog system and unused legacy code
 
 ## Current Implementation Status
 
