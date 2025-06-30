@@ -193,6 +193,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form with Frappe CRM integration
   app.post("/api/contact", async (req, res) => {
     try {
+      console.log("Raw request body:", req.body);
       const validatedData = contactFormSchema.parse(req.body);
       
       console.log("Contact form submission:", validatedData);

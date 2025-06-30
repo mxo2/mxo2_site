@@ -81,16 +81,15 @@ export default function Header() {
                         <ChevronDown className="w-5 h-5 group-hover:rotate-180 transition-transform" />
                       </button>
                     ) : (
-                      <Link href={item.href}>
-                        <a
-                          className={`text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-bold text-base uppercase tracking-wide transition-colors py-6 ${
-                            location === item.href
-                              ? "text-[hsl(354,87%,51%)]"
-                              : ""
-                          }`}
-                        >
-                          {item.name}
-                        </a>
+                      <Link
+                        href={item.href}
+                        className={`text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-bold text-base uppercase tracking-wide transition-colors py-6 ${
+                          location === item.href
+                            ? "text-[hsl(354,87%,51%)]"
+                            : ""
+                        }`}
+                      >
+                        {item.name}
                       </Link>
                     )}
                   </div>
@@ -127,15 +126,15 @@ export default function Header() {
             <div className="lg:hidden border-t border-gray-200 py-4">
               <div className="space-y-4">
                 {navigation.map((item) => (
-                  <Link key={item.name} href={item.href}>
-                    <a
-                      className={`block text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-medium transition-colors ${
-                        location === item.href ? "text-[hsl(354,87%,51%)]" : ""
-                      }`}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.name}
-                    </a>
+                  <Link 
+                    key={item.name} 
+                    href={item.href}
+                    className={`block text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-medium transition-colors ${
+                      location === item.href ? "text-[hsl(354,87%,51%)]" : ""
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
                   </Link>
                 ))}
                 <div className="pt-4 space-y-2">
