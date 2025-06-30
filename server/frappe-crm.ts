@@ -89,7 +89,6 @@ Additional Notes: ${chatData.notes || 'None'}`;
       const leadData = this.mapContactFormToLead(formData);
       
       console.log('Sending lead to Frappe CRM:', leadData);
-      console.log('Auth headers:', this.getAuthHeaders());
 
       const response = await fetch(`${this.baseUrl}/api/resource/Lead`, {
         method: 'POST',
