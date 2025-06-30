@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { 
   Search, 
@@ -41,18 +40,124 @@ interface BlogPost {
   featured: boolean;
 }
 
+// Our comprehensive blog posts data
+const blogPostsData: BlogPost[] = [
+  {
+    id: 1,
+    title: "AI-Powered Digital Transformation: How Machine Learning is Revolutionizing Enterprise Operations",
+    slug: "ai-powered-digital-transformation",
+    excerpt: "Discover how artificial intelligence and machine learning technologies are reshaping enterprise operations, driving efficiency, and creating competitive advantages in today's digital economy.",
+    featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
+    author: {
+      name: "Dr. Sarah Chen",
+      title: "AI Solutions Architect, MXO2",
+      avatar: null
+    },
+    category: {
+      name: "AI & Innovation",
+      color: "#3B82F6"
+    },
+    tags: [
+      { name: "Artificial Intelligence", slug: "ai" },
+      { name: "Machine Learning", slug: "ml" },
+      { name: "Digital Transformation", slug: "digital-transformation" },
+      { name: "Enterprise", slug: "enterprise" }
+    ],
+    readTime: 12,
+    publishedAt: "2025-06-30T10:00:00Z",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "AI-Powered Cloud Migration: Reducing Costs by 40% with Intelligent Automation",
+    slug: "ai-cloud-migration-automation",
+    excerpt: "Learn how AI-driven automation transforms cloud migration strategies, delivering significant cost savings and improved performance through intelligent workload optimization.",
+    featuredImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
+    author: {
+      name: "Michael Rodriguez",
+      title: "Cloud Migration Specialist, MXO2",
+      avatar: null
+    },
+    category: {
+      name: "Cloud Migration",
+      color: "#10B981"
+    },
+    tags: [
+      { name: "Cloud Migration", slug: "cloud-migration" },
+      { name: "AI Automation", slug: "ai-automation" },
+      { name: "Cost Optimization", slug: "cost-optimization" },
+      { name: "Infrastructure", slug: "infrastructure" }
+    ],
+    readTime: 15,
+    publishedAt: "2025-06-28T10:00:00Z",
+    featured: false
+  },
+  {
+    id: 3,
+    title: "Robotic Process Automation: Transforming Manufacturing Operations with AI",
+    slug: "rpa-manufacturing-ai",
+    excerpt: "Explore how intelligent RPA solutions are revolutionizing manufacturing processes, improving quality control, and driving operational efficiency through advanced automation technologies.",
+    featuredImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop",
+    author: {
+      name: "Jennifer Walsh",
+      title: "Robotics Engineering Lead, MXO2",
+      avatar: null
+    },
+    category: {
+      name: "Robotics & AI",
+      color: "#8B5CF6"
+    },
+    tags: [
+      { name: "Robotic Process Automation", slug: "rpa" },
+      { name: "Manufacturing", slug: "manufacturing" },
+      { name: "AI Automation", slug: "ai-automation" },
+      { name: "Industry 4.0", slug: "industry-40" }
+    ],
+    readTime: 18,
+    publishedAt: "2025-06-25T10:00:00Z",
+    featured: false
+  },
+  {
+    id: 4,
+    title: "Multi-Cloud Strategy: How AI Orchestration Optimizes Workload Distribution",
+    slug: "ai-multi-cloud-orchestration",
+    excerpt: "Discover how AI-powered multi-cloud orchestration delivers optimal performance and cost efficiency by intelligently distributing workloads across multiple cloud providers.",
+    featuredImage: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=400&fit=crop",
+    author: {
+      name: "David Kumar",
+      title: "Multi-Cloud Solutions Architect, MXO2",
+      avatar: null
+    },
+    category: {
+      name: "AI Solutions",
+      color: "#F59E0B"
+    },
+    tags: [
+      { name: "Multi-Cloud", slug: "multi-cloud" },
+      { name: "AI Orchestration", slug: "ai-orchestration" },
+      { name: "Cloud Strategy", slug: "cloud-strategy" },
+      { name: "Cost Optimization", slug: "cost-optimization" }
+    ],
+    readTime: 16,
+    publishedAt: "2025-06-22T10:00:00Z",
+    featured: false
+  }
+];
+
 export default function Blog() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Fetch blog posts
-  const { data: blogPosts = [], isLoading } = useQuery<BlogPost[]>({
-    queryKey: ['/api/partnership/blogs'],
-  });
+  // Use our static blog posts data
+  const blogPosts = blogPostsData;
+  const isLoading = false;
 
-  // Fetch categories
-  const { data: categories = [] } = useQuery<Array<{id: number, name: string}>>({
-    queryKey: ['/api/partnership/categories'],
-  });
+  // Static categories based on our blog posts
+  const categories = [
+    { id: 1, name: "AI & Innovation" },
+    { id: 2, name: "Cloud Migration" },
+    { id: 3, name: "Robotics & AI" },
+    { id: 4, name: "AI Solutions" }
+  ];
 
   // Get recent posts for sidebar (latest 5)
   const recentPosts = blogPosts.slice(0, 5);
