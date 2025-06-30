@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import MegaMenu from "./mega-menu";
+import { ContactModal } from "@/components/ui/contact-modal";
 import logoImage from "@assets/logo_1751173873529.png";
 
 export default function Header() {
@@ -99,9 +100,11 @@ export default function Header() {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Button className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-bold text-base px-8 py-3">
-                Talk to us
-              </Button>
+              <ContactModal>
+                <Button className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-bold text-base px-8 py-3">
+                  Talk to us
+                </Button>
+              </ContactModal>
             </div>
 
             {/* Mobile menu button */}
@@ -136,15 +139,11 @@ export default function Header() {
                   </Link>
                 ))}
                 <div className="pt-4 space-y-2">
-                  <Button
-                    variant="outline"
-                    className="w-full border-[hsl(354,87%,51%)] text-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,51%)] hover:text-white font-opensans font-medium"
-                  >
-                    Login
-                  </Button>
-                  <Button className="w-full bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-medium">
-                    Get Started
-                  </Button>
+                  <ContactModal>
+                    <Button className="w-full bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-medium">
+                      Talk to us
+                    </Button>
+                  </ContactModal>
                 </div>
               </div>
             </div>
