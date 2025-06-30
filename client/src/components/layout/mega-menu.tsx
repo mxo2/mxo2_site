@@ -17,7 +17,7 @@ export default function MegaMenu({ isOpen, activeMenu, onMouseEnter, onMouseLeav
   // Products data
   const products = [
     {
-      name: "MXO2 Workspace",
+      name: "mxO₂ Workspace",
       href: "/workspace",
       description: "Complete business communication platform with email, calendar, and collaboration tools",
       icon: "💼"

@@ -63,7 +63,7 @@ export default function CRM() {
                 </Badge>
                 
                 <h1 className="font-montserrat font-bold text-5xl lg:text-6xl text-white mb-4 leading-tight">
-                  MXO2 CRM
+                  mx<span className="text-cyan-300">O₂</span> CRM
                 </h1>
                 
                 <h2 className="font-montserrat text-2xl lg:text-3xl text-white font-medium mb-6">
@@ -449,7 +449,7 @@ export default function CRM() {
 
             <div className="grid lg:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose MXO2 CRM?</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose mx<span className="text-cyan-600">O₂</span> CRM?</h3>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-600" />

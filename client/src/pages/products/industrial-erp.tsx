@@ -409,7 +409,7 @@ export default function IndustrialERP() {
 
             <div className="grid lg:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose MXO2 Industrial ERP?</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose mx<span className="text-cyan-600">O₂</span> Industrial ERP?</h3>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-600" />

@@ -56,7 +56,7 @@ export default function Workspace() {
   ];
 
   const integrations = [
-    { name: "Cloud Storage", items: ["Dropbox", "Google Drive", "OneDrive", "MXO2 File Storage"] },
+    { name: "Cloud Storage", items: ["Dropbox", "Google Drive", "OneDrive", "mxO₂ File Storage"] },
     { name: "Communication", items: ["Live Chat", "Video Conferencing", "Voice Calls"] },
     { name: "AI Tools", items: ["OpenAI ChatGPT", "Document Analysis", "Smart Automation"] },
     { name: "Document Collaboration", items: ["Real-time Editing", "Version Control", "Collaborative Workspace"] },
@@ -83,7 +83,7 @@ export default function Workspace() {
                   <span className="block text-cyan-300">MX Record</span>
                 </h1>
                 <p className="text-xl lg:text-2xl text-blue-100 font-opensans mb-8 leading-relaxed">
-                  MXO2 Workspace is the complete business communication platform that powers your organization with enterprise-grade email, collaboration, and productivity tools.
+                  mx<span className="text-cyan-300">O₂</span> Workspace is the complete business communication platform that powers your organization with enterprise-grade email, collaboration, and productivity tools.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <ContactModal>
@@ -354,7 +354,7 @@ export default function Workspace() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-montserrat">
-                The MXO2 Marketplace
+                The mx<span className="text-cyan-600">O₂</span> Marketplace
               </h2>
               <p className="text-xl text-gray-600 font-opensans max-w-4xl mx-auto">
                 Expand your workspace capabilities with our marketplace of integrations and add-ons. 

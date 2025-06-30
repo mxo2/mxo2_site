@@ -468,7 +468,7 @@ export default function Industries() {
         title="Industry Transformation Guide"
         description="Comprehensive guide to digital transformation across healthcare, manufacturing, finance, retail, government, and technology sectors."
         downloadUrl="/downloads/mxo2-industry-transformation-guide.pdf"
-        fileName="MXO2-Industry-Transformation-Guide.pdf"
+        fileName="mxO2-Industry-Transformation-Guide.pdf"
       />
     </div>
   );

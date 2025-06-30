@@ -306,7 +306,7 @@ export default function TermsConditions() {
               <div className="bg-red-50 border border-red-200 rounded-lg p-6">
                 <div className="space-y-4">
                   <p className="text-gray-700 text-sm">
-                    <strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL MXO2 BE LIABLE FOR:</strong>
+                    <strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL mxO₂ BE LIABLE FOR:</strong>
                   </p>
                   <ul className="text-gray-700 space-y-2 text-sm">
                     <li>• INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES</li>
@@ -317,7 +317,7 @@ export default function TermsConditions() {
                   </ul>
                   <p className="text-gray-700 text-sm mt-4">
                     <strong>OUR TOTAL LIABILITY FOR ALL CLAIMS ARISING FROM OR RELATING TO THESE TERMS OR OUR SERVICES SHALL NOT EXCEED 
-                    THE TOTAL AMOUNT PAID BY YOU TO MXO2 IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.</strong>
+                    THE TOTAL AMOUNT PAID BY YOU TO mxO₂ IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.</strong>
                   </p>
                 </div>
               </div>

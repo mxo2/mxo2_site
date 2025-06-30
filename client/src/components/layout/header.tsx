@@ -48,18 +48,16 @@ export default function Header() {
           <div className="flex items-center h-28">
             {/* Logo with AI */}
             <div className="flex items-center">
-              <Link href="/">
-                <a className="flex items-center space-x-3">
-                  <img
-                    src={logoImage}
-                    alt="MXO2 Logo"
-                    className="h-20 w-auto"
-                  />
-                  <div className="w-px h-10 bg-gray-300"></div>
-                  <span className="text-xl font-bold animate-bounce bg-gradient-to-r from-red-500 via-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    AI
-                  </span>
-                </a>
+              <Link href="/" className="flex items-center space-x-3">
+                <img
+                  src={logoImage}
+                  alt="mxO2 Logo"
+                  className="h-20 w-auto"
+                />
+                <div className="w-px h-10 bg-gray-300"></div>
+                <span className="text-xl font-bold animate-bounce bg-gradient-to-r from-red-500 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  AI
+                </span>
               </Link>
             </div>
 

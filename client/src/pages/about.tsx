@@ -52,10 +52,10 @@ export default function About() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-montserrat">
-                Global Enterprises Trust MXO2
+                Global Enterprises Trust mx<span className="text-cyan-600">O₂</span>
               </h2>
               <p className="text-xl lg:text-2xl text-gray-600 font-opensans max-w-4xl mx-auto leading-relaxed">
-                Recognized among <strong>CIO Applications' Top 10 AI Solution Providers</strong>, MXO2 delivers enterprise-grade 
+                Recognized among <strong>CIO Applications' Top 10 AI Solution Providers</strong>, mx<span className="text-cyan-600">O₂</span> delivers enterprise-grade 
                 technology solutions that transform business operations and drive sustainable growth.
               </p>
             </div>
@@ -99,7 +99,7 @@ export default function About() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <h3 className="text-3xl font-bold text-gray-900 mb-6 font-montserrat">
-                    Why Global Leaders Choose MXO2
+                    Why Global Leaders Choose mx<span className="text-cyan-600">O₂</span>
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
@@ -234,7 +234,7 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-12 font-montserrat text-center">
-              Why Organizations Choose MXO2
+              Why Organizations Choose mx<span className="text-cyan-600">O₂</span>
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
@@ -522,7 +522,7 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-montserrat">
-              MXO2 Technology Solutions Portfolio
+              mx<span className="text-cyan-600">O₂</span> Technology Solutions Portfolio
             </h2>
             <p className="text-xl text-gray-600 mb-12 font-opensans">
               Comprehensive technology services covering AI, cloud migration, automation, and digital transformation

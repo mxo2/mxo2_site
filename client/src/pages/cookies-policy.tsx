@@ -453,7 +453,7 @@ export default function CookiesPolicy() {
                   <div className="flex items-start text-gray-700">
                     <MapPin className="w-4 h-4 mr-2 mt-0.5" />
                     <span className="text-sm">
-                      MXO2 Technologies Private Limited<br />
+                      mxO₂ Technologies Private Limited<br />
                       Privacy Department<br />
                       [Your Business Address]
                     </span>
