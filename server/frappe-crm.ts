@@ -58,7 +58,7 @@ export class FrappeCRMService {
       email_id: formData.email,
       company_name: formData.company || '',
       mobile_no: formData.phone || '',
-      status: 'Lead', // Default status for new leads
+      status: 'Open', // Set as Open for immediate follow-up
       custom_service_interest: formData.service || '',
       custom_message: formData.message || '',
       lead_owner: 'sam@mxo2.com' // Assign to current user for visibility
@@ -77,7 +77,7 @@ Additional Notes: ${chatData.notes || 'None'}`;
       email_id: chatData.email,
       company_name: '',
       mobile_no: '',
-      status: 'Lead',
+      status: 'Open',
       custom_service_interest: servicesText,
       custom_message: notes,
       lead_owner: 'sam@mxo2.com'
