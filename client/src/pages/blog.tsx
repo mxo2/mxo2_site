@@ -1,183 +1,319 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import BlogCard from "@/components/ui/blog-card";
-import { Card, CardContent } from "@/components/ui/card";
-import { type BlogPost } from "@shared/schema";
+import { Link } from "wouter";
+import { 
+  Search, 
+  Calendar, 
+  User, 
+  Clock, 
+  ChevronRight, 
+  Linkedin, 
+  Twitter, 
+  Facebook, 
+  Link as LinkIcon,
+  Copy
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+
+interface BlogPost {
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string;
+  featuredImage: string | null;
+  author: {
+    name: string;
+    title: string;
+    avatar: string | null;
+  } | null;
+  category: {
+    name: string;
+    color: string;
+  } | null;
+  tags: Array<{
+    name: string;
+    slug: string;
+  }>;
+  readTime: number;
+  publishedAt: string;
+  featured: boolean;
+}
 
 export default function Blog() {
-  const { data: posts, isLoading } = useQuery<BlogPost[]>({
-    queryKey: ["/api/blog"],
-    enabled: true,
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Fetch blog posts
+  const { data: blogPosts = [], isLoading } = useQuery<BlogPost[]>({
+    queryKey: ['/api/partnership/blogs'],
   });
 
-  // Fallback blog posts based on real content
-  const fallbackPosts: BlogPost[] = [
-    {
-      id: 1,
-      title: "Revolutionizing Retail Trading: Inside MXO2's Powerful Multi-Platform Algo Trading System",
-      excerpt: "Discover how our algorithmic trading platform transforms retail trading with advanced automation and real-time analytics capabilities.",
-      slug: "revolutionizing-retail-trading",
-      content: "Our algorithmic trading system represents a breakthrough in retail trading technology...",
-      featuredImage: null,
-      authorId: 1,
-      published: true,
-      createdAt: new Date("2025-05-24"),
-      updatedAt: new Date("2025-05-24"),
-    },
-    {
-      id: 2,
-      title: "Smart Streets of Jaisalmer: How StreetSync Is Powering GPS-Based Municipal Workforce Management",
-      excerpt: "Explore how StreetSync revolutionizes municipal operations with GPS tracking and workforce optimization in collaboration with government officials.",
-      slug: "smart-streets-jaisalmer-streetsync",
-      content: "StreetSync was implemented under a government directive...",
-      featuredImage: null,
-      authorId: 1,
-      published: true,
-      createdAt: new Date("2025-05-24"),
-      updatedAt: new Date("2025-05-24"),
-    },
-    {
-      id: 3,
-      title: "Empowering Families and Students with AI: The Future of Parenting and Learning Begins at Parallel Campus",
-      excerpt: "Learn how AI transforms education through personalized learning experiences and intelligent support systems for modern families.",
-      slug: "empowering-families-students-ai-parallel-campus",
-      content: "Parallel Campus began as a robust School ERP platform...",
-      featuredImage: null,
-      authorId: 1,
-      published: true,
-      createdAt: new Date("2025-05-24"),
-      updatedAt: new Date("2025-05-24"),
-    },
-    {
-      id: 4,
-      title: "The Future of Cloud Infrastructure: Hybrid Solutions for Enterprise Growth",
-      excerpt: "Understanding how hybrid cloud solutions provide the flexibility and scalability needed for modern enterprise operations.",
-      slug: "future-cloud-infrastructure-hybrid-solutions",
-      content: "As businesses continue to evolve in the digital age...",
-      featuredImage: null,
-      authorId: 1,
-      published: true,
-      createdAt: new Date("2025-05-20"),
-      updatedAt: new Date("2025-05-20"),
-    },
-    {
-      id: 5,
-      title: "AI-Powered Business Process Automation: ROI and Implementation Strategies",
-      excerpt: "A comprehensive guide to implementing AI and RPA solutions that deliver measurable business value and operational efficiency.",
-      slug: "ai-powered-business-process-automation",
-      content: "Business process automation has evolved significantly...",
-      featuredImage: null,
-      authorId: 1,
-      published: true,
-      createdAt: new Date("2025-05-18"),
-      updatedAt: new Date("2025-05-18"),
-    },
-    {
-      id: 6,
-      title: "Cybersecurity in the Age of Remote Work: Best Practices and Technologies",
-      excerpt: "Essential cybersecurity strategies and technologies to protect your business in an increasingly connected and remote world.",
-      slug: "cybersecurity-remote-work-best-practices",
-      content: "The shift to remote work has fundamentally changed...",
-      featuredImage: null,
-      authorId: 1,
-      published: true,
-      createdAt: new Date("2025-05-15"),
-      updatedAt: new Date("2025-05-15"),
-    }
-  ];
+  // Fetch categories
+  const { data: categories = [] } = useQuery<Array<{id: number, name: string}>>({
+    queryKey: ['/api/partnership/categories'],
+  });
 
-  const displayPosts = posts || fallbackPosts;
+  // Get recent posts for sidebar (latest 5)
+  const recentPosts = blogPosts.slice(0, 5);
+
+  // Featured post (first post)
+  const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0];
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(window.location.href);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white">
+        <div className="animate-pulse">
+          <div className="h-64 bg-gray-200"></div>
+          <div className="max-w-7xl mx-auto px-4 py-8">
+            <div className="grid lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2 space-y-6">
+                <div className="h-8 bg-gray-200 rounded w-3/4"></div>
+                <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                <div className="space-y-3">
+                  <div className="h-4 bg-gray-200 rounded"></div>
+                  <div className="h-4 bg-gray-200 rounded"></div>
+                  <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="h-6 bg-gray-200 rounded w-1/2"></div>
+                {[1, 2, 3].map(i => (
+                  <div key={i} className="h-16 bg-gray-200 rounded"></div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!featuredPost) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">No Blog Posts Available</h2>
+          <p className="text-gray-600">Check back soon for the latest insights and updates.</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="py-20">
-      {/* Hero Section */}
-      <section className="bg-navy text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="font-montserrat font-bold text-4xl lg:text-6xl mb-6">
-              Insights & <span className="text-cyan">Resources</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
-              Stay informed with the latest trends, best practices, and thought leadership in technology and digital transformation.
-            </p>
+    <div className="min-h-screen bg-white">
+      {/* Skip to main content link */}
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded">
+        Skip to main content
+      </a>
+
+      {/* Category Badge */}
+      <div className="bg-[hsl(208,70%,56%)] text-white py-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link 
+            href="/blog" 
+            className="text-sm font-medium hover:underline"
+          >
+            {featuredPost.category?.name || "Blog Insights"}
+          </Link>
+        </div>
+      </div>
+
+      {/* Main Article Header */}
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+            {featuredPost.title}
+          </h1>
+          
+          {/* Article Meta */}
+          <div className="flex flex-wrap items-center gap-4 mb-8 text-sm text-gray-600">
+            <time dateTime={featuredPost.publishedAt}>
+              {formatDate(featuredPost.publishedAt)}
+            </time>
+            {featuredPost.author && (
+              <>
+                <span>by</span>
+                <span className="font-medium">
+                  {featuredPost.author.name}{featuredPost.author.title && `, ${featuredPost.author.title}`}
+                </span>
+              </>
+            )}
+          </div>
+
+          {/* Social Sharing */}
+          <div className="flex items-center gap-3 mb-8">
+            <Button
+              variant="outline"
+              size="sm"
+              className="p-2"
+              onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, '_blank')}
+            >
+              <Linkedin className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="p-2"
+              onClick={() => window.open(`https://twitter.com/share?url=${window.location.href}&text=${featuredPost.title}`, '_blank')}
+            >
+              <Twitter className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="p-2"
+              onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank')}
+            >
+              <Facebook className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="p-2"
+              onClick={copyToClipboard}
+            >
+              <Copy className="w-4 h-4" />
+            </Button>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Featured Post */}
-      {displayPosts.length > 0 && (
-        <section className="py-20 bg-light-gray">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="font-montserrat font-bold text-3xl lg:text-4xl text-navy mb-6 uppercase">
-                Featured Article
-              </h2>
-            </div>
-            
-            <Card className="bg-white shadow-lg overflow-hidden max-w-4xl mx-auto border-0">
-              <div className="grid lg:grid-cols-2">
-                <div className="bg-gradient-to-br from-navy to-cyan flex items-center justify-center p-12">
-                  <div className="text-center text-white">
-                    <div className="w-24 h-24 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <span className="text-3xl font-bold">AI</span>
-                    </div>
-                    <h3 className="font-montserrat font-bold text-2xl">Featured Story</h3>
-                  </div>
-                </div>
-                <CardContent className="p-8">
-                  <h3 className="font-montserrat font-bold text-2xl text-navy mb-4">
-                    {displayPosts[0].title}
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {displayPosts[0].excerpt}
-                  </p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-6">
-                    <span>Published: {new Date(displayPosts[0].createdAt).toLocaleDateString()}</span>
-                  </div>
-                  <a 
-                    href={`/blog/${displayPosts[0].slug}`}
-                    className="font-montserrat font-semibold text-cyan hover:text-navy transition-colors uppercase text-sm"
-                  >
-                    Read Full Article →
-                  </a>
-                </CardContent>
-              </div>
-            </Card>
-          </div>
-        </section>
+      {/* Featured Image */}
+      {featuredPost.featuredImage && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <img 
+            src={featuredPost.featuredImage} 
+            alt={featuredPost.title}
+            className="w-full h-96 object-cover rounded-lg shadow-lg"
+          />
+        </div>
       )}
 
-      {/* Blog Posts Grid */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-montserrat font-bold text-3xl lg:text-4xl text-navy mb-6 uppercase">
-              Latest Articles
-            </h2>
+      {/* Newsletter Subscription Banner */}
+      <div className="bg-[hsl(354,87%,51%)] text-white mb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-lg font-semibold mb-1">Subscribe to the MXO2 Insights Newsletter</h3>
+              <p className="text-sm opacity-90">Stay updated with the latest technology insights and industry trends</p>
+            </div>
+            <Button 
+              variant="secondary" 
+              className="bg-white text-[hsl(354,87%,51%)] hover:bg-gray-100 font-medium"
+            >
+              Subscribe now
+            </Button>
           </div>
-          
-          {isLoading ? (
-            <div className="grid lg:grid-cols-3 gap-8">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="bg-white rounded-xl shadow-lg overflow-hidden animate-pulse">
-                  <div className="bg-gray-300 h-48"></div>
-                  <div className="p-6">
-                    <div className="h-4 bg-gray-300 rounded mb-4"></div>
-                    <div className="h-3 bg-gray-300 rounded mb-2"></div>
-                    <div className="h-3 bg-gray-300 rounded mb-4"></div>
-                    <div className="h-3 bg-gray-300 rounded w-1/3"></div>
+        </div>
+      </div>
+
+      {/* Main Content Area */}
+      <div id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="grid lg:grid-cols-3 gap-12">
+          {/* Article Content */}
+          <div className="lg:col-span-2">
+            <div className="prose prose-lg max-w-none">
+              <div 
+                className="text-gray-700 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: featuredPost.excerpt }}
+              />
+              
+              {/* Article Tags */}
+              {featuredPost.tags && featuredPost.tags.length > 0 && (
+                <div className="mt-12 pt-8 border-t border-gray-200">
+                  <h3 className="text-sm font-semibold text-gray-900 mb-4">Tags:</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {featuredPost.tags.map((tag) => (
+                      <Link 
+                        key={tag.slug} 
+                        href={`/blog?tag=${tag.slug}`}
+                        className="inline-block"
+                      >
+                        <Badge 
+                          variant="secondary" 
+                          className="hover:bg-gray-200 cursor-pointer"
+                        >
+                          {tag.name}
+                        </Badge>
+                      </Link>
+                    ))}
                   </div>
                 </div>
-              ))}
+              )}
             </div>
-          ) : (
-            <div className="grid lg:grid-cols-3 gap-8">
-              {displayPosts.slice(1).map((post) => (
-                <BlogCard key={post.id} post={post} />
-              ))}
+          </div>
+
+          {/* Sidebar */}
+          <aside className="lg:col-span-1">
+            {/* Recent Posts */}
+            <div className="bg-gray-50 rounded-lg p-6 mb-8">
+              <h3 className="font-bold text-lg text-gray-900 mb-6">Recent Posts</h3>
+              <div className="space-y-6">
+                {recentPosts.map((post) => (
+                  <article key={post.id} className="group">
+                    <div className="flex items-start space-x-3">
+                      {post.featuredImage && (
+                        <img 
+                          src={post.featuredImage} 
+                          alt={post.title}
+                          className="w-16 h-16 object-cover rounded flex-shrink-0"
+                        />
+                      )}
+                      <div className="flex-1 min-w-0">
+                        {post.category && (
+                          <div className="text-xs font-medium text-[hsl(208,70%,56%)] mb-1">
+                            {post.category.name}
+                          </div>
+                        )}
+                        <Link 
+                          href={`/blog/${post.slug}`}
+                          className="block"
+                        >
+                          <h4 className="text-sm font-semibold text-gray-900 group-hover:text-[hsl(354,87%,51%)] line-clamp-2 mb-1">
+                            {post.title}
+                          </h4>
+                        </Link>
+                        <time className="text-xs text-gray-500">
+                          {formatDate(post.publishedAt)}
+                        </time>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
-          )}
+
+            {/* Categories */}
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="font-bold text-lg text-gray-900 mb-6">Categories</h3>
+              <div className="space-y-2">
+                {categories.map((category) => (
+                  <Link 
+                    key={category.id} 
+                    href={`/blog?category=${category.name}`}
+                    className="block text-sm text-gray-700 hover:text-[hsl(354,87%,51%)] hover:bg-white px-3 py-2 rounded transition-colors"
+                  >
+                    {category.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </aside>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
