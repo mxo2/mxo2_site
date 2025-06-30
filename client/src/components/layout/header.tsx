@@ -16,7 +16,7 @@ export default function Header() {
     { name: "Solutions", href: "/solutions", hasMegaMenu: true },
     { name: "Products", href: "/products", hasMegaMenu: true },
     { name: "Industries", href: "/industries" },
-    { name: "Blogs", href: "/partnership" },
+    { name: "Blogs", href: "/blog", hasMegaMenu: true },
     { name: "About Us", href: "/about" },
   ];
 
