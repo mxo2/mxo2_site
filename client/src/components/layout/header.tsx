@@ -52,10 +52,10 @@ export default function Header() {
                   <img
                     src={logoImage}
                     alt="MXO2 Logo"
-                    className="h-24 w-auto"
+                    className="h-20 w-auto"
                   />
                   <div className="w-px h-10 bg-gray-300"></div>
-                  <span className="text-2xl font-bold animate-bounce bg-gradient-to-r from-red-500 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="text-xl font-bold animate-bounce bg-gradient-to-r from-red-500 via-blue-600 to-purple-600 bg-clip-text text-transparent">
                     AI
                   </span>
                 </a>
@@ -69,7 +69,7 @@ export default function Header() {
                   <div key={item.name} className="relative">
                     {item.hasMegaMenu ? (
                       <button
-                        className="flex items-center space-x-1 text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-bold text-lg uppercase tracking-wide transition-colors py-6 group"
+                        className="flex items-center space-x-1 text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-bold text-base uppercase tracking-wide transition-colors py-6 group"
                         onMouseEnter={() => {
                           setIsMegaMenuOpen(true);
                           setActiveMenu(item.name);
@@ -82,7 +82,7 @@ export default function Header() {
                     ) : (
                       <Link href={item.href}>
                         <a
-                          className={`text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-bold text-lg uppercase tracking-wide transition-colors py-6 ${
+                          className={`text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-bold text-base uppercase tracking-wide transition-colors py-6 ${
                             location === item.href
                               ? "text-[hsl(354,87%,51%)]"
                               : ""
@@ -99,7 +99,7 @@ export default function Header() {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Button className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-bold text-lg px-8 py-3">
+              <Button className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white font-opensans font-bold text-base px-8 py-3">
                 Talk to us
               </Button>
             </div>
