@@ -111,7 +111,7 @@ export default function Partnership() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6 font-montserrat">
-              Partnership Insights
+              Blog
             </h1>
             <p className="text-xl lg:text-2xl text-blue-100 font-opensans max-w-3xl mx-auto leading-relaxed">
               Discover the latest in technology partnerships, industry insights, and innovation stories 
