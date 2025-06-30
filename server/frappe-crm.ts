@@ -89,11 +89,15 @@ Additional Notes: ${chatData.notes || 'None'}`;
       const leadData = this.mapContactFormToLead(formData);
       
       console.log('Sending lead to Frappe CRM:', leadData);
+      console.log('Auth headers:', this.getAuthHeaders());
 
       const response = await fetch(`${this.baseUrl}/api/resource/Lead`, {
         method: 'POST',
-        headers: this.getAuthHeaders(),
-        body: JSON.stringify(leadData)
+        headers: {
+          'Content-Type': 'application/json',
+          ...this.getAuthHeaders()
+        },
+        body: JSON.stringify({ data: leadData })
       });
 
       if (!response.ok) {
@@ -139,8 +143,11 @@ Additional Notes: ${chatData.notes || 'None'}`;
 
       const response = await fetch(`${this.baseUrl}/api/resource/Lead`, {
         method: 'POST',
-        headers: this.getAuthHeaders(),
-        body: JSON.stringify(leadData)
+        headers: {
+          'Content-Type': 'application/json',
+          ...this.getAuthHeaders()
+        },
+        body: JSON.stringify({ data: leadData })
       });
 
       if (!response.ok) {
