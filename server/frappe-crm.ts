@@ -61,7 +61,7 @@ export class FrappeCRMService {
       status: 'Lead', // Default status for new leads
       custom_service_interest: formData.service || '',
       custom_message: formData.message || '',
-      lead_owner: 'Administrator' // Default lead owner, can be configured
+      lead_owner: 'sam@mxo2.com' // Assign to current user for visibility
     };
   }
 
@@ -80,7 +80,7 @@ Additional Notes: ${chatData.notes || 'None'}`;
       status: 'Lead',
       custom_service_interest: servicesText,
       custom_message: notes,
-      lead_owner: 'Administrator'
+      lead_owner: 'sam@mxo2.com'
     };
   }
 
