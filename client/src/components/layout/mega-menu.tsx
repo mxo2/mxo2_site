@@ -60,21 +60,23 @@ export default function MegaMenu({ isOpen, activeMenu, onMouseEnter, onMouseLeav
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {products.map((product) => (
-              <Link key={product.name} href={product.href}>
-                <a className="group block">
-                  <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors">
-                    <div className="text-2xl flex-shrink-0">{product.icon}</div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-sm text-[hsl(208,70%,56%)] group-hover:text-[hsl(354,87%,51%)] transition-colors mb-1">
-                        {product.name}
-                      </h3>
-                      <p className="text-xs text-gray-600 leading-relaxed">
-                        {product.description}
-                      </p>
-                    </div>
-                    <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity mt-1 flex-shrink-0" />
+              <Link 
+                key={product.name} 
+                href={product.href}
+                className="group block"
+              >
+                <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors">
+                  <div className="text-2xl flex-shrink-0">{product.icon}</div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-sm text-[hsl(208,70%,56%)] group-hover:text-[hsl(354,87%,51%)] transition-colors mb-1">
+                      {product.name}
+                    </h3>
+                    <p className="text-xs text-gray-600 leading-relaxed">
+                      {product.description}
+                    </p>
                   </div>
-                </a>
+                  <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity mt-1 flex-shrink-0" />
+                </div>
               </Link>
             ))}
           </div>
@@ -82,15 +84,17 @@ export default function MegaMenu({ isOpen, activeMenu, onMouseEnter, onMouseLeav
           {/* Bottom CTA Section */}
           <div className="mt-6 pt-4 border-t border-gray-200 text-center">
             <div className="flex items-center justify-center space-x-4">
-              <Link href="/contact">
-                <a className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white px-4 py-2 rounded-md font-opensans font-medium transition-colors text-sm">
-                  Talk to an Expert
-                </a>
+              <Link 
+                href="/contact"
+                className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white px-4 py-2 rounded-md font-opensans font-medium transition-colors text-sm"
+              >
+                Talk to an Expert
               </Link>
-              <Link href="/products">
-                <a className="text-[hsl(220,72%,44%)] hover:text-[hsl(220,72%,35%)] font-opensans font-medium transition-colors text-sm">
-                  View All Products →
-                </a>
+              <Link 
+                href="/products"
+                className="text-[hsl(220,72%,44%)] hover:text-[hsl(220,72%,35%)] font-opensans font-medium transition-colors text-sm"
+              >
+                View All Products →
               </Link>
             </div>
           </div>
@@ -182,20 +186,21 @@ export default function MegaMenu({ isOpen, activeMenu, onMouseEnter, onMouseLeav
               <ul className="space-y-3">
                 {menuData[activeTab as keyof typeof menuData].services.map((item, index) => (
                   <li key={index}>
-                    <Link href={item.href}>
-                      <a className="group block text-gray-700 hover:text-[hsl(354,87%,51%)] transition-colors font-opensans">
-                        <div className="flex items-start justify-between">
-                          <div className="flex-1">
-                            <span className="text-sm font-semibold block text-[hsl(208,70%,56%)] group-hover:text-[hsl(354,87%,51%)]">
-                              {item.name}
-                            </span>
-                            <p className="text-xs text-gray-600 mt-1 leading-relaxed">
-                              {item.description}
-                            </p>
-                          </div>
-                          <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity mt-1 ml-2 flex-shrink-0" />
+                    <Link 
+                      href={item.href}
+                      className="group block text-gray-700 hover:text-[hsl(354,87%,51%)] transition-colors font-opensans"
+                    >
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <span className="text-sm font-semibold block text-[hsl(208,70%,56%)] group-hover:text-[hsl(354,87%,51%)]">
+                            {item.name}
+                          </span>
+                          <p className="text-xs text-gray-600 mt-1 leading-relaxed">
+                            {item.description}
+                          </p>
                         </div>
-                      </a>
+                        <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity mt-1 ml-2 flex-shrink-0" />
+                      </div>
                     </Link>
                   </li>
                 ))}
@@ -210,20 +215,21 @@ export default function MegaMenu({ isOpen, activeMenu, onMouseEnter, onMouseLeav
               <ul className="space-y-3">
                 {menuData[activeTab as keyof typeof menuData].technologies.map((item, index) => (
                   <li key={index}>
-                    <Link href={item.href}>
-                      <a className="group block text-gray-700 hover:text-[hsl(354,87%,51%)] transition-colors font-opensans">
-                        <div className="flex items-start justify-between">
-                          <div className="flex-1">
-                            <span className="text-sm font-semibold block text-[hsl(208,70%,56%)] group-hover:text-[hsl(354,87%,51%)]">
-                              {item.name}
-                            </span>
-                            <p className="text-xs text-gray-600 mt-1 leading-relaxed">
-                              {item.description}
-                            </p>
-                          </div>
-                          <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity mt-1 ml-2 flex-shrink-0" />
+                    <Link 
+                      href={item.href}
+                      className="group block text-gray-700 hover:text-[hsl(354,87%,51%)] transition-colors font-opensans"
+                    >
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <span className="text-sm font-semibold block text-[hsl(208,70%,56%)] group-hover:text-[hsl(354,87%,51%)]">
+                            {item.name}
+                          </span>
+                          <p className="text-xs text-gray-600 mt-1 leading-relaxed">
+                            {item.description}
+                          </p>
                         </div>
-                      </a>
+                        <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity mt-1 ml-2 flex-shrink-0" />
+                      </div>
                     </Link>
                   </li>
                 ))}
@@ -234,15 +240,17 @@ export default function MegaMenu({ isOpen, activeMenu, onMouseEnter, onMouseLeav
           {/* Bottom CTA Section */}
           <div className="mt-6 pt-4 border-t border-gray-200 text-center">
             <div className="flex items-center justify-center space-x-4">
-              <Link href="/contact">
-                <a className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white px-4 py-2 rounded-md font-opensans font-medium transition-colors text-sm">
-                  Talk to an Expert
-                </a>
+              <Link 
+                href="/contact"
+                className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white px-4 py-2 rounded-md font-opensans font-medium transition-colors text-sm"
+              >
+                Talk to an Expert
               </Link>
-              <Link href="/solutions">
-                <a className="text-[hsl(220,72%,44%)] hover:text-[hsl(220,72%,35%)] font-opensans font-medium transition-colors text-sm">
-                  View All Solutions →
-                </a>
+              <Link 
+                href="/solutions"
+                className="text-[hsl(220,72%,44%)] hover:text-[hsl(220,72%,35%)] font-opensans font-medium transition-colors text-sm"
+              >
+                View All Solutions →
               </Link>
             </div>
           </div>

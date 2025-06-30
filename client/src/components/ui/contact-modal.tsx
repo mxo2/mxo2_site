@@ -224,15 +224,21 @@ export function ContactModal({ children, triggerText = "Talk to Us" }: ContactMo
           <div className="space-y-2">
             <Label htmlFor="message" className="text-sm font-medium text-gray-700">
               Message *
+              <span className="text-xs text-gray-500 ml-2">(minimum 10 characters)</span>
             </Label>
             <Textarea
               id="message"
-              placeholder="Tell us about your project or business needs..."
+              placeholder="Tell us about your project or business needs... (minimum 10 characters)"
               value={formData.message}
               onChange={(e) => handleInputChange("message", e.target.value)}
               className="min-h-[120px] border-gray-300 focus:border-[#1e3a8a] focus:ring-[#1e3a8a] resize-none"
               required
             />
+            {formData.message.length > 0 && formData.message.length < 10 && (
+              <p className="text-xs text-red-500">
+                Message must be at least 10 characters ({formData.message.length}/10)
+              </p>
+            )}
           </div>
 
           {/* Submit Button */}

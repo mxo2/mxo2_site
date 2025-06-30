@@ -219,6 +219,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
     } catch (error) {
       if (error instanceof z.ZodError) {
+        console.error("Validation errors:", JSON.stringify(error.errors, null, 2));
         return res.status(400).json({ error: "Invalid contact form data", details: error.errors });
       }
       console.error("Contact form error:", error);
