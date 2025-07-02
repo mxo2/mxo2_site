@@ -27,9 +27,6 @@ export default function Header() {
         <div className="container mx-auto px-4">
           <div className="flex justify-end space-x-6 text-sm">
             <a href="#" className="hover:text-cyan-400 transition-colors">
-              INVESTORS
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">
               CALL US
             </a>
             <a href="#" className="hover:text-cyan-400 transition-colors">
