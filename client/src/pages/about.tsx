@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { Target, Rocket, Handshake } from "lucide-react";
 import VisionMissionValues from "@/components/sections/vision-mission-values";
-import samImage from "@assets/sam_1751113238654.png";
+import samImage from "@assets/IMG_2944 5_1751463014169.jpg";
 import clientsImage from "@assets/clients 1_1751112968066.jpg";
 import instructureImage from "@assets/instracture_3_1751112701698.jpg";
 import designImage from "@assets/design_1751110232480.png";
@@ -205,9 +205,9 @@ export default function About() {
                 <div className="bg-white rounded-lg p-8 shadow-lg text-center">
                   <div className="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full">
                     <img 
-                      src="/assets/sam_1751113238654.png" 
-                      alt="Sam Panwar - CEO & Founder of MXO2" 
-                      className="w-full h-full object-cover"
+                      src={samImage} 
+                      alt="Sam Panwar - CEO & Founder of mxO₂" 
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2 font-montserrat">Sam Panwar</h3>
