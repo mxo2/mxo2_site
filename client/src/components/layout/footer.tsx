@@ -57,36 +57,69 @@ export default function Footer() {
         </div>
       </div>
       
-      {/* Bottom Footer */}
+      {/* Legal Links Section */}
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            {/* Copyright */}
-            <div className="text-gray-400 text-sm">
-              © 2025 Maximum Oxygen Inc. All rights reserved.
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            {/* Legal Links */}
+            <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400">
+              <Link href="/privacy-policy" className="hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-conditions" className="hover:text-white transition-colors">
+                Terms & Conditions
+              </Link>
+              <Link href="/cookies-policy" className="hover:text-white transition-colors">
+                Cookies Policy
+              </Link>
+              <Link href="/contact" className="hover:text-white transition-colors">
+                Contact Us
+              </Link>
             </div>
             
             {/* Social Icons */}
             <div className="flex items-center space-x-4">
-              <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+              <a href="https://www.facebook.com/people/Maximum-Oxygen-Inc/61577756427787/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
+              <a href="https://x.com/IncMomentu20798" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors">
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+              <a href="https://www.linkedin.com/company/maximum-oxygen-inc/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
-                <Youtube className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
-                <MessageCircle className="w-4 h-4" />
-              </a>
             </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Copyright and Compliance */}
+      <div className="border-t border-gray-800">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+            <div>
+              © 2025 MXO2 Technologies Private Limited. All rights reserved.
+            </div>
+            <div className="flex flex-wrap items-center gap-4">
+              <span>GDPR Compliant</span>
+              <span>•</span>
+              <span>ISO 27001 Certified</span>
+              <span>•</span>
+              <span>SOC 2 Type II</span>
+            </div>
+          </div>
+          
+          {/* Terms Acceptance Notice */}
+          <div className="mt-4 pt-4 border-t border-gray-800 text-xs text-gray-500 text-center md:text-left">
+            <p>
+              By using this website, you agree to our 
+              <Link href="/terms-conditions" className="text-blue-400 hover:text-blue-300 ml-1 mr-1">Terms & Conditions</Link>
+              and acknowledge our 
+              <Link href="/privacy-policy" className="text-blue-400 hover:text-blue-300 ml-1 mr-1">Privacy Policy</Link>
+              and 
+              <Link href="/cookies-policy" className="text-blue-400 hover:text-blue-300 ml-1">Cookies Policy</Link>.
+              We use cookies to enhance your experience and analyze site usage.
+            </p>
           </div>
         </div>
       </div>

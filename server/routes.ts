@@ -7,8 +7,16 @@ import {
   insertPageSchema, 
   insertServiceSchema, 
   insertIndustrySchema, 
-  insertTechnologySchema 
+  insertTechnologySchema,
+  insertChatConversationSchema,
+  insertChatLeadSchema,
+  insertPartnershipBlogSchema,
+  insertBlogCategorySchema,
+  insertBlogTagSchema,
+  insertBlogAuthorSchema
 } from "@shared/schema";
+import { processChatMessage, generateSessionId } from "./ai-service";
+import { frappeCRM } from "./frappe-crm";
 
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -186,30 +194,206 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Contact form
+  // Contact form with Frappe CRM integration
   app.post("/api/contact", async (req, res) => {
     try {
+      console.log("Raw request body:", req.body);
       const validatedData = contactFormSchema.parse(req.body);
       
-      // In a real application, you would:
-      // 1. Save to database
-      // 2. Send email notification
-      // 3. Integrate with CRM
-      
-      // For now, we'll just log and respond
       console.log("Contact form submission:", validatedData);
       
-      res.status(200).json({ 
-        message: "Contact form submitted successfully",
-        data: validatedData 
-      });
+      // Try to create lead in Frappe CRM
+      const crmResult = await frappeCRM.createLead(validatedData);
+      
+      if (crmResult.success) {
+        console.log("Lead created in Frappe CRM with ID:", crmResult.leadId);
+        res.status(200).json({ 
+          message: "Contact form submitted successfully and lead created in CRM",
+          data: validatedData,
+          crmLeadId: crmResult.leadId
+        });
+      } else {
+        // Even if CRM fails, we still consider the form submission successful
+        console.warn("Failed to create lead in CRM:", crmResult.error);
+        res.status(200).json({ 
+          message: "Contact form submitted successfully (CRM integration pending)",
+          data: validatedData,
+          crmError: crmResult.error
+        });
+      }
     } catch (error) {
       if (error instanceof z.ZodError) {
+        console.error("Validation errors:", JSON.stringify(error.errors, null, 2));
         return res.status(400).json({ error: "Invalid contact form data", details: error.errors });
       }
+      console.error("Contact form error:", error);
       res.status(500).json({ error: "Failed to submit contact form" });
     }
   });
+
+  // Chat API routes
+  app.post("/api/chat/message", async (req, res) => {
+    try {
+      const { message, sessionId } = req.body;
+      
+      if (!message) {
+        return res.status(400).json({ error: "Message is required" });
+      }
+
+      // Get conversation history
+      const conversations = sessionId 
+        ? await storage.getChatConversationsBySession(sessionId)
+        : [];
+
+      const conversationHistory = conversations.map(conv => [
+        { role: 'user' as const, content: conv.userMessage },
+        { role: 'assistant' as const, content: conv.botResponse }
+      ]).flat();
+
+      // Process message with AI
+      const aiResponse = await processChatMessage(message, conversationHistory);
+
+      // Generate session ID if not provided
+      const finalSessionId = sessionId || generateSessionId();
+
+      // Save conversation
+      const conversation = await storage.createChatConversation({
+        sessionId: finalSessionId,
+        userMessage: message,
+        botResponse: aiResponse.message,
+        intent: aiResponse.intent
+      });
+
+      res.json({
+        response: aiResponse.message,
+        sessionId: finalSessionId,
+        intent: aiResponse.intent,
+        needsUserInfo: aiResponse.needsUserInfo,
+        suggestedServices: aiResponse.suggestedServices
+      });
+
+    } catch (error) {
+      console.error('Chat API Error:', error);
+      res.status(500).json({ 
+        error: "Sorry, I'm experiencing technical difficulties. Please try again later." 
+      });
+    }
+  });
+
+  app.post("/api/chat/lead", async (req, res) => {
+    try {
+      const validatedData = insertChatLeadSchema.parse(req.body);
+      
+      // Store lead in local database
+      const lead = await storage.createChatLead(validatedData);
+      
+      // Also send to Frappe CRM
+      const crmResult = await frappeCRM.createChatLead({
+        name: validatedData.name,
+        email: validatedData.email,
+        servicesInterested: validatedData.servicesInterested || undefined,
+        conversationId: validatedData.conversationId || undefined,
+        notes: validatedData.notes || undefined
+      });
+      
+      if (crmResult.success) {
+        console.log("Chat lead created in Frappe CRM with ID:", crmResult.leadId);
+        res.status(201).json({ 
+          ...lead, 
+          crmLeadId: crmResult.leadId,
+          crmSync: true 
+        });
+      } else {
+        console.warn("Failed to sync chat lead to CRM:", crmResult.error);
+        res.status(201).json({ 
+          ...lead, 
+          crmError: crmResult.error,
+          crmSync: false 
+        });
+      }
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: "Invalid lead data", details: error.errors });
+      }
+      console.error("Chat lead creation error:", error);
+      res.status(500).json({ error: "Failed to create lead" });
+    }
+  });
+
+  app.get("/api/chat/leads", async (req, res) => {
+    try {
+      const leads = await storage.getAllChatLeads();
+      res.json(leads);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch leads" });
+    }
+  });
+
+  // CRM Connection Test
+  app.get("/api/crm/test", async (req, res) => {
+    try {
+      const testResult = await frappeCRM.testConnection();
+      res.json(testResult);
+    } catch (error) {
+      console.error('CRM test error:', error);
+      res.status(500).json({ 
+        success: false, 
+        error: "Failed to test CRM connection" 
+      });
+    }
+  });
+
+  // Downloads endpoint for download modal integration
+  const downloadFormSchema = z.object({
+    name: z.string().min(1, "Name is required"),
+    email: z.string().email("Valid email is required"),
+    company: z.string().optional(),
+    resource: z.string().min(1, "Resource name is required"),
+    downloadUrl: z.string().url("Valid download URL is required")
+  });
+
+  app.post("/api/downloads", async (req, res) => {
+    try {
+      const validatedData = downloadFormSchema.parse(req.body);
+      
+      console.log("Download form submission:", validatedData);
+      
+      // Create a lead for download requests in Frappe CRM
+      const leadData = {
+        name: validatedData.name,
+        email: validatedData.email,
+        company: validatedData.company,
+        service: `Download: ${validatedData.resource}`,
+        message: `User downloaded resource: ${validatedData.resource} from ${validatedData.downloadUrl}`
+      };
+
+      const crmResult = await frappeCRM.createLead(leadData);
+      
+      if (crmResult.success) {
+        console.log("Download lead created in Frappe CRM with ID:", crmResult.leadId);
+        res.status(200).json({ 
+          message: "Download tracked successfully and lead created in CRM",
+          data: validatedData,
+          crmLeadId: crmResult.leadId
+        });
+      } else {
+        console.warn("Failed to create download lead in CRM:", crmResult.error);
+        res.status(200).json({ 
+          message: "Download tracked successfully (CRM integration pending)",
+          data: validatedData,
+          crmError: crmResult.error
+        });
+      }
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ error: "Invalid download form data", details: error.errors });
+      }
+      console.error("Download tracking error:", error);
+      res.status(500).json({ error: "Failed to track download" });
+    }
+  });
+
+  // Note: Partnership blog routes removed - using static data for simplified blog system
 
   const httpServer = createServer(app);
   return httpServer;
