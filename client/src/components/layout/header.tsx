@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -11,6 +11,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const navigation = [
     { name: "Solutions", href: "/solutions", hasMegaMenu: true },
@@ -62,15 +63,30 @@ export default function Header() {
             <nav className="hidden lg:flex items-center justify-center flex-1">
               <div className="flex items-center space-x-12">
                 {navigation.map((item) => (
-                  <div key={item.name} className="relative">
+                  <div 
+                    key={item.name} 
+                    className="relative"
+                    onMouseEnter={() => {
+                      if (item.hasMegaMenu) {
+                        if (hoverTimeoutRef.current) {
+                          clearTimeout(hoverTimeoutRef.current);
+                        }
+                        setIsMegaMenuOpen(true);
+                        setActiveMenu(item.name);
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      if (item.hasMegaMenu) {
+                        hoverTimeoutRef.current = setTimeout(() => {
+                          setIsMegaMenuOpen(false);
+                          setActiveMenu(null);
+                        }, 300);
+                      }
+                    }}
+                  >
                     {item.hasMegaMenu ? (
                       <button
                         className="flex items-center space-x-1 text-gray-700 hover:text-[hsl(354,87%,51%)] font-opensans font-bold text-base uppercase tracking-wide transition-colors py-6 group"
-                        onMouseEnter={() => {
-                          setIsMegaMenuOpen(true);
-                          setActiveMenu(item.name);
-                        }}
-                        onMouseLeave={() => setIsMegaMenuOpen(false)}
                       >
                         <span>{item.name}</span>
                         <ChevronDown className="w-5 h-5 group-hover:rotate-180 transition-transform" />
@@ -149,10 +165,17 @@ export default function Header() {
       <MegaMenu
         isOpen={isMegaMenuOpen}
         activeMenu={activeMenu}
-        onMouseEnter={() => setIsMegaMenuOpen(true)}
+        onMouseEnter={() => {
+          if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+          }
+          setIsMegaMenuOpen(true);
+        }}
         onMouseLeave={() => {
-          setIsMegaMenuOpen(false);
-          setActiveMenu(null);
+          hoverTimeoutRef.current = setTimeout(() => {
+            setIsMegaMenuOpen(false);
+            setActiveMenu(null);
+          }, 300);
         }}
       />
     </header>
