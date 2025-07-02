@@ -667,7 +667,7 @@ export default function CloudMigration() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 font-montserrat">
-              Why Choose mx<span className="text-cyan-300">O₂</span> for Cloud Migration?
+              Why Choose MXO2 for Cloud Migration?
             </h2>
             <p className="text-xl text-blue-100 font-opensans max-w-3xl mx-auto">
               Proven expertise, enterprise-grade security, and guaranteed business continuity

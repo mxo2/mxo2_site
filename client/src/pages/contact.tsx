@@ -114,7 +114,7 @@ export default function Contact() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="font-montserrat font-bold text-4xl lg:text-6xl mb-6">
-              Contact <span className="text-cyan">mx<sub>O₂</sub></span>
+              Contact <span className="text-cyan">MXO2</span>
             </h1>
             <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
               Ready to transform your business with cutting-edge technology? Let's start the conversation and explore how we can help you achieve your goals.
@@ -275,7 +275,7 @@ export default function Contact() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-montserrat font-bold text-3xl lg:text-4xl text-navy mb-6 uppercase">
-              Why Choose mx<span className="text-cyan-600">O₂</span>?
+              Why Choose MXO2?
             </h2>
             <p className="text-xl text-medium-gray max-w-3xl mx-auto">
               We combine technical expertise with business acumen to deliver solutions that drive real results for your organization.
