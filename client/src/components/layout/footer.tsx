@@ -79,23 +79,14 @@ export default function Footer() {
             
             {/* Social Icons */}
             <div className="flex items-center space-x-4">
-              <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+              <a href="https://www.facebook.com/people/Maximum-Oxygen-Inc/61577756427787/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
+              <a href="https://x.com/IncMomentu20798" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors">
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+              <a href="https://www.linkedin.com/company/maximum-oxygen-inc/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
                 <Linkedin className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
-                <Youtube className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
-                <MessageCircle className="w-4 h-4" />
               </a>
             </div>
           </div>
