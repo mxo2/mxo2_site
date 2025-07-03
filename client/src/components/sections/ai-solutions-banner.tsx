@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function AISolutionsBanner() {
   return (
@@ -13,12 +14,14 @@ export default function AISolutionsBanner() {
           decisions, faster workflows, and scalable innovation.
         </p>
         
-        <Button 
-          size="lg" 
-          className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white px-8 py-3 text-lg font-opensans font-medium"
-        >
-          Learn more
-        </Button>
+        <Link href="/workspace">
+          <Button 
+            size="lg" 
+            className="bg-[hsl(354,87%,51%)] hover:bg-[hsl(354,87%,45%)] text-white px-8 py-3 text-lg font-opensans font-medium"
+          >
+            Learn more
+          </Button>
+        </Link>
       </div>
     </section>
   );
