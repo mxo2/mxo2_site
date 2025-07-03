@@ -110,21 +110,21 @@ export default function Contact() {
   return (
     <div className="py-20">
       {/* Hero Section */}
-      <section className="bg-navy text-white py-20">
+      <section className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="font-montserrat font-bold text-4xl lg:text-6xl mb-6">
-              Contact <span className="text-cyan">mx<sub>O₂</sub></span>
+            <h1 className="font-opensans font-bold text-4xl lg:text-6xl mb-6 text-white">
+              Contact <span className="text-cyan-400">mx<sub className="text-cyan-400">O₂</sub></span>
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
-              Connect with our team in Jaipur to discuss your digital transformation journey. We're here to help you leverage AI, cloud solutions, and modern technology for business growth.
+            <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed font-opensans">
+              Connect with our global team to discuss your digital transformation journey. We deliver cutting-edge AI, cloud solutions, and enterprise technology worldwide.
             </p>
           </div>
         </div>
       </section>
 
       {/* Contact Form and Info */}
-      <section className="py-20 bg-light-gray">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -136,7 +136,7 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name" className="font-opensans font-semibold text-navy">
+                      <Label htmlFor="name" className="font-opensans font-semibold text-gray-900">
                         Full Name *
                       </Label>
                       <Input
@@ -149,7 +149,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="font-opensans font-semibold text-navy">
+                      <Label htmlFor="email" className="font-opensans font-semibold text-gray-900">
                         Email Address *
                       </Label>
                       <Input
@@ -230,7 +230,7 @@ export default function Contact() {
                   <Button
                     type="submit"
                     disabled={contactMutation.isPending}
-                    className="w-full bg-cyan hover:bg-navy text-white font-montserrat font-semibold py-3"
+                    className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-opensans font-semibold py-3"
                   >
                     {contactMutation.isPending ? "Sending..." : "Send Message"}
                   </Button>
@@ -248,11 +248,11 @@ export default function Contact() {
                 <Card key={index} className="bg-white shadow-lg border-0">
                   <CardContent className="p-6">
                     <div className="flex items-start">
-                      <div className="bg-cyan w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <div className="bg-cyan-500 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                         <info.icon className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-montserrat font-semibold text-navy mb-2">
+                        <h3 className="font-opensans font-semibold text-gray-900 mb-2">
                           {info.title}
                         </h3>
                         {info.details.map((detail, detailIndex) => (
@@ -274,22 +274,22 @@ export default function Contact() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-bold text-3xl lg:text-4xl text-navy mb-6 uppercase">
+            <h2 className="font-opensans font-bold text-3xl lg:text-4xl text-gray-900 mb-6 uppercase">
               Why Choose mx<span className="text-cyan-600">O₂</span>?
             </h2>
-            <p className="text-xl text-medium-gray max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We combine technical expertise with business acumen to deliver solutions that drive real results for your organization.
             </p>
           </div>
           
           <div className="grid lg:grid-cols-3 gap-8">
             {whyChooseUs.map((item, index) => (
-              <Card key={index} className="bg-light-gray border-0 card-hover">
+              <Card key={index} className="bg-gray-50 border-0 hover:shadow-lg transition-shadow">
                 <CardContent className="p-8 text-center">
-                  <div className="bg-cyan w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="bg-cyan-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-montserrat font-bold text-xl text-navy mb-4">
+                  <h3 className="font-opensans font-bold text-xl text-gray-900 mb-4">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
