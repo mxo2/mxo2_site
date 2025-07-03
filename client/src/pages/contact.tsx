@@ -303,26 +303,26 @@ export default function Contact() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-navy text-white">
+      <section className="py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="font-montserrat font-bold text-3xl lg:text-4xl mb-6">
-              Ready to Start Your <span className="text-cyan">Digital Transformation?</span>
+            <h2 className="font-opensans font-bold text-3xl lg:text-4xl mb-6 text-white">
+              Ready to Start Your <span className="text-cyan-400">Digital Transformation?</span>
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-100 mb-8 max-w-3xl mx-auto font-opensans">
               Schedule a free consultation to discuss your project requirements and learn how we can help you achieve your technology goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-cyan hover:bg-white hover:text-navy text-white font-montserrat font-semibold"
+                className="bg-cyan-500 hover:bg-cyan-600 text-white font-opensans font-semibold"
               >
                 Schedule Free Consultation
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-white hover:bg-white hover:text-navy text-white font-montserrat font-semibold"
+                className="border-2 border-white hover:bg-white hover:text-gray-900 text-white font-opensans font-semibold"
               >
                 Download Our Portfolio
               </Button>
