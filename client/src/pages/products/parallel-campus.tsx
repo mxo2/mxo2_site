@@ -366,7 +366,7 @@ export default function ParallelCampus() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Globe className="w-5 h-5 text-blue-600" />
-                    <span className="text-gray-700">Global Presence: USA, India, Japan</span>
+                    <span className="text-gray-700">Headquartered in Jaipur, India</span>
                   </div>
                 </div>
 

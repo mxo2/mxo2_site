@@ -70,12 +70,12 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Our Location",
-      details: ["123 Innovation Drive", "Tech Hub, Silicon Valley", "CA 94025, United States"]
+      details: ["T1 Jagdamba Tower", "Amarapali Circle, Vaishali Nagar", "Jaipur 302021, Rajasthan, India"]
     },
     {
       icon: Phone,
-      title: "Phone & Fax",
-      details: ["+1 (555) 123-4567", "+1 (555) 123-4568 (Fax)", "24/7 Support Available"]
+      title: "Phone & Support",
+      details: ["+91 141 XXX-XXXX", "+91 9XX-XXX-XXXX", "24/7 Support Available"]
     },
     {
       icon: Mail,
@@ -85,7 +85,7 @@ export default function Contact() {
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Monday - Friday: 9:00 AM - 6:00 PM PST", "Saturday: 10:00 AM - 4:00 PM PST", "Sunday: Closed"]
+      details: ["Monday - Friday: 9:00 AM - 6:00 PM IST", "Saturday: 10:00 AM - 4:00 PM IST", "Sunday: Closed"]
     }
   ];
 
@@ -117,7 +117,7 @@ export default function Contact() {
               Contact <span className="text-cyan">mx<sub>O₂</sub></span>
             </h1>
             <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
-              Ready to transform your business with cutting-edge technology? Let's start the conversation and explore how we can help you achieve your goals.
+              Connect with our team in Jaipur to discuss your digital transformation journey. We're here to help you leverage AI, cloud solutions, and modern technology for business growth.
             </p>
           </div>
         </div>
@@ -186,7 +186,7 @@ export default function Contact() {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+91 98XXX XXXXX"
                         className="font-opensans"
                       />
                     </div>
