@@ -74,8 +74,8 @@ export default function Contact() {
     },
     {
       icon: Phone,
-      title: "Phone & Support",
-      details: ["+91 141 XXX-XXXX", "+91 9XX-XXX-XXXX", "24/7 Support Available"]
+      title: "Phone & WhatsApp",
+      details: ["+91 9829649640", "WhatsApp Available", "24/7 Support Available"]
     },
     {
       icon: Mail,
@@ -186,7 +186,7 @@ export default function Contact() {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
-                        placeholder="+91 98XXX XXXXX"
+                        placeholder="+91 9829649640"
                         className="font-opensans"
                       />
                     </div>
