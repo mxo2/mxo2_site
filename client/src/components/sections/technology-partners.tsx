@@ -35,22 +35,22 @@ const technologies = [
   },
   {
     name: "Kubernetes",
-    logo: null, // Will use text/icon
+    logo: null,
   },
   {
     name: "UiPath",
     logo: uipathLogoPath,
   },
   {
-    name: "PostgreSQL",
-    logo: null,
-  },
-  {
-    name: "TensorFlow",
+    name: "Dataflow",
     logo: null,
   },
   {
     name: "Power BI",
+    logo: null,
+  },
+  {
+    name: "PostgreSQL",
     logo: null,
   }
 ];
@@ -71,7 +71,7 @@ export default function TechnologyPartners() {
                 <img 
                   src={tech.logo} 
                   alt={`${tech.name} logo`} 
-                  className="w-16 h-10 object-contain"
+                  className="w-24 h-16 object-contain"
                 />
               </div>
               
@@ -113,22 +113,22 @@ export default function TechnologyPartners() {
           {technologies.slice(3).map((tech, index) => (
             <div 
               key={index + 3}
-              className="flex flex-col items-center p-4 bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
+              className="flex flex-col items-center p-6 bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow"
             >
               {tech.logo ? (
                 <img
                   src={tech.logo}
                   alt={tech.name}
-                  className="h-8 w-auto mb-2 object-contain"
+                  className="h-12 w-auto mb-3 object-contain"
                 />
               ) : (
-                <div className="h-8 w-8 mb-2 bg-[hsl(220,72%,44%)] rounded flex items-center justify-center">
-                  <span className="text-xs font-bold text-white">
+                <div className="h-12 w-12 mb-3 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                  <span className="text-lg font-bold text-white">
                     {tech.name.charAt(0)}
                   </span>
                 </div>
               )}
-              <h3 className="text-sm font-semibold text-gray-900 text-center">
+              <h3 className="text-sm font-semibold text-gray-900 text-center font-opensans">
                 {tech.name}
               </h3>
             </div>
