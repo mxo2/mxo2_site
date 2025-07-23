@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ContactModal } from "@/components/ui/contact-modal";
+import SEO from "@/components/SEO";
 import { 
   Mail, 
   Calendar, 
@@ -72,6 +73,13 @@ export default function Workspace() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="mxO₂ Workspace - Enterprise Email & Collaboration Platform | Microsoft Exchange Alternative"
+        description="mxO₂ Workspace is the complete business communication platform with enterprise email, calendaring, chat, and video conferencing. The Microsoft Exchange alternative with MAPI support."
+        keywords="mxO2 workspace, enterprise email server, Microsoft Exchange alternative, business communication platform, email hosting, calendaring, team collaboration, MAPI support"
+        ogTitle="mxO₂ Workspace - Oxygen to Your MX Record"
+        ogDescription="Transform business communication with mxO₂ Workspace. Enterprise-grade email, collaboration tools, and productivity features for modern organizations."
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[hsl(220,72%,44%)] to-[hsl(220,72%,35%)] text-white py-20">
         <div className="container mx-auto px-4">

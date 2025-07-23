@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { Target, Rocket, Handshake } from "lucide-react";
 import VisionMissionValues from "@/components/sections/vision-mission-values";
+import SEO from "@/components/SEO";
 import samImage from "@assets/IMG_2944 5_1751463014169.jpg";
 import clientsImage from "@assets/clients 1_1751112968066.jpg";
 import instructureImage from "@assets/instracture_3_1751112701698.jpg";
@@ -14,6 +15,13 @@ export default function About() {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="About mxO₂ - Tech Entrepreneurs Driving Digital Innovation | Leadership Team"
+        description="Learn about mxO₂'s leadership team, mission, and vision. Built by tech entrepreneurs for digital innovators, steering the oxygen flow in enterprise transformation."
+        keywords="mxO2 about, tech entrepreneurs, digital innovation, leadership team, company mission, enterprise transformation, technology leadership, mxO2 founders"
+        ogTitle="About mxO₂ - Leaders in Digital Transformation"
+        ogDescription="Meet the tech entrepreneurs behind mxO₂'s digital transformation success. Discover our mission to deliver cutting-edge AI and enterprise solutions."
+      />
       {/* Hero Section */}
       <section className="relative h-[400px] overflow-hidden">
         <div className="absolute inset-0 flex">

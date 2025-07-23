@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { MapPin, Phone, Mail, Clock, Building, Users, Award } from "lucide-react";
+import SEO from "@/components/SEO";
 
 interface ContactForm {
   name: string;
@@ -109,6 +110,13 @@ export default function Contact() {
 
   return (
     <div className="py-20">
+      <SEO 
+        title="Contact mxO₂ - Get Expert Digital Transformation Consultation | Enterprise Solutions"
+        description="Contact mxO₂'s global team for AI-powered digital transformation solutions. Get expert consultation on cloud migration, automation, and enterprise technology. Call +91 9829649640."
+        keywords="contact mxO2, digital transformation consultation, enterprise solutions, cloud migration experts, AI automation contact, business technology support, mxO2 phone number"
+        ogTitle="Contact mxO₂ - Transform Your Business Today"
+        ogDescription="Connect with mxO₂'s experts for custom AI, cloud, and automation solutions. Free consultation available. Contact us at +91 9829649640 or info@mxo2.com."
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-20">
         <div className="container mx-auto px-4">

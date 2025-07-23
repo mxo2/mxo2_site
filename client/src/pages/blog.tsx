@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import SEO from "@/components/SEO";
 
 interface BlogPost {
   id: number;
@@ -219,6 +220,13 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="mxO₂ Blog - Digital Transformation Insights & AI Solutions | Expert Knowledge"
+        description="Explore mxO₂'s latest insights on digital transformation, AI automation, cloud migration, and enterprise technology. Expert articles on business innovation and tech solutions."
+        keywords="digital transformation blog, AI insights, cloud migration articles, enterprise technology, business automation, mxO2 blog, tech innovation, digital strategy"
+        ogTitle="mxO₂ Blog - Latest Digital Transformation Insights"
+        ogDescription="Stay updated with mxO₂'s expert insights on AI, cloud technologies, and digital transformation strategies for modern enterprises."
+      />
       {/* Skip to main content link */}
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded">
         Skip to main content

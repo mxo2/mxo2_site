@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Cloud, Bot, Cpu, ArrowRight } from "lucide-react";
+import SEO from "@/components/SEO";
 
 export default function Solutions() {
   const solutions = [
@@ -44,6 +45,13 @@ export default function Solutions() {
 
   return (
     <div className="py-20">
+      <SEO 
+        title="Enterprise Solutions - Cloud, AI & Applications | mxO₂ Digital Transformation"
+        description="Comprehensive enterprise solutions from mxO₂. Cloud migration, AI & IoT integration, and application modernization services. Transform your business with our expert solutions."
+        keywords="enterprise solutions, cloud migration, AI integration, application modernization, digital transformation, IoT solutions, business automation, mxO2 services"
+        ogTitle="mxO₂ Enterprise Solutions - Transform Your Business"
+        ogDescription="Accelerate your digital transformation with mxO₂'s comprehensive cloud, AI, and application solutions designed for modern enterprises."
+      />
       {/* Hero Section */}
       <section className="bg-navy text-white py-20">
         <div className="container mx-auto px-4">
