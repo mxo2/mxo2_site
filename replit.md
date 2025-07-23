@@ -188,6 +188,12 @@ Changelog:
   - Added robots.txt with proper crawl directives and sitemap reference
   - Integrated sitemap link in footer for easy user access
   - All SEO implementations include targeted keywords, descriptions, and social media optimization
+- January 23, 2025. **CRM INTEGRATION UPDATE**: Updated Frappe CRM configuration:
+  - Changed CRM URL from crm.mxo2.com to my.mxo2.com
+  - Updated API credentials for new CRM instance
+  - Fixed source validation to use "Walk In" instead of "Website"
+  - Tested and confirmed successful lead creation (Test Lead ID: CRM-LEAD-2025-01536)
+  - Contact forms and AI chatbot now fully operational with new CRM setup
 
 ## Current Implementation Status
 

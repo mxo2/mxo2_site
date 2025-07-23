@@ -33,7 +33,7 @@ export class FrappeCRMService {
   private apiSecret?: string;
 
   constructor() {
-    this.baseUrl = 'https://crm.mxo2.com';
+    this.baseUrl = 'https://my.mxo2.com';
     this.apiKey = process.env.FRAPPE_API_KEY;
     this.apiSecret = process.env.FRAPPE_API_SECRET;
   }
@@ -59,6 +59,7 @@ export class FrappeCRMService {
       company_name: formData.company || '',
       mobile_no: formData.phone || '',
       status: 'Open', // Set as Open for immediate follow-up
+      source: 'Walk In', // Use valid source
       custom_service_interest: formData.service || '',
       custom_message: formData.message || '',
       lead_owner: 'sam@mxo2.com' // Assign to current user for visibility
@@ -78,6 +79,7 @@ Additional Notes: ${chatData.notes || 'None'}`;
       company_name: '',
       mobile_no: '',
       status: 'Open',
+      source: 'Walk In', // Use valid source
       custom_service_interest: servicesText,
       custom_message: notes,
       lead_owner: 'sam@mxo2.com'
