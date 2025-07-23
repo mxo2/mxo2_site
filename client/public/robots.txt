@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mxo2.com/sitemap.xml
+
+# Crawl delays
+Crawl-delay: 1
+
+# Allow specific directories
+Allow: /solutions/
+Allow: /blog/
+Allow: /about
+Allow: /contact
+Allow: /workspace
+Allow: /industries
+
+# Allow images and assets
+Allow: /assets/
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+
+# Disallow admin and sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: *.json
+Disallow: /node_modules/

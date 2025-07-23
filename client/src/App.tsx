@@ -37,6 +37,7 @@ import TermsConditions from "@/pages/terms-conditions";
 import CookiesPolicy from "@/pages/cookies-policy";
 import Partnership from "@/pages/partnership";
 import Workspace from "@/pages/workspace";
+import Sitemap from "@/pages/sitemap";
 
 function Router() {
   return (
@@ -80,6 +81,7 @@ function Router() {
                   <Route path="/blog/:slug" component={BlogPost} />
                   <Route path="/about" component={About} />
                   <Route path="/contact" component={Contact} />
+                  <Route path="/sitemap" component={Sitemap} />
                   <Route component={NotFound} />
                 </Switch>
               </main>
